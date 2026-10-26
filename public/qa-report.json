@@ -1,0 +1,1252 @@
+{
+ "generatedAt": "2026-10-24T14:23:50.079Z",
+ "browser": "chrome.exe",
+ "routes": 98,
+ "axe": {
+  "/": {
+   "violations": []
+  },
+  "/start/principles": {
+   "violations": []
+  },
+  "/start/how-to-use": {
+   "violations": []
+  },
+  "/start/rules": {
+   "violations": []
+  },
+  "/foundations/colors": {
+   "violations": []
+  },
+  "/foundations/typography": {
+   "violations": []
+  },
+  "/foundations/spacing": {
+   "violations": []
+  },
+  "/foundations/radii": {
+   "violations": []
+  },
+  "/foundations/borders": {
+   "violations": []
+  },
+  "/foundations/effects": {
+   "violations": []
+  },
+  "/foundations/shadows": {
+   "violations": []
+  },
+  "/foundations/motion": {
+   "violations": []
+  },
+  "/foundations/iconography": {
+   "violations": []
+  },
+  "/foundations/density": {
+   "violations": []
+  },
+  "/foundations/responsive": {
+   "violations": []
+  },
+  "/components/buttons": {
+   "violations": []
+  },
+  "/components/icon-buttons": {
+   "violations": []
+  },
+  "/components/search-fields": {
+   "violations": []
+  },
+  "/components/text-inputs": {
+   "violations": []
+  },
+  "/components/textareas": {
+   "violations": []
+  },
+  "/components/dropdowns": {
+   "violations": []
+  },
+  "/components/multi-selects": {
+   "violations": []
+  },
+  "/components/date-pickers": {
+   "violations": []
+  },
+  "/components/checkboxes": {
+   "violations": []
+  },
+  "/components/radio-cards": {
+   "violations": []
+  },
+  "/components/switches": {
+   "violations": []
+  },
+  "/components/labels": {
+   "violations": []
+  },
+  "/components/badges": {
+   "violations": []
+  },
+  "/components/tags": {
+   "violations": []
+  },
+  "/components/status-indicators": {
+   "violations": []
+  },
+  "/components/kpi-cards": {
+   "violations": []
+  },
+  "/components/metric-cards": {
+   "violations": []
+  },
+  "/components/standard-cards": {
+   "violations": []
+  },
+  "/components/tables": {
+   "violations": []
+  },
+  "/components/pagination": {
+   "violations": []
+  },
+  "/components/tabs": {
+   "violations": []
+  },
+  "/components/navigation-items": {
+   "violations": []
+  },
+  "/components/breadcrumbs": {
+   "violations": []
+  },
+  "/components/modals": {
+   "violations": []
+  },
+  "/components/drawers": {
+   "violations": []
+  },
+  "/components/tooltips-popovers": {
+   "violations": []
+  },
+  "/components/alerts": {
+   "violations": []
+  },
+  "/components/toasts": {
+   "violations": []
+  },
+  "/components/file-upload": {
+   "violations": []
+  },
+  "/components/loading": {
+   "violations": []
+  },
+  "/components/empty-states": {
+   "violations": []
+  },
+  "/components/link-action": {
+   "violations": []
+  },
+  "/components/action-group": {
+   "violations": []
+  },
+  "/components/binary-toggle": {
+   "violations": []
+  },
+  "/components/field-with-attach": {
+   "violations": []
+  },
+  "/components/rich-picker": {
+   "violations": []
+  },
+  "/components/callout": {
+   "violations": []
+  },
+  "/components/stepper": {
+   "violations": []
+  },
+  "/components/dashboard-card": {
+   "violations": []
+  },
+  "/components/status-card": {
+   "violations": []
+  },
+  "/components/count-pill": {
+   "violations": []
+  },
+  "/components/info-chip": {
+   "violations": []
+  },
+  "/components/avatar": {
+   "violations": []
+  },
+  "/components/progress": {
+   "violations": []
+  },
+  "/components/summary-strip": {
+   "violations": []
+  },
+  "/components/media-card": {
+   "violations": []
+  },
+  "/components/page-headers": {
+   "violations": []
+  },
+  "/components/table-card": {
+   "violations": []
+  },
+  "/components/collapsible-section": {
+   "violations": []
+  },
+  "/charts/library": {
+   "violations": []
+  },
+  "/charts/playground": {
+   "violations": []
+  },
+  "/charts/foundations": {
+   "violations": []
+  },
+  "/charts/vertical-bar": {
+   "violations": []
+  },
+  "/charts/horizontal-bar": {
+   "violations": []
+  },
+  "/charts/grouped-bar": {
+   "violations": []
+  },
+  "/charts/stacked-bar": {
+   "violations": []
+  },
+  "/charts/line": {
+   "violations": []
+  },
+  "/charts/area": {
+   "violations": []
+  },
+  "/charts/donut": {
+   "violations": []
+  },
+  "/charts/heatmap": {
+   "violations": []
+  },
+  "/charts/bubble": {
+   "violations": []
+  },
+  "/charts/progress": {
+   "violations": []
+  },
+  "/charts/tooltips-legends": {
+   "violations": []
+  },
+  "/layouts/shell": {
+   "violations": []
+  },
+  "/layouts/page-headers": {
+   "violations": []
+  },
+  "/layouts/filters": {
+   "violations": []
+  },
+  "/layouts/kpi-grids": {
+   "violations": []
+  },
+  "/layouts/data-tables": {
+   "violations": []
+  },
+  "/layouts/dashboards": {
+   "violations": []
+  },
+  "/layouts/forms": {
+   "violations": []
+  },
+  "/layouts/detail-pages": {
+   "violations": []
+  },
+  "/layouts/modal-workflows": {
+   "violations": []
+  },
+  "/apps": {
+   "violations": []
+  },
+  "/qa": {
+   "violations": []
+  },
+  "/apps/live-view": {
+   "violations": []
+  },
+  "/apps/factories": {
+   "violations": []
+  },
+  "/apps/add-factory": {
+   "violations": []
+  },
+  "/apps/cameras": {
+   "violations": []
+  },
+  "/apps/add-cameras": {
+   "violations": []
+  },
+  "/apps/users": {
+   "violations": []
+  },
+  "/apps/analytics": {
+   "violations": []
+  },
+  "/apps/add-product": {
+   "violations": []
+  },
+  "/apps/product-master": {
+   "violations": []
+  }
+ },
+ "overflow": {
+  "/": [
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "/start/principles": [
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "/start/how-to-use": [
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "/start/rules": [
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "/foundations/colors": [
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "/foundations/typography": [
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "/foundations/spacing": [
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "/foundations/radii": [
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "/foundations/borders": [
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "/foundations/effects": [
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "/foundations/shadows": [
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "/foundations/motion": [
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "/foundations/iconography": [
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "/foundations/density": [
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "/foundations/responsive": [
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "/components/buttons": [
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "/components/icon-buttons": [
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "/components/search-fields": [
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "/components/text-inputs": [
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "/components/textareas": [
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "/components/dropdowns": [
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "/components/multi-selects": [
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "/components/date-pickers": [
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "/components/checkboxes": [
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "/components/radio-cards": [
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "/components/switches": [
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "/components/labels": [
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "/components/badges": [
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "/components/tags": [
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "/components/status-indicators": [
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "/components/kpi-cards": [
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "/components/metric-cards": [
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "/components/standard-cards": [
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "/components/tables": [
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "/components/pagination": [
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "/components/tabs": [
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "/components/navigation-items": [
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "/components/breadcrumbs": [
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "/components/modals": [
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "/components/drawers": [
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "/components/tooltips-popovers": [
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "/components/alerts": [
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "/components/toasts": [
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "/components/file-upload": [
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "/components/loading": [
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "/components/empty-states": [
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "/components/link-action": [
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "/components/action-group": [
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "/components/binary-toggle": [
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "/components/field-with-attach": [
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "/components/rich-picker": [
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "/components/callout": [
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "/components/stepper": [
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "/components/dashboard-card": [
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "/components/status-card": [
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "/components/count-pill": [
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "/components/info-chip": [
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "/components/avatar": [
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "/components/progress": [
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "/components/summary-strip": [
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "/components/media-card": [
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "/components/page-headers": [
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "/components/table-card": [
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "/components/collapsible-section": [
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "/charts/library": [
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "/charts/playground": [
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "/charts/foundations": [
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "/charts/vertical-bar": [
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "/charts/horizontal-bar": [
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "/charts/grouped-bar": [
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "/charts/stacked-bar": [
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "/charts/line": [
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "/charts/area": [
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "/charts/donut": [
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "/charts/heatmap": [
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "/charts/bubble": [
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "/charts/progress": [
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "/charts/tooltips-legends": [
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "/layouts/shell": [
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "/layouts/page-headers": [
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "/layouts/filters": [
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "/layouts/kpi-grids": [
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "/layouts/data-tables": [
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "/layouts/dashboards": [
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "/layouts/forms": [
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "/layouts/detail-pages": [
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "/layouts/modal-workflows": [
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "/apps": [
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "/qa": [
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "/apps/live-view": [
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "/apps/factories": [
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "/apps/add-factory": [
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "/apps/cameras": [
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "/apps/add-cameras": [
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "/apps/users": [
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "/apps/analytics": [
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "/apps/add-product": [
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "/apps/product-master": [
+   0,
+   0,
+   0,
+   0,
+   0
+  ]
+ },
+ "consoleErrors": {
+  "/": [],
+  "/start/principles": [],
+  "/start/how-to-use": [],
+  "/start/rules": [],
+  "/foundations/colors": [],
+  "/foundations/typography": [],
+  "/foundations/spacing": [],
+  "/foundations/radii": [],
+  "/foundations/borders": [],
+  "/foundations/effects": [],
+  "/foundations/shadows": [],
+  "/foundations/motion": [],
+  "/foundations/iconography": [],
+  "/foundations/density": [],
+  "/foundations/responsive": [],
+  "/components/buttons": [],
+  "/components/icon-buttons": [],
+  "/components/search-fields": [],
+  "/components/text-inputs": [],
+  "/components/textareas": [],
+  "/components/dropdowns": [],
+  "/components/multi-selects": [],
+  "/components/date-pickers": [],
+  "/components/checkboxes": [],
+  "/components/radio-cards": [],
+  "/components/switches": [],
+  "/components/labels": [],
+  "/components/badges": [],
+  "/components/tags": [],
+  "/components/status-indicators": [],
+  "/components/kpi-cards": [],
+  "/components/metric-cards": [],
+  "/components/standard-cards": [],
+  "/components/tables": [],
+  "/components/pagination": [],
+  "/components/tabs": [],
+  "/components/navigation-items": [],
+  "/components/breadcrumbs": [],
+  "/components/modals": [],
+  "/components/drawers": [],
+  "/components/tooltips-popovers": [],
+  "/components/alerts": [],
+  "/components/toasts": [],
+  "/components/file-upload": [],
+  "/components/loading": [],
+  "/components/empty-states": [],
+  "/components/link-action": [],
+  "/components/action-group": [],
+  "/components/binary-toggle": [],
+  "/components/field-with-attach": [],
+  "/components/rich-picker": [],
+  "/components/callout": [],
+  "/components/stepper": [],
+  "/components/dashboard-card": [],
+  "/components/status-card": [],
+  "/components/count-pill": [],
+  "/components/info-chip": [],
+  "/components/avatar": [],
+  "/components/progress": [],
+  "/components/summary-strip": [],
+  "/components/media-card": [],
+  "/components/page-headers": [],
+  "/components/table-card": [],
+  "/components/collapsible-section": [],
+  "/charts/library": [],
+  "/charts/playground": [],
+  "/charts/foundations": [],
+  "/charts/vertical-bar": [],
+  "/charts/horizontal-bar": [],
+  "/charts/grouped-bar": [],
+  "/charts/stacked-bar": [],
+  "/charts/line": [],
+  "/charts/area": [],
+  "/charts/donut": [],
+  "/charts/heatmap": [],
+  "/charts/bubble": [],
+  "/charts/progress": [],
+  "/charts/tooltips-legends": [],
+  "/layouts/shell": [],
+  "/layouts/page-headers": [],
+  "/layouts/filters": [],
+  "/layouts/kpi-grids": [],
+  "/layouts/data-tables": [],
+  "/layouts/dashboards": [],
+  "/layouts/forms": [],
+  "/layouts/detail-pages": [],
+  "/layouts/modal-workflows": [],
+  "/apps": [],
+  "/qa": [],
+  "/apps/live-view": [],
+  "/apps/factories": [],
+  "/apps/add-factory": [],
+  "/apps/cameras": [],
+  "/apps/add-cameras": [],
+  "/apps/users": [],
+  "/apps/analytics": [],
+  "/apps/add-product": [],
+  "/apps/product-master": []
+ },
+ "tokens": {
+  "undefinedRefs": [],
+  "hexLiterals": [],
+  "checkedFiles": 64,
+  "allowedLiteralFiles": {
+   "src/generated/ds.css": "verbatim spec CSS",
+   "src/charts/core.tsx": "heat-stop values mirrored from --ds-heat-0…4 for RGB interpolation (§7.2)",
+   "src/charts/Charts.tsx": "§7.5 guide line rgba(255,255,255,0.2) (spec literal)",
+   "src/charts/library/scales.ts": "§7.2 categorical extension and \"Other\" swatch (spec literals, no tokens exist)",
+   "src/docs/pages/charts.tsx": "§7.2 categorical extension swatches and guide literal (spec literals)",
+   "src/styles/showcase.css": "§5.4 split-button divider rgba(255,255,255,0.2) (spec literal)"
+  }
+ },
+ "interactions": {
+  "generatedAt": "2026-10-24T14:30:33.417Z",
+  "results": [
+   {
+    "name": "Select opens with ArrowDown and sets aria-activedescendant",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "Enter selects and closes; focus stays on the trigger",
+    "ok": true,
+    "detail": "Active"
+   },
+   {
+    "name": "Escape closes without changing the value",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "Panel moves focus to the first field",
+    "ok": true,
+    "detail": "input \"\""
+   },
+   {
+    "name": "Everything outside the panel is inert",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "Submit shows every required-field error",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "Focus moves to the first invalid field",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "Escape with unsaved edits asks to discard (Keep Editing focused)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "Closing restores focus to the opener and clears inert",
+    "ok": true,
+    "detail": "button \"Add user\""
+   },
+   {
+    "name": "Backdrop click never closes (R-12)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "Pagination changes the rows and keeps focus on the page button",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "Confirmation is an alertdialog with Cancel focused",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "Delete removes the user (23 remain)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "Sorting sets aria-sort on that column only",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "Step 1 blocks on invalid fields and focuses the first one",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "Add Cameras opens as a modal dialog",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "Tooltip shows immediately on keyboard focus",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "Escape hides the tooltip without moving focus",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "Chart mark shows the rich tooltip on focus",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "A toast with an action does not time out",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "A neutral toast is gone after 2500ms",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "Popover moves focus to \"From\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "From > To shows the error and aria-disables Apply",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "Escape discards the draft and returns focus to the trigger",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "ArrowRight moves and activates the next tab",
+    "ok": true,
+    "detail": "HUL Admin(3)"
+   },
+   {
+    "name": "Radio cards: arrow keys move and select",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "Compact density lowers the control size token to 36px",
+    "ok": true,
+    "detail": "36px"
+   },
+   {
+    "name": "RTL places the navigation on the start (right) edge",
+    "ok": true,
+    "detail": "x=1168"
+   },
+   {
+    "name": "No uncaught page errors",
+    "ok": true,
+    "detail": ""
+   }
+  ]
+ }
+}

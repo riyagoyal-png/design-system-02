@@ -1,0 +1,63 @@
+/* GENERATED from the §2.3 "Named text styles" table — do not edit. */
+.ds-ts-page-title { font-family: var(--ds-font-family); font-size: 24px; font-weight: 600; line-height: 32px; letter-spacing: -0.35px; color: var(--ds-color-text-primary); }
+.ds-ts-dialog-title { font-family: var(--ds-font-family); font-size: 20px; font-weight: 700; line-height: 28px; letter-spacing: -0.5px; color: var(--ds-color-text-primary); }
+.ds-ts-modal-title { font-family: var(--ds-font-family); font-size: 14px; font-weight: 400; line-height: 18px; color: var(--ds-color-text-primary); }
+.ds-ts-card-title { font-family: var(--ds-font-family); font-size: 20px; font-weight: 600; line-height: 24px; letter-spacing: -0.4px; color: var(--ds-color-text-primary); }
+.ds-ts-entity-title { font-family: var(--ds-font-family); font-size: 20px; font-weight: 600; line-height: 28px; letter-spacing: -0.4px; color: var(--ds-color-text-primary); }
+.ds-ts-media-title { font-family: var(--ds-font-family); font-size: 20px; font-weight: 600; line-height: 26px; letter-spacing: -0.25px; color: var(--ds-color-text-primary); }
+.ds-ts-group-title { font-family: var(--ds-font-family); font-size: 20px; font-weight: 700; line-height: 24px; letter-spacing: -0.5px; color: var(--ds-color-text-primary); }
+.ds-ts-subgroup-title { font-family: var(--ds-font-family); font-size: 16px; font-weight: 700; line-height: 22px; letter-spacing: -0.5px; color: var(--ds-color-text-primary); }
+.ds-ts-summary-title { font-family: var(--ds-font-family); font-size: 20px; font-weight: 700; line-height: 28px; letter-spacing: -0.5px; color: var(--ds-color-text-primary); }
+.ds-ts-kpi-value { font-family: var(--ds-font-family); font-size: 20px; font-weight: 700; line-height: 28px; letter-spacing: -0.65px; color: var(--ds-color-text-primary); }
+.ds-ts-kpi-label { font-family: var(--ds-font-family); font-size: 12px; font-weight: 700; line-height: 16px; letter-spacing: 0.55px; text-transform: uppercase; color: var(--ds-color-text-muted); }
+.ds-ts-metric-value { font-family: var(--ds-font-family); font-size: 20px; font-weight: 700; line-height: 28px; letter-spacing: -0.65px; color: var(--ds-color-text-primary); }
+.ds-ts-metric-denominator { font-family: var(--ds-font-family); font-size: 14px; font-weight: 400; line-height: 20px; color: var(--ds-color-text-muted); }
+.ds-ts-metric-label { font-family: var(--ds-font-family); font-size: 12px; font-weight: 500; line-height: 18px; letter-spacing: 0.4px; text-transform: uppercase; color: var(--ds-color-text-muted); }
+.ds-ts-section-title { font-family: var(--ds-font-family); font-size: 20px; font-weight: 500; line-height: 28px; letter-spacing: -0.35px; color: var(--ds-color-text-tertiary); }
+.ds-ts-section-label { font-family: var(--ds-font-family); font-size: 12px; font-weight: 700; line-height: 16px; letter-spacing: 0.55px; text-transform: uppercase; color: var(--ds-color-text-tertiary); }
+.ds-ts-field-label { font-family: var(--ds-font-family); font-size: 12px; font-weight: 500; line-height: 16px; color: var(--ds-color-text-tertiary); }
+.ds-ts-field-value { font-family: var(--ds-font-family); font-size: 16px; font-weight: 400; line-height: 22px; letter-spacing: 0.5px; color: var(--ds-color-text-primary); }
+.ds-ts-eyebrow { font-family: var(--ds-font-family); font-size: 12px; font-weight: 400; line-height: 18px; letter-spacing: 0.55px; color: var(--ds-color-link); }
+.ds-ts-body { font-family: var(--ds-font-family); font-size: 14px; font-weight: 400; line-height: 20px; color: var(--ds-color-text-secondary); }
+.ds-ts-body-muted { font-family: var(--ds-font-family); font-size: 14px; font-weight: 400; line-height: 20px; color: var(--ds-color-text-muted); }
+.ds-ts-body-strong { font-family: var(--ds-font-family); font-size: 14px; font-weight: 500; line-height: 20px; color: var(--ds-color-text-primary); }
+.ds-ts-body-emphasis { font-family: var(--ds-font-family); font-size: 14px; font-weight: 600; line-height: 20px; color: var(--ds-color-text-primary); }
+.ds-ts-small { font-family: var(--ds-font-family); font-size: 12px; font-weight: 400; line-height: 16px; color: var(--ds-color-text-muted); }
+.ds-ts-small-strong { font-family: var(--ds-font-family); font-size: 12px; font-weight: 600; line-height: 16px; color: var(--ds-color-text-secondary); }
+.ds-ts-caption { font-family: var(--ds-font-family); font-size: 10px; font-weight: 400; line-height: 14px; color: var(--ds-color-text-tertiary); }
+.ds-ts-table-header { font-family: var(--ds-font-family); font-size: 12px; font-weight: 600; line-height: 16px; letter-spacing: 0.3px; text-transform: uppercase; color: var(--ds-color-text-muted); }
+.ds-ts-table-cell-primary { font-family: var(--ds-font-family); font-size: 14px; font-weight: 500; line-height: 20px; color: var(--ds-color-text-primary); }
+.ds-ts-table-cell { font-family: var(--ds-font-family); font-size: 14px; font-weight: 400; line-height: 20px; color: var(--ds-color-text-secondary); }
+.ds-ts-form-label { font-family: var(--ds-font-family); font-size: 12px; font-weight: 500; line-height: 16px; color: var(--ds-color-text-muted); }
+.ds-ts-form-label-caps { font-family: var(--ds-font-family); font-size: 12px; font-weight: 500; line-height: 16px; letter-spacing: 0.55px; text-transform: uppercase; color: var(--ds-color-text-muted); }
+.ds-ts-input-text { font-family: var(--ds-font-family); font-size: 14px; font-weight: 400; line-height: 20px; color: var(--ds-color-text-primary); }
+.ds-ts-placeholder { font-family: var(--ds-font-family); font-size: 14px; font-weight: 400; line-height: 20px; color: var(--ds-color-text-placeholder); }
+.ds-ts-validation { font-family: var(--ds-font-family); font-size: 12px; font-weight: 400; line-height: 16px; color: var(--ds-color-error-text); }
+.ds-ts-helper { font-family: var(--ds-font-family); font-size: 12px; font-weight: 400; line-height: 16px; color: var(--ds-color-text-tertiary); }
+.ds-ts-button-sm { font-family: var(--ds-font-family); font-size: 12px; font-weight: 600; line-height: 16px; }
+.ds-ts-button-md { font-family: var(--ds-font-family); font-size: 14px; font-weight: 600; line-height: 20px; }
+.ds-ts-button-lg { font-family: var(--ds-font-family); font-size: 16px; font-weight: 600; line-height: 22px; }
+.ds-ts-badge { font-family: var(--ds-font-family); font-size: 14px; font-weight: 600; line-height: 20px; }
+.ds-ts-badge-sm { font-family: var(--ds-font-family); font-size: 12px; font-weight: 600; line-height: 16px; }
+.ds-ts-tag { font-family: var(--ds-font-family); font-size: 14px; font-weight: 500; line-height: 20px; color: var(--ds-color-text-primary); }
+.ds-ts-count-pill { font-family: var(--ds-font-family); font-size: 14px; font-weight: 700; line-height: 18px; color: var(--ds-color-text-secondary); }
+.ds-ts-nav-item { font-family: var(--ds-font-family); font-size: 14px; font-weight: 500; line-height: 20px; color: var(--ds-color-text-muted); }
+.ds-ts-nav-section { font-family: var(--ds-font-family); font-size: 12px; font-weight: 400; line-height: 16px; color: var(--ds-color-text-muted); }
+.ds-ts-tab { font-family: var(--ds-font-family); font-size: 14px; font-weight: 400; line-height: 20px; color: var(--ds-color-text-muted); }
+.ds-ts-tab-count { font-family: var(--ds-font-family); font-size: 12px; font-weight: 400; line-height: 16px; color: var(--ds-color-text-tertiary); }
+.ds-ts-link-action { font-family: var(--ds-font-family); font-size: 14px; font-weight: 600; line-height: 20px; color: var(--ds-color-brand); }
+.ds-ts-step-title { font-family: var(--ds-font-family); font-size: 12px; font-weight: 700; line-height: 16px; letter-spacing: 0.3px; color: var(--ds-color-text-primary); }
+.ds-ts-step-sub { font-family: var(--ds-font-family); font-size: 12px; font-weight: 500; line-height: 16px; color: var(--ds-color-link); }
+.ds-ts-media-detail { font-family: var(--ds-font-family); font-size: 14px; font-weight: 600; line-height: 16px; color: var(--ds-color-text-secondary); }
+.ds-ts-avatar-initials { font-family: var(--ds-font-family); font-size: 14px; font-weight: 500; line-height: 16px; color: var(--ds-color-text-secondary); }
+.ds-ts-legend { font-family: var(--ds-font-family); font-size: 14px; font-weight: 500; line-height: 22px; color: var(--ds-color-text-tertiary); }
+.ds-ts-legend-sm { font-family: var(--ds-font-family); font-size: 12px; font-weight: 500; line-height: 16px; color: var(--ds-color-text-tertiary); }
+.ds-ts-axis-y { font-family: var(--ds-font-family); font-size: 12px; font-weight: 400; line-height: 24px; letter-spacing: -0.4px; color: var(--ds-color-text-axis); }
+.ds-ts-axis-x { font-family: var(--ds-font-family); font-size: 14px; font-weight: 400; line-height: 24px; letter-spacing: -0.4px; color: var(--ds-color-text-primary); }
+.ds-ts-axis-caption { font-family: var(--ds-font-family); font-size: 11px; font-weight: 400; line-height: 14px; color: var(--ds-color-text-chart-subtle); }
+.ds-ts-data-label { font-family: var(--ds-font-family); font-size: 16px; font-weight: 400; line-height: 22px; letter-spacing: -0.4px; color: var(--ds-color-text-primary); }
+.ds-ts-tooltip-title { font-family: var(--ds-font-family); font-size: 11px; font-weight: 700; line-height: 13px; color: var(--ds-color-text-tooltip); }
+.ds-ts-tooltip-body { font-family: var(--ds-font-family); font-size: 10px; font-weight: 400; line-height: 12px; color: var(--ds-color-text-tooltip-muted); }
+.ds-ts-heat-cell { font-family: var(--ds-font-family); font-size: 14px; font-weight: 600; line-height: 20px; letter-spacing: -0.4px; color: var(--ds-color-text-primary); }
+.ds-ts-bar-segment { font-family: var(--ds-font-family); font-size: 12px; font-weight: 600; line-height: 1; color: var(--ds-color-text-on-bright); }
+.ds-ts-toast { font-family: var(--ds-font-family); font-size: 14px; font-weight: 400; line-height: 20px; color: var(--ds-color-text-primary); }
