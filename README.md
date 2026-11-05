@@ -60,9 +60,10 @@ Append `?frame=1` to hide the showcase-only "Back to Showcase" nav entry.
 
 ```bash
 npm run typecheck            # tsc --noEmit
-npm run check:tokens         # static token / colour-literal scan
+npm run check:tokens         # token, colour-literal and type-literal scan
 npm run check:browser        # axe (WCAG 2.2 A/AA), overflow at 390/768/1024/1440/1680, console errors, screenshots
 npm run check:interactions   # scripted keyboard, focus, overlay, validation and timing checks
+npm run check:adoption -- <app>   # audits an application that uses this system (see DESIGN.md)
 npm run qa                   # all of the above after a build
 node scripts/shoot-apps.mjs  # 1920 × 1021 captures of the eight screens for comparison with Figma
 ```
@@ -73,6 +74,7 @@ Results are written to `public/qa-report.json`, which the Quality page shows, an
 
 | File | Purpose |
 |---|---|
+| `DESIGN.md` | **Start here to use the system in another app.** What to copy and delete, component and text-style mapping, Tailwind preset, verification |
 | `spec/DESIGN_SYSTEM.md` | The specification: foundations, tokens, components, layouts, charts, rules, resolution log, decisions |
 | `FIGMA_EXTRACTION.md` | Frame mapping, extracted values, assets with hashes, missing assets, inferred values |
 | `DESIGN_SYSTEM_DIFF.md` | What was kept, changed, added and removed relative to the previous system, and why |
@@ -81,6 +83,6 @@ Results are written to `public/qa-report.json`, which the Quality page shows, an
 
 ## Constraints followed
 
-- Dark theme only; there is no light theme.
+- Dark is the default theme; light is opt-in with `<html data-theme="light">` (`spec/DESIGN_SYSTEM_LIGHT.md`).
 - No colour literals in components. Every value comes from a spec token.
 - Nothing has been published, committed, pushed or deployed. The Figma file and the previous showcase were only read.

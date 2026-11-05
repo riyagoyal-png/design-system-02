@@ -45,7 +45,7 @@ const StaticPanel = () => (
     <aside className="ds-panel" data-part="panel">
       <div className="ds-panel__header" data-part="header"><div className="ds-panel__titlerow"><div className="ds-panel__titlegroup"><span className="ds-panel__icon" aria-hidden="true"><Illustration name="illus.facility-set" crop="factory" size={40} /></span><p className="ds-text-dialog-title">Add New Factory</p></div><span className="ds-icon-btn ds-icon-btn--close" aria-hidden="true">×</span></div></div>
       <div className="ds-panel__body" data-part="body"><div className="ds-form-grid"><div className="ds-field"><span className="ds-field__label">Factory Name</span><span className="ds-input doc-static-input" /></div><div className="ds-field"><span className="ds-field__label">Location / City</span><span className="ds-input doc-static-input" /></div></div></div>
-      <div className="ds-panel__footer" data-part="footer"><span className="ds-btn ds-btn--secondary">Back</span><span className="ds-panel__footer-end"><span className="ds-panel__note">Auto-saved draft 12s ago</span><span className="ds-btn ds-btn--primary">Next: Configuration</span></span></div>
+      <div className="ds-panel__footer" data-part="footer"><span className="ds-btn ds-btn--tertiary">Back</span><span className="ds-panel__footer-end"><span className="ds-panel__note">Auto-saved draft 12s ago</span><span className="ds-btn ds-btn--primary">Next: Configuration</span></span></div>
     </aside>
   </div>
 );
@@ -70,16 +70,16 @@ export const EXTRAS: Record<string, Extra> = {
   },
   '/components/action-group': {
     staticComponent: 'An action group has no states of its own; each member keeps its own states (§5.54).',
-    anatomy: { render: () => <div className="doc-footer-demo doc-narrow-xl" data-part="container"><span data-part="secondary" className="ds-contents"><Button variant="secondary" leading={ArrowBack}>Back</Button></span><span data-part="primary" className="ds-contents"><Button minWidth trailing={ChevronRight}>Next: Configuration</Button></span></div>,
-      parts: [{ part: 'container', label: 'Panel footer group', spec: 'justify-content: space-between' }, { part: 'secondary', label: 'Secondary (start)', spec: 'Back / Cancel with a 20px back arrow' }, { part: 'primary', label: 'Primary (end)', spec: 'min-width 180 (size-header-button), trailing chevron' }] },
+    anatomy: { render: () => <div className="doc-footer-demo doc-narrow-xl" data-part="container"><span data-part="tertiary" className="ds-contents"><Button variant="tertiary" leading={ArrowBack}>Back</Button></span><span data-part="primary" className="ds-contents"><Button minWidth trailing={ChevronRight}>Next: Configuration</Button></span></div>,
+      parts: [{ part: 'container', label: 'Panel footer group', spec: 'justify-content: space-between' }, { part: 'tertiary', label: 'Tertiary (start)', spec: 'Back / Cancel with a 20px back arrow' }, { part: 'primary', label: 'Primary (end)', spec: 'min-width 180 (size-header-button), trailing chevron' }] },
     playground: {
       controls: [{ kind: 'select', key: 'ctx', label: 'Context', options: ['Modal', 'Panel footer', 'Row actions', 'Popover footer'] }],
       initial: { ctx: 'Modal' },
-      render: p => p.ctx === 'Modal' ? <div className="ds-modal__footer"><Button variant="secondary">Skip</Button><Button minWidth>Add Camera</Button></div>
-        : p.ctx === 'Panel footer' ? <div className="doc-footer-demo doc-narrow-xl"><Button variant="secondary" leading={ArrowBack}>Back</Button><Button minWidth trailing={ChevronRight}>Save product</Button></div>
+      render: p => p.ctx === 'Modal' ? <div className="ds-modal__footer"><Button variant="tertiary">Skip</Button><Button minWidth>Add Camera</Button></div>
+        : p.ctx === 'Panel footer' ? <div className="doc-footer-demo doc-narrow-xl"><Button variant="tertiary" leading={ArrowBack}>Back</Button><Button minWidth trailing={ChevronRight}>Save product</Button></div>
         : p.ctx === 'Row actions' ? <div className="ds-row-actions"><IconButton icon={Copy} label="Copy Anita Sharma" size="compact" /><IconButton icon={Pencil} label="Edit Anita Sharma" size="compact" /><IconButton icon={Trash2} label="Delete Anita Sharma" size="compact" /></div>
         : <div className="doc-footer-demo doc-narrow-lg"><Button variant="ghost" size="sm">Clear</Button><Button size="sm">Apply</Button></div>,
-      code: p => p.ctx === 'Row actions' ? '<div className="ds-row-actions">…3 compact IconButtons (24px glyphs, 16px apart)…</div>' : p.ctx === 'Modal' ? '<Modal footer={<><Button variant="secondary">Skip</Button><Button minWidth>Add Camera</Button></>} …/>' : p.ctx === 'Panel footer' ? '<SlidePanel footer={<><Button variant="secondary" leading={ArrowBack}>Back</Button><Button minWidth trailing={ChevronRight}>Save product</Button></>} …/>' : '<Popover footer={<><Button variant="ghost" size="sm">Clear</Button><Button size="sm">Apply</Button></>} …/>',
+      code: p => p.ctx === 'Row actions' ? '<div className="ds-row-actions">…3 compact IconButtons (24px glyphs, 16px apart)…</div>' : p.ctx === 'Modal' ? '<Modal footer={<><Button variant="tertiary">Skip</Button><Button minWidth>Add Camera</Button></>} …/>' : p.ctx === 'Panel footer' ? '<SlidePanel footer={<><Button variant="tertiary" leading={ArrowBack}>Back</Button><Button minWidth trailing={ChevronRight}>Save product</Button></>} …/>' : '<Popover footer={<><Button variant="ghost" size="sm">Clear</Button><Button size="sm">Apply</Button></>} …/>',
     },
   },
   '/components/textareas': {
@@ -363,7 +363,7 @@ export const EXTRAS: Record<string, Extra> = {
   },
   '/components/table-card': {
     staticComponent: 'A static container (§5.42).', noVariants: 'With or without the section header / bulk bar (see Playground).',
-    anatomy: { render: () => <div className="doc-full"><TableCard title="Users" titleId="anat-tc" count={USERS.length} actions={<Button variant="secondary" size="sm">Export</Button>}><DataTable caption="Users" labelledBy="anat-tc" rowHeader="name" rowKey={u => u.id} rows={USERS.slice(0, 2)} columns={[{ key: 'name', header: 'Name' }, { key: 'role', header: 'Role' }, { key: 'factory', header: 'Factory' }]} /></TableCard></div>,
+    anatomy: { render: () => <div className="doc-full"><TableCard title="Users" titleId="anat-tc" count={USERS.length} actions={<Button variant="tertiary" size="sm">Export</Button>}><DataTable caption="Users" labelledBy="anat-tc" rowHeader="name" rowKey={u => u.id} rows={USERS.slice(0, 2)} columns={[{ key: 'name', header: 'Name' }, { key: 'role', header: 'Role' }, { key: 'factory', header: 'Factory' }]} /></TableCard></div>,
       parts: [{ part: 'container', label: 'Card', spec: 'radius 16 (radius-card) · gradient-glass · shadow-float-drop + shadow-edge above the content · clipped' }, { part: 'header', label: 'Section header', spec: 'padding 16 · group-title 20/24 700 + small count pill 14px apart · actions at the end · 1px border-faint divider' }] },
     playground: {
       controls: [{ kind: 'bool', key: 'header', label: 'Section header' }, { kind: 'bool', key: 'pagination', label: 'Pagination' }],
@@ -493,7 +493,7 @@ function PlayModal({ size, title }: { size: 'sm' | 'md'; title: string }) {
   const close = () => { setOpen(false); setV(''); };
   return <><Button onClick={() => setOpen(true)}>Open {size} modal</Button>
     <Modal open={open} onClose={close} title={title} size={size} icon={<Illustration name="illus.camera" size={32} />} dirty={!!v}
-      footer={<><Button variant="secondary" onClick={close}>Skip</Button><Button minWidth onClick={close}>Add Camera</Button></>}>
+      footer={<><Button variant="tertiary" onClick={close}>Skip</Button><Button minWidth onClick={close}>Add Camera</Button></>}>
       <div className={size === 'sm' ? 'ds-form-grid ds-form-grid--1' : 'ds-form-grid'}><Field caps label="Camera ID" required><TextInput value={v} onChange={e => setV(e.target.value)} placeholder="e.g. - CAM01 - L01" /></Field><Field caps label="Line Associated With"><Select options={opts(['Line 1', 'Line 2'])} value={null} onChange={() => {}} placeholder="e.g. - Line 1" searchable={false} /></Field></div>
     </Modal></>;
 }
@@ -504,14 +504,14 @@ function PlayPanel({ size, stepper, subtitle }: { size: 'sm' | 'md' | 'lg' | 'xl
   return <><Button onClick={() => setOpen(true)}>Open {size} panel</Button>
     <SlidePanel open={open} onClose={close} title="Add Product" size={size} icon={<Illustration name="illus.catalog-item" size={36} />} dirty={!!name}
       subtitle={subtitle ? 'Register a SKU and its reference barcodes.' : undefined} subheader={stepper ? <Stepper current={0} steps={[{ title: 'Basic Details', sub: 'In progress' }, { title: 'Barcodes', sub: 'References' }]} /> : undefined}
-      footer={<><Button variant="secondary" leading={ArrowLeft} onClick={close}>Cancel</Button><Button trailing={ChevronRight} minWidth onClick={close}>Save product</Button></>}>
+      footer={<><Button variant="tertiary" leading={ArrowLeft} onClick={close}>Cancel</Button><Button trailing={ChevronRight} minWidth onClick={close}>Save product</Button></>}>
       <div className="ds-form-grid"><Field label="Product Name" required className="ds-span-2"><TextInput value={name} onChange={e => setName(e.target.value)} placeholder="Enter product name" /></Field><Field label="Primary Barcode"><TextInput placeholder="e.g. 8901030875397" /></Field><Field label="Factory"><Select options={factoryOpts} value={null} onChange={() => {}} placeholder="Choose factory" /></Field></div>
     </SlidePanel></>;
 }
 function PlayTip({ text, placement }: { text: string; placement: 'top' | 'bottom' | 'right' }) {
   const ref = useRef<HTMLButtonElement>(null);
-  return <Tooltip key={placement + text} content={text} placement={placement}><button ref={ref} type="button" className="ds-btn ds-btn--secondary"><Info size={14} aria-hidden="true" />Hover or focus</button></Tooltip>;
+  return <Tooltip key={placement + text} content={text} placement={placement}><button ref={ref} type="button" className="ds-btn ds-btn--tertiary"><Info size={14} aria-hidden="true" />Hover or focus</button></Tooltip>;
 }
 function PlayToast({ msg, tone, action }: { msg: string; tone: 'neutral' | 'error'; action: boolean }) {
-  return <Button variant="secondary" onClick={() => toast(msg, { tone, action: action ? { label: 'Undo', onAction: () => toast('Undone') } : undefined })}>Show toast</Button>;
+  return <Button variant="tertiary" onClick={() => toast(msg, { tone, action: action ? { label: 'Undo', onAction: () => toast('Undone') } : undefined })}>Show toast</Button>;
 }

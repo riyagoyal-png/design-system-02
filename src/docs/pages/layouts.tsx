@@ -83,7 +83,7 @@ export function HeaderLayout() {
           <div className="ds-table-card__toolbar">
             <SearchInput width="full" value={q} onValueChange={setQ} label="Search products" placeholder="Search by product name, barcode, CLD code or CBU code" />
             {['Status', 'CBU code'].map(l => <Select key={l} variant="filter" label={l} className="ds-select--180" value="all" onChange={() => {}} searchable={false} options={[{ value: 'all', label: l === 'Status' ? 'All Status' : 'All CBU Codes' }]} />)}
-            <Button variant="secondary" leading={Export}>Export</Button>
+            <Button variant="tertiary" leading={Export}>Export</Button>
           </div>
         </section>
       </DocSection>
@@ -104,12 +104,12 @@ export function FilterLayout() {
       <DocSection id="global" title="Page-wide (Analytics header)"><Frame label="Global filters"><PageHeader title="Analytics" icon={<Illustration name="illus.facility-set" crop="factory" size={36} />} actions={<>{sel('Period', 'Today')}{sel('Factory', 'All Factories')}{sel('Line', 'All Lines')}</>} /></Frame></DocSection>
       <DocSection id="local" title="Card-scoped (defect matrix header)"><DashCard title="Line - Product Defect Matrix" subtitle="Weekly defect rate by production line" right={<><Badge tone="success">Active</Badge>{sel('Period', 'Last 8 weeks')}</>}><div className="doc-placeholder">Bubble matrix</div></DashCard></DocSection>
       <DocSection id="categorical" title="Partitioning tabs with counts (User Management)">
-        <div className="ds-cluster app-between"><Tabs idBase="lf" label="Roles" value={tab} onChange={setTab} tabs={USER_COUNTS} /><Button variant="secondary" leading={Export}>Export</Button></div>
+        <div className="ds-cluster app-between"><Tabs idBase="lf" label="Roles" value={tab} onChange={setTab} tabs={USER_COUNTS} /><Button variant="tertiary" leading={Export}>Export</Button></div>
       </DocSection>
       <DocSection id="advanced" title="Many filters [EXTENSION]">
         <div className="doc-stack">
           <div className="ds-select">
-            <Button ref={ref} variant="secondary" leading={SlidersHorizontal} aria-haspopup="dialog" aria-expanded={open} onClick={() => setOpen(o => !o)}>Filters</Button>
+            <Button ref={ref} variant="tertiary" leading={SlidersHorizontal} aria-haspopup="dialog" aria-expanded={open} onClick={() => setOpen(o => !o)}>Filters</Button>
             <Popover open={open} onClose={() => setOpen(false)} label="Filters" anchorRef={ref} align="start" width="sm" footer={<><Button variant="ghost" size="sm" onClick={() => { setChips([]); setOpen(false); }}>Clear</Button><Button size="sm" onClick={() => { setChips(['Factory: Factory 1', 'Status: Active', 'Line: Line 1']); setOpen(false); ref.current?.focus(); }}>Apply</Button></>}>
               <Field label="Line"><Select options={[{ value: 'Line 1', label: 'Line 1' }, { value: 'Line 2', label: 'Line 2' }]} value={null} onChange={() => {}} placeholder="Any line" /></Field>
             </Popover>
@@ -180,7 +180,7 @@ export function TableLayout() {
           <div className="ds-page-content doc-frame__content">
             <div className="ds-cluster app-between">
               <Tabs idBase="tl" controls label="Roles" value={tab} onChange={v => { setTab(v); setPage(1); }} tabs={USER_COUNTS} />
-              <Button variant="secondary" leading={Export}>Export</Button>
+              <Button variant="tertiary" leading={Export}>Export</Button>
             </div>
             <TabPanel idBase="tl" value={tab}>
               <TableCard>
@@ -238,7 +238,7 @@ export function FormsLayout() {
       <DocSection id="containers" title="Containers">
         <div className="ds-cluster">
           <Button leading={Plus} onClick={() => setPanel(true)}>Slide panel (Add Product)</Button>
-          <Button variant="secondary" onClick={() => setModal(true)}>Modal (Add Cameras)</Button>
+          <Button variant="tertiary" onClick={() => setModal(true)}>Modal (Add Cameras)</Button>
         </div>
       </DocSection>
       <DocSection id="inline" title="Inline edit [EXTENSION]" description="Enter saves, Escape cancels.">
@@ -249,7 +249,7 @@ export function FormsLayout() {
         </Preview>
       </DocSection>
       <SlidePanel open={panel} onClose={() => setPanel(false)} title="Add Product" size="xl" icon={<Illustration name="illus.catalog-item" size={36} />}
-        footer={<><Button variant="secondary" leading={ArrowBack} onClick={() => setPanel(false)}>Cancel</Button>
+        footer={<><Button variant="tertiary" leading={ArrowBack} onClick={() => setPanel(false)}>Cancel</Button>
           <div className="ds-panel__footer-end"><p className="ds-panel__note" role="status">Auto-saved draft 12s ago</p><Button trailing={ChevronRight} minWidth onClick={() => { setPanel(false); toast('Product saved'); }}>Save product</Button></div></>}>
         <div className="ds-form-grid">
           <Field label="Product Name" required className="ds-span-all"><TextInput placeholder="Enter product name" /></Field>
@@ -259,7 +259,7 @@ export function FormsLayout() {
         </div>
       </SlidePanel>
       <Modal open={modal} onClose={() => setModal(false)} title="Add Cameras" icon={<Illustration name="illus.camera" size={32} />}
-        footer={<><Button variant="secondary" onClick={() => setModal(false)}>Skip</Button><Button minWidth onClick={() => { setModal(false); toast('Camera added'); }}>Add Camera</Button></>}>
+        footer={<><Button variant="tertiary" onClick={() => setModal(false)}>Skip</Button><Button minWidth onClick={() => { setModal(false); toast('Camera added'); }}>Add Camera</Button></>}>
         <div className="ds-form-grid">
           <Field caps label="Camera ID" required><TextInput placeholder="e.g. - CAM01 - L01" /></Field>
           <Field caps label="Camera IP" required><TextInput placeholder="e.g. - 192.168.1.101" inputMode="decimal" /></Field>
@@ -275,7 +275,7 @@ export function DetailLayout() {
   return (
     <Page refs={['6.8']} apps={[]} intro="[PRESERVED] Back button + record name in the header, record actions at the end, then a summary strip, then child records. Not drawn in the eight screens: this is where “View factory” on a Factories card would lead. Variant: a two-column layout with a 320–360px properties card on wide screens [EXTENSION].">
       <Frame label="Detail page">
-        <PageHeader title={f.name} back={{ label: 'Factories', onBack: () => {} }} actions={<Button variant="secondary" leading={Edit}>Edit factory</Button>} />
+        <PageHeader title={f.name} back={{ label: 'Factories', onBack: () => {} }} actions={<Button variant="tertiary" leading={Edit}>Edit factory</Button>} />
         <div className="ds-page-content doc-frame__content">
           <SummaryStrip eyebrow={f.city} title={f.name} fields={[{ label: 'Lines active', value: `${f.lines} / ${f.linesOf}` }, { label: 'Cameras', value: String(f.cameras) }]} statuses={[{ label: 'Status', tone: f.status.tone, value: f.status.label }]} />
           <div className="doc-detail-cols">
@@ -302,7 +302,7 @@ export function ModalWorkflowLayout() {
         </div>
       </Preview>
       <SlidePanel open={step === 'panel'} onClose={() => { setStep('idle'); setName(''); }} title="Add Line" size="sm" dirty={!!name} icon={<Illustration name="illus.conveyor-line" size={36} />}
-        footer={<><Button variant="secondary" leading={ArrowBack} onClick={() => { setStep('idle'); setName(''); }}>Cancel</Button><Button onClick={() => { setStep('idle'); toast(`${name || 'Line'} added`, { action: { label: 'Undo', onAction: () => toast('Line removed') } }); setName(''); }}>Add Line</Button></>}>
+        footer={<><Button variant="tertiary" leading={ArrowBack} onClick={() => { setStep('idle'); setName(''); }}>Cancel</Button><Button onClick={() => { setStep('idle'); toast(`${name || 'Line'} added`, { action: { label: 'Undo', onAction: () => toast('Line removed') } }); setName(''); }}>Add Line</Button></>}>
         <Field label="Line name" required><TextInput value={name} onChange={e => setName(e.target.value)} placeholder="Type, then press Escape" /></Field>
       </SlidePanel>
       <ConfirmDialog open={step === 'confirm'} title="Delete camera?" message="Line 1 • Camera 1 will stop sending frames and be removed from Line 1." confirmLabel="Delete" onCancel={() => setStep('idle')} onConfirm={() => { setStep('idle'); toast('Line 1 • Camera 1 deleted'); }} />

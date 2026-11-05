@@ -7,10 +7,10 @@ import { toast } from '../../components/ds/Toast';
 import { Cell, Grid, attrs } from '../kit';
 import type { ComponentDoc } from '../ComponentPage';
 
-const VARIANTS: ButtonVariant[] = ['primary', 'secondary', 'subtle', 'tonal', 'ghost', 'danger'];
-const VARIANT_LABEL: Record<ButtonVariant, string> = { primary: 'Add camera', secondary: 'Export', subtle: 'View factory', tonal: 'Add Line', ghost: 'Clear', danger: 'Delete camera' };
+const VARIANTS: ButtonVariant[] = ['primary', 'secondary', 'tertiary', 'subtle', 'tonal', 'ghost', 'danger'];
+const VARIANT_LABEL: Record<ButtonVariant, string> = { primary: 'Add camera', secondary: 'Restart stream', tertiary: 'Export', subtle: 'View factory', tonal: 'Add Line', ghost: 'Clear', danger: 'Delete camera' };
 const VARIANT_NOTE: Record<ButtonVariant, string> = {
-  primary: 'gradient-button-primary · brand border · shadow-button-primary', secondary: 'gradient-glass · border-control · text-emphasis 500 · shadow-field',
+  primary: 'gradient-button-primary · brand border · shadow-button-primary', secondary: 'brand-tint-10 · transparent border · link [PRODUCT DECISION]', tertiary: 'gradient-glass · border-control · text-emphasis 500 · shadow-field',
   subtle: 'surface-control · border-hairline · text-emphasis', tonal: 'brand-tint-20 · brand-text [EXTENSION]', ghost: 'transparent · text-muted [EXTENSION]', danger: 'danger-bg · danger-border · danger-text [EXTENSION]',
 };
 
@@ -26,7 +26,7 @@ export const buttonDoc: ComponentDoc = {
     <div className="ds-cluster">
       <Button leading={Plus} minWidth onClick={() => toast('The Add Cameras form opens here')}>Add camera</Button>
       <Button leading={Changeover} minWidth>Line Changeover</Button>
-      <Button variant="secondary" leading={ArrowBack}>Back</Button>
+      <Button variant="tertiary" leading={ArrowBack}>Back</Button>
       <Button variant="subtle" trailing={ChevronRight}>View factory</Button>
       <LoadingDemo />
     </div>
@@ -37,9 +37,9 @@ export const buttonDoc: ComponentDoc = {
       <Grid min={200}>
         {(['sm', 'md', 'lg'] as ButtonSize[]).map(s => <Cell key={s} label={`size ${s}`} note={s === 'sm' ? 'min-height 28 · padding 0 12 · button-sm 12/16 600' : s === 'md' ? 'min-height 40 · padding 0 16 · button-md 14/20 600 (default)' : 'min-height 48 · padding 0 20 · button-lg 16/22 600'}><Button size={s} leading={Plus}>Add user</Button></Cell>)}
         <Cell label="Trailing chevron (Next / Save)" note="14px, points inline-end"><Button trailing={ChevronRight} minWidth>Next: Configuration</Button></Cell>
-        <Cell label="Leading back arrow" note="20px glyph"><Button variant="secondary" leading={ArrowBack}>Cancel</Button></Cell>
+        <Cell label="Leading back arrow" note="20px glyph"><Button variant="tertiary" leading={ArrowBack}>Cancel</Button></Cell>
         <Cell label="Optional 180px min-width" note="size-header-button"><Button minWidth leading={Plus}>Add Camera</Button></Cell>
-        <Cell label="Long label wraps" note="Never clipped (§2.3)"><div className="doc-narrow"><Button variant="secondary">Export line-wise defects as spreadsheet</Button></div></Cell>
+        <Cell label="Long label wraps" note="Never clipped (§2.3)"><div className="doc-narrow"><Button variant="tertiary">Export line-wise defects as spreadsheet</Button></div></Cell>
       </Grid>
     </>
   ),
@@ -61,7 +61,7 @@ export const buttonDoc: ComponentDoc = {
     parts: [
       { part: 'container', label: 'Container', spec: 'min-height 40 (size-control) · padding 0 16 · 1px border · radius 12 (radius-control) · gap 8' },
       { part: 'leading', label: 'Leading icon', spec: '14px plus / changeover, 20px back arrow; currentColor' },
-      { part: 'label', label: 'Label', spec: 'button-md 14/20 600 (secondary 500); wraps when constrained' },
+      { part: 'label', label: 'Label', spec: 'button-md 14/20 600 (tertiary 500); wraps when constrained' },
       { part: 'trailing', label: 'Trailing icon', spec: '14px chevron pointing inline-end' },
     ],
   },
@@ -70,12 +70,12 @@ export const buttonDoc: ComponentDoc = {
     { property: 'Horizontal padding (md / sm / lg)', token: '--ds-space-4 + --ds-space-3 + --ds-space-5' },
     { property: 'Radius', token: '--ds-radius-control' },
     { property: 'Icon → label gap', token: '--ds-space-2' },
-    { property: 'Typography (md)', token: '--ds-font-size-body + --ds-line-height-body', note: ' weight 600; secondary 500' },
+    { property: 'Typography (md)', token: '--ds-font-size-body + --ds-line-height-body', note: ' weight 600; tertiary 500' },
     { property: 'Primary fill / hover', token: '--ds-gradient-button-primary + --ds-gradient-button-primary-hover' },
     { property: 'Primary border / text', token: '--ds-color-brand + --ds-color-text-on-brand' },
     { property: 'Primary glow', token: '--ds-shadow-button-primary' },
-    { property: 'Secondary fill / shadow', token: '--ds-gradient-glass + --ds-shadow-field' },
-    { property: 'Secondary border / hover / text', token: '--ds-color-border-control + --ds-color-border-control-hover + --ds-color-text-emphasis' },
+    { property: 'Tertiary fill / shadow', token: '--ds-gradient-glass + --ds-shadow-field' },
+    { property: 'Tertiary border / hover / text', token: '--ds-color-border-control + --ds-color-border-control-hover + --ds-color-text-emphasis' },
     { property: 'Subtle fill / hover / border', token: '--ds-color-surface-control + --ds-color-surface-control-hover + --ds-color-border-hairline' },
     { property: 'Tonal fill / hover / text', token: '--ds-color-brand-tint-20 + --ds-color-brand-tint-30 + --ds-color-brand-text' },
     { property: 'Ghost text / hover fill', token: '--ds-color-text-muted + --ds-color-surface-hover' },
@@ -103,13 +103,13 @@ export const buttonDoc: ComponentDoc = {
     ),
     code: p => `<Button${attrs({ variant: p.variant !== 'primary' ? String(p.variant) : undefined, size: p.size !== 'md' ? String(p.size) : undefined })}${p.icon === 'leading plus' ? ' leading={Plus}' : p.icon === 'leading back' ? ' leading={ArrowBack}' : p.icon === 'trailing chevron' ? ' trailing={ChevronRight}' : ''}${attrs({ disabled: !!p.disabled, loading: !!p.loading, minWidth: !!p.minWidth })}>\n  ${p.label}\n</Button>`,
   },
-  usage: `import { Button } from './components/ds/Button';\nimport { ArrowBack, ChevronRight, Plus } from './components/ds/figmaIcons';\n\n<Button leading={Plus} minWidth onClick={openAddCameras}>Add camera</Button>\n<Button variant="secondary" leading={ArrowBack} onClick={close}>Cancel</Button>\n<Button variant="subtle" trailing={ChevronRight}>View factory</Button>\n<Button loading>Saving</Button>\n<Button softDisabled aria-describedby="save-hint">Save product</Button>`,
+  usage: `import { Button } from './components/ds/Button';\nimport { ArrowBack, ChevronRight, Plus } from './components/ds/figmaIcons';\n\n<Button leading={Plus} minWidth onClick={openAddCameras}>Add camera</Button>\n<Button variant="tertiary" leading={ArrowBack} onClick={close}>Cancel</Button>\n<Button variant="subtle" trailing={ChevronRight}>View factory</Button>\n<Button loading>Saving</Button>\n<Button softDisabled aria-describedby="save-hint">Save product</Button>`,
   behavior: (
     <ul className="doc-list">
       <li>Native <code>&lt;button type="button"&gt;</code> unless it submits a form; Enter and Space activate (§5.52).</li>
       <li>Loading sets <code>aria-busy="true"</code> and ignores activation; <code>softDisabled</code> uses <code>aria-disabled</code> so a reason can be linked with <code>aria-describedby</code> and the button stays focusable (cursor not-allowed).</li>
       <li>Focus: 2px <code>focus-ring</code> outline, offset 2. Hover never changes the label colour of primary.</li>
-      <li>One primary per view region. Footer pattern: secondary (Back / Cancel) at the inline-start, primary at the inline-end (§5.4).</li>
+      <li>One primary per view region. Footer pattern: tertiary (Back / Cancel) at the inline-start, primary at the inline-end (§5.4).</li>
     </ul>
   ),
 };
@@ -231,7 +231,7 @@ export const linkActionDoc: ComponentDoc = {
 
 export const actionGroupDoc: ComponentDoc = {
   path: '/components/action-group', title: 'Action Group', refs: ['5.4'], provenance: 'OBSERVED',
-  summary: 'Rows of related actions whose context sets gap, alignment and order: header (search → filters → primary, 12 apart), drawer footer (secondary at the start, helper + primary at the end), modal (secondary 120 then primary 180, 16 apart, end-aligned). The split button is an extension.',
+  summary: 'Rows of related actions whose context sets gap, alignment and order: header (search → filters → primary, 12 apart), drawer footer (tertiary at the start, helper + primary at the end), modal (tertiary 120 then primary 180, 16 apart, end-aligned). The split button is an extension.',
   preview: () => (
     <div className="doc-stack doc-full">
       <div className="ds-page-header__actions">
@@ -240,17 +240,17 @@ export const actionGroupDoc: ComponentDoc = {
         <Button leading={Plus} minWidth>Add camera</Button>
       </div>
       <div className="ds-panel__footer">
-        <Button variant="secondary" leading={ArrowBack}>Back</Button>
+        <Button variant="tertiary" leading={ArrowBack}>Back</Button>
         <div className="ds-panel__footer-end"><p className="ds-panel__note" role="status">Auto-saved draft 12s ago</p><Button trailing={ChevronRight} minWidth>Next: Configuration</Button></div>
       </div>
     </div>
   ),
   variants: () => (
     <Grid min={300}>
-      <Cell label="Header actions" note="gap 12 (space-header-actions)"><div className="ds-page-header__actions"><Button variant="secondary" leading={Export}>Export</Button><Button leading={Plus}>Add user</Button></div></Cell>
-      <Cell label="Modal actions" note="secondary min 120, primary 180, gap 16, end"><div className="ds-modal__footer doc-full"><Button variant="secondary">Skip</Button><Button minWidth>Add Camera</Button></div></Cell>
-      <Cell label="Confirmation dialog" note="gap 12, end (§5.45)"><div className="ds-dialog__actions doc-full"><Button variant="secondary">Cancel</Button><Button variant="danger">Delete</Button></div></Cell>
-      <Cell label="Drawer footer" note="space-between; helper 12px text-tertiary"><div className="ds-panel__footer doc-full"><Button variant="secondary" leading={ArrowBack}>Cancel</Button><div className="ds-panel__footer-end"><Button trailing={ChevronRight} minWidth>Save product</Button></div></div></Cell>
+      <Cell label="Header actions" note="gap 12 (space-header-actions)"><div className="ds-page-header__actions"><Button variant="tertiary" leading={Export}>Export</Button><Button leading={Plus}>Add user</Button></div></Cell>
+      <Cell label="Modal actions" note="tertiary min 120, primary 180, gap 16, end"><div className="ds-modal__footer doc-full"><Button variant="tertiary">Skip</Button><Button minWidth>Add Camera</Button></div></Cell>
+      <Cell label="Confirmation dialog" note="gap 12, end (§5.45)"><div className="ds-dialog__actions doc-full"><Button variant="tertiary">Cancel</Button><Button variant="danger">Delete</Button></div></Cell>
+      <Cell label="Drawer footer" note="space-between; helper 12px text-tertiary"><div className="ds-panel__footer doc-full"><Button variant="tertiary" leading={ArrowBack}>Cancel</Button><div className="ds-panel__footer-end"><Button trailing={ChevronRight} minWidth>Save product</Button></div></div></Cell>
       <Cell label="Row actions" note="32px buttons, gap 16, end"><span className="ds-row-actions"><IconButton icon={Copy} size="compact" label="Copy email" /><IconButton icon={Edit} size="compact" label="Edit user" /><IconButton icon={Trash} size="compact" label="Delete user" /></span></Cell>
       <Cell label="Split button [EXTENSION]" note="toggle 40 wide, border-on-brand divider"><div className="ds-split"><Button leading={Export}>Export</Button><button type="button" className="ds-btn ds-btn--primary ds-split__toggle" aria-label="More export options" aria-haspopup="menu"><ChevronSmall size={14} aria-hidden="true" /></button></div></Cell>
     </Grid>
@@ -259,13 +259,13 @@ export const actionGroupDoc: ComponentDoc = {
   anatomy: {
     render: () => (
       <div className="ds-panel__footer doc-narrow-xxl" data-part="container">
-        <span data-part="secondary" className="ds-contents"><Button variant="secondary" leading={ArrowBack}>Back</Button></span>
+        <span data-part="tertiary" className="ds-contents"><Button variant="tertiary" leading={ArrowBack}>Back</Button></span>
         <div className="ds-panel__footer-end"><p className="ds-panel__note" data-part="note">Auto-saved draft 12s ago</p><span data-part="primary" className="ds-contents"><Button trailing={ChevronRight} minWidth>Next</Button></span></div>
       </div>
     ),
     parts: [
       { part: 'container', label: 'Drawer footer group', spec: 'space-between · gap 12 · padding 20 24 · gradient-glass-up · 1px border-faint top' },
-      { part: 'secondary', label: 'Secondary (inline-start)', spec: 'Back / Cancel with a 20px back arrow' },
+      { part: 'tertiary', label: 'Tertiary (inline-start)', spec: 'Back / Cancel with a 20px back arrow' },
       { part: 'note', label: 'Helper text', spec: '12/16 text-tertiary ("Auto-saved draft …"), role=status' },
       { part: 'primary', label: 'Primary (inline-end)', spec: '180px min-width, trailing 14px chevron' },
     ],
@@ -275,23 +275,23 @@ export const actionGroupDoc: ComponentDoc = {
     { property: 'Modal action gap / row-action gap', token: '--ds-space-4' },
     { property: 'Confirm dialog / drawer footer gap', token: '--ds-space-3' },
     { property: 'Primary min width', token: '--ds-size-header-button' },
-    { property: 'Modal secondary min width', value: '120px', note: ' (spec literal, §5.44)' },
+    { property: 'Modal tertiary min width', value: '120px', note: ' (spec literal, §5.44)' },
     { property: 'Split toggle width / divider', token: '--ds-size-control + --ds-color-border-on-brand' },
   ],
   playground: {
     controls: [{ kind: 'select', key: 'ctx', label: 'Context', options: ['Header', 'Modal', 'Confirm dialog', 'Drawer footer', 'Row actions'] }],
     initial: { ctx: 'Modal' },
-    render: p => p.ctx === 'Header' ? <div className="ds-page-header__actions"><Button variant="secondary" leading={Export}>Export</Button><Button leading={Plus} minWidth>Add user</Button></div>
-      : p.ctx === 'Modal' ? <div className="ds-modal__footer doc-narrow-xxl"><Button variant="secondary">Skip</Button><Button minWidth>Add Camera</Button></div>
-      : p.ctx === 'Confirm dialog' ? <div className="ds-dialog__actions doc-narrow-xl"><Button variant="secondary">Cancel</Button><Button variant="danger">Delete</Button></div>
-      : p.ctx === 'Drawer footer' ? <div className="ds-panel__footer doc-narrow-xxl"><Button variant="secondary" leading={ArrowBack}>Back</Button><div className="ds-panel__footer-end"><Button trailing={ChevronRight} minWidth>Next</Button></div></div>
+    render: p => p.ctx === 'Header' ? <div className="ds-page-header__actions"><Button variant="tertiary" leading={Export}>Export</Button><Button leading={Plus} minWidth>Add user</Button></div>
+      : p.ctx === 'Modal' ? <div className="ds-modal__footer doc-narrow-xxl"><Button variant="tertiary">Skip</Button><Button minWidth>Add Camera</Button></div>
+      : p.ctx === 'Confirm dialog' ? <div className="ds-dialog__actions doc-narrow-xl"><Button variant="tertiary">Cancel</Button><Button variant="danger">Delete</Button></div>
+      : p.ctx === 'Drawer footer' ? <div className="ds-panel__footer doc-narrow-xxl"><Button variant="tertiary" leading={ArrowBack}>Back</Button><div className="ds-panel__footer-end"><Button trailing={ChevronRight} minWidth>Next</Button></div></div>
       : <span className="ds-row-actions"><IconButton icon={Copy} size="compact" label="Copy email" /><IconButton icon={Edit} size="compact" label="Edit user" /><IconButton icon={Trash} size="compact" label="Delete user" /></span>,
-    code: p => p.ctx === 'Header' ? '<div className="ds-page-header__actions">\n  <Button variant="secondary" leading={Export}>Export</Button>\n  <Button leading={Plus} minWidth>Add user</Button>\n</div>'
-      : p.ctx === 'Modal' ? '<div className="ds-modal__footer">\n  <Button variant="secondary">Skip</Button>\n  <Button minWidth>Add Camera</Button>\n</div>'
-      : p.ctx === 'Confirm dialog' ? '<div className="ds-dialog__actions">\n  <Button variant="secondary">Cancel</Button>\n  <Button variant="danger">Delete</Button>\n</div>'
-      : p.ctx === 'Drawer footer' ? '<div className="ds-panel__footer">\n  <Button variant="secondary" leading={ArrowBack}>Back</Button>\n  <div className="ds-panel__footer-end"><Button trailing={ChevronRight} minWidth>Next</Button></div>\n</div>'
+    code: p => p.ctx === 'Header' ? '<div className="ds-page-header__actions">\n  <Button variant="tertiary" leading={Export}>Export</Button>\n  <Button leading={Plus} minWidth>Add user</Button>\n</div>'
+      : p.ctx === 'Modal' ? '<div className="ds-modal__footer">\n  <Button variant="tertiary">Skip</Button>\n  <Button minWidth>Add Camera</Button>\n</div>'
+      : p.ctx === 'Confirm dialog' ? '<div className="ds-dialog__actions">\n  <Button variant="tertiary">Cancel</Button>\n  <Button variant="danger">Delete</Button>\n</div>'
+      : p.ctx === 'Drawer footer' ? '<div className="ds-panel__footer">\n  <Button variant="tertiary" leading={ArrowBack}>Back</Button>\n  <div className="ds-panel__footer-end"><Button trailing={ChevronRight} minWidth>Next</Button></div>\n</div>'
       : '<span className="ds-row-actions">…three compact IconButtons…</span>',
   },
-  usage: `<div className="ds-modal__footer">\n  <Button variant="secondary" onClick={onClose}>Skip</Button>\n  <Button minWidth onClick={submit}>Add Camera</Button>\n</div>`,
-  behavior: <ul className="doc-list"><li>DOM order equals visual order (secondary before primary) so Tab follows reading order; groups wrap instead of overflowing.</li><li>The split toggle is a separate button with its own <code>aria-label</code> and <code>aria-haspopup="menu"</code>.</li></ul>,
+  usage: `<div className="ds-modal__footer">\n  <Button variant="tertiary" onClick={onClose}>Skip</Button>\n  <Button minWidth onClick={submit}>Add Camera</Button>\n</div>`,
+  behavior: <ul className="doc-list"><li>DOM order equals visual order (tertiary before primary) so Tab follows reading order; groups wrap instead of overflowing.</li><li>The split toggle is a separate button with its own <code>aria-label</code> and <code>aria-haspopup="menu"</code>.</li></ul>,
 };

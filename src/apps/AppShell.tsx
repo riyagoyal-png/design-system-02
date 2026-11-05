@@ -36,8 +36,8 @@ export function AppShell({ product, tagline, logo, sections, current, onNavigate
 
   return (
     <div className="ds-shell app-shell" id="ds-overlay-host">
-      <a className="app-skip" href="#app-main" onClick={e => { e.preventDefault(); document.getElementById('app-main')?.focus(); }}>Skip to content</a>
-      <div className="app-rail" data-inert-scope>
+      <a className="ds-skip-link" href="#app-main" onClick={e => { e.preventDefault(); document.getElementById('app-main')?.focus(); }}>Skip to content</a>
+      <div className="ds-shell__rail" data-inert-scope>
         <Sidebar product={product} tagline={tagline} logo={logo} sections={allSections} current={current} onSelect={nav} user={user} />
       </div>
       <div className="ds-main" id="ds-main">
@@ -46,7 +46,7 @@ export function AppShell({ product, tagline, logo, sections, current, onNavigate
           <span className="ds-sidebar__name">{product}</span>
           <Avatar name={user.name} variant="photo" src={user.src} />
         </div>
-        <div className="app-content" data-inert-scope>
+        <div className="ds-shell__content" data-inert-scope>
           <PageHeader title={title} icon={icon} status={status} actions={actions} back={back} description={description} scrolled={scrolled} />
           <main id="app-main" tabIndex={-1} className="ds-page-content" onScroll={e => setScrolled((e.target as HTMLElement).scrollTop > 0)}>{children}</main>
         </div>
@@ -54,11 +54,11 @@ export function AppShell({ product, tagline, logo, sections, current, onNavigate
       </div>
       {overlays}
       {drawer && (
-        <div className="ds-overlay ds-overlay--fixed app-drawer-overlay" role="dialog" aria-modal="true" aria-label="Navigation" id="app-drawer"
+        <div className="ds-overlay ds-overlay--nav-drawer" role="dialog" aria-modal="true" aria-label="Navigation" id="app-drawer"
           onKeyDown={e => { if (e.key === 'Escape') setDrawer(false); }}>
           <div className="ds-overlay__backdrop" aria-hidden="true" />
-          <div ref={drawerRef} className="app-drawer">
-            <div className="app-drawer__close"><IconButton icon={ArrowLeft} label="Close navigation" onClick={() => setDrawer(false)} tooltip={false} /></div>
+          <div ref={drawerRef} className="ds-nav-drawer">
+            <div className="ds-nav-drawer__close"><IconButton icon={ArrowLeft} label="Close navigation" onClick={() => setDrawer(false)} tooltip={false} /></div>
             <Sidebar product={product} tagline={tagline} logo={logo} sections={allSections} current={current} onSelect={nav} user={user} collapsible={false} />
           </div>
         </div>

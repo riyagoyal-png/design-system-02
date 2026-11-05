@@ -68,8 +68,11 @@ export function Sidebar({ product, tagline, logo, sections, current, onSelect, u
 }
 
 /** §5.38 page header: 36px illustration + page-title, optional status (e.g. Live) and global actions. h1 is the overlay focus fallback. */
-export function PageHeader({ title, icon, status, back, breadcrumb, description, actions, scrolled }: {
-  title: string; icon?: ReactNode; status?: ReactNode; back?: { label: string; onBack: () => void }; breadcrumb?: { label: string; href: string }[];
+export function PageHeader({ title, icon, status, back, parent, breadcrumb, description, actions, scrolled }: {
+  title: string; icon?: ReactNode; status?: ReactNode; back?: { label: string; onBack: () => void };
+  /** Sub-page: the page it was opened from, shown muted before the title ("Sources / Instruments"). */
+  parent?: { label: string; href?: string; onClick?: () => void };
+  breadcrumb?: { label: string; href: string }[];
   description?: string; actions?: ReactNode; scrolled?: boolean;
 }) {
   return (
@@ -80,7 +83,13 @@ export function PageHeader({ title, icon, status, back, breadcrumb, description,
           {icon && <span className="ds-page-header__icon" aria-hidden="true" data-part="icon">{icon}</span>}
           <div className="ds-page-header__titles">
             {breadcrumb && <Breadcrumb items={breadcrumb} />}
-            <h1 className="ds-text-page-title" tabIndex={-1} data-part="title">{title}</h1>
+            <h1 className="ds-text-page-title" tabIndex={-1} data-part="title">
+              {parent && <>
+                <a className="ds-page-header__parent" href={parent.href} onClick={parent.onClick ? e => { e.preventDefault(); parent.onClick!(); } : undefined}>{parent.label}</a>
+                <span className="ds-page-header__sep" aria-hidden="true">/</span>
+              </>}
+              {title}
+            </h1>
             {description && <p className="ds-text-body-muted">{description}</p>}
           </div>
         </div>

@@ -176,7 +176,7 @@ Every status token keeps its dark value (OBSERVED: the frame's "Matched" and "Ac
 
 ### 3.7 Data visualization
 
-Categorical (`chart-cat-1…4`), heat (`heat-0…4`), tag and status-chart colours are unchanged, so a chart means the same in both themes. Changes:
+Categorical (`chart-cat-1…10`), heat (`heat-0…4`), tag and status-chart colours are unchanged, so a chart means the same in both themes. Changes:
 
 | Token | Dark | Light |
 |---|---|---|
@@ -325,19 +325,19 @@ Every colour, gradient and shadow token of `spec/DESIGN_SYSTEM.md` §3 is redecl
   --ds-color-focus-ring-on-color: #ffffff;
 
   /* ── Status ───────────────────────────────────────────── */
-  --ds-color-success-text: #34d399;
-  --ds-color-success-glow: #10b981;
-  --ds-color-success-bg: rgba(16,185,129,0.10);
-  --ds-color-success-border: rgba(16,185,129,0.20);
-  --ds-gradient-progress-success: linear-gradient(90deg, #34d399 0%, #10b981 100%);
-  --ds-color-warning-text: #fbbf24;
-  --ds-color-warning-bg: rgba(251,191,36,0.10);
-  --ds-color-warning-border: rgba(251,191,36,0.20);
-  --ds-color-danger: #ff5825;
-  --ds-color-danger-text: #ff7043;
-  --ds-color-danger-bg: rgba(255,88,37,0.10);
-  --ds-color-danger-bg-hover: rgba(255,88,37,0.20);
-  --ds-color-danger-border: rgba(255,88,37,0.20);
+  --ds-color-success-text: #6aa760;
+  --ds-color-success-glow: #6aa760;
+  --ds-color-success-bg: rgba(106,167,96,0.10);
+  --ds-color-success-border: rgba(106,167,96,0.20);
+  --ds-gradient-progress-success: linear-gradient(90deg, #6aa760 0%, #6aa760 100%);
+  --ds-color-warning-text: #e8b94a;
+  --ds-color-warning-bg: rgba(232,185,74,0.10);
+  --ds-color-warning-border: rgba(232,185,74,0.20);
+  --ds-color-danger: #e5575f;
+  --ds-color-danger-text: #e5575f;
+  --ds-color-danger-bg: rgba(229,87,95,0.10);
+  --ds-color-danger-bg-hover: rgba(229,87,95,0.20);
+  --ds-color-danger-border: rgba(229,87,95,0.20);
   --ds-color-error: #fb7185;
   --ds-color-error-text: #fb7185;
   --ds-color-live: #d33434;
@@ -345,8 +345,8 @@ Every colour, gradient and shadow token of `spec/DESIGN_SYSTEM.md` §3 is redecl
   --ds-color-info-text: #1d4ed8;
   --ds-color-info-bg: rgba(59,130,246,0.10);
   --ds-color-info-border: rgba(59,130,246,0.20);
-  --ds-color-row-warning: rgba(251,191,36,0.03);
-  --ds-color-row-critical: rgba(255,88,37,0.03);
+  --ds-color-row-warning: rgba(232,185,74,0.03);
+  --ds-color-row-critical: rgba(229,87,95,0.03);
   --ds-color-alert-count: #fb7185;
 
   /* ── Overlays ─────────────────────────────────────────── */
@@ -354,14 +354,22 @@ Every colour, gradient and shadow token of `spec/DESIGN_SYSTEM.md` §3 is redecl
   --ds-overlay-blur: 4px;
 
   /* ── Data visualization ───────────────────────────────── */
-  --ds-chart-cat-1: #016ffe;
-  --ds-chart-cat-2: #8b34fd;
-  --ds-chart-cat-3: #fbb645;
-  --ds-chart-cat-4: #00bac9;
+  --ds-chart-cat-1: #60a5fa;
+  --ds-chart-cat-2: #2563eb;
+  --ds-chart-cat-3: #6366f1;
+  --ds-chart-cat-4: #4b10a3;
+  --ds-chart-cat-5: #f383a3;
+  --ds-chart-cat-6: #23b9ac;
+  --ds-chart-cat-7: #ad77c2;
+  --ds-chart-cat-8: #6aa760;
+  --ds-chart-cat-9: #da825d;
+  --ds-chart-cat-10: #1397bb;
+  --ds-chart-status-red: #e5575f;
+  --ds-chart-status-yellow: #e8b94a;
   --ds-chart-positive: var(--ds-color-success-glow);
-  --ds-chart-negative: var(--ds-color-danger);
+  --ds-chart-negative: var(--ds-chart-status-red);
   --ds-chart-running: var(--ds-color-success-text);
-  --ds-chart-stopped: var(--ds-color-danger);
+  --ds-chart-stopped: var(--ds-chart-status-red);
   --ds-chart-trend: #111827;
   --ds-chart-track: var(--ds-color-track);
   --ds-chart-baseline: rgba(15,23,42,0.08);
@@ -407,9 +415,9 @@ Every colour, gradient and shadow token of `spec/DESIGN_SYSTEM.md` §3 is redecl
   --ds-shadow-avatar-orb: 0 7px 10px -2px rgba(59,130,246,0.30), 0 3px 4px -3px rgba(59,130,246,0.30);
   --ds-shadow-header-scrolled: 0 8px 16px -8px rgba(15,23,42,0.12);
   --ds-shadow-footer-scrolled: 0 -8px 16px -8px rgba(15,23,42,0.12);
-  --ds-shadow-status-success: 0 0 10px 0 #10b981, 0 0 2px 0 #34d399;
-  --ds-shadow-status-warning: 0 0 10px 0 #fbbf24, 0 0 2px 0 #fbbf24;
-  --ds-shadow-status-error: 0 0 10px 0 #ff5825, 0 0 2px 0 #ff5825;
+  --ds-shadow-status-success: 0 0 10px 0 #6aa760, 0 0 2px 0 #6aa760;
+  --ds-shadow-status-warning: 0 0 10px 0 #e8b94a, 0 0 2px 0 #e8b94a;
+  --ds-shadow-status-error: 0 0 10px 0 #e5575f, 0 0 2px 0 #e5575f;
   --ds-shadow-user-card: 2px 2px 24px 0 rgba(0,0,0,0.12);
   --ds-error-ring: 0 0 0 1px var(--ds-color-error);
 }

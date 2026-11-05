@@ -82,7 +82,7 @@ function DiscardConfirm({ onKeep, onDiscard }: { onKeep: () => void; onDiscard: 
           <p id="discard-d" className="ds-text-body-muted">Your edits haven't been saved.</p>
         </div>
         <div className="ds-dialog__actions">
-          <button ref={keep} type="button" className="ds-btn ds-btn--secondary" onClick={onKeep}>Keep Editing</button>
+          <button ref={keep} type="button" className="ds-btn ds-btn--tertiary" onClick={onKeep}>Keep Editing</button>
           <button type="button" className="ds-btn ds-btn--danger" onClick={onDiscard}>Discard</button>
         </div>
       </div>
@@ -138,7 +138,7 @@ export function ConfirmDialog({ open, title, message, confirmLabel, onCancel, on
           <p id={did} className="ds-text-body-muted">{message}</p>
         </div>
         <div className="ds-dialog__actions" data-part="actions">
-          <button ref={cancel} type="button" className="ds-btn ds-btn--secondary" onClick={onCancel}>Cancel</button>
+          <button ref={cancel} type="button" className="ds-btn ds-btn--tertiary" onClick={onCancel}>Cancel</button>
           <button type="button" className={`ds-btn ds-btn--${tone}`} onClick={onConfirm}>{confirmLabel}</button>
         </div>
       </div>
@@ -227,9 +227,9 @@ export function MediaViewer({ open, onClose, title, sub, badge, src, footer }: {
 }
 
 /** §5.47 popover (non-modal): role="dialog", Escape and outside click close, focus returns to the trigger. */
-export function Popover({ open, onClose, label, children, footer, anchorRef, align = 'end', width }: {
+export function Popover({ open, onClose, label, children, footer, anchorRef, align = 'end', width, feed }: {
   open: boolean; onClose: (reason: 'escape' | 'outside') => void; label: string; children: ReactNode; footer?: ReactNode;
-  anchorRef: RefObject<HTMLElement | null>; align?: 'start' | 'end'; width?: 'date' | 'sm';
+  anchorRef: RefObject<HTMLElement | null>; align?: 'start' | 'end'; width?: 'date' | 'sm'; /** §5.47 notification feed: full-bleed head and list */ feed?: boolean;
 }) {
   const ref = useRef<HTMLDivElement>(null);
   useLayoutEffect(() => {
@@ -243,7 +243,7 @@ export function Popover({ open, onClose, label, children, footer, anchorRef, ali
   }, [open]); // eslint-disable-line react-hooks/exhaustive-deps
   if (!open) return null;
   return (
-    <div ref={ref} className={`ds-popover${align === 'start' ? ' ds-popover--start' : ''}${width === 'sm' ? ' ds-popover--sm' : ''}`} role="dialog" aria-label={label}
+    <div ref={ref} className={`ds-popover${align === 'start' ? ' ds-popover--start' : ''}${width === 'sm' ? ' ds-popover--sm' : ''}${feed ? ' ds-popover--feed' : ''}`} role="dialog" aria-label={label}
       onKeyDown={e => { if (e.key === 'Escape') { e.stopPropagation(); onClose('escape'); anchorRef.current?.focus(); } }}
       onBlur={e => { if (!ref.current?.contains(e.relatedTarget as Node) && e.relatedTarget && !anchorRef.current?.contains(e.relatedTarget as Node)) onClose('outside'); }}
       data-part="container">

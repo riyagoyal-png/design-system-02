@@ -148,7 +148,7 @@ Primitive names are **reference labels** for traceability; they are not emitted 
 | `white-4` | `rgba(255,255,255,0.04)` | Main-panel gradient top; count pill / subtle button fill; tab-track border |
 | `white-5` | `rgba(255,255,255,0.05)` | Close-button fill |
 | `white-6` | `rgba(255,255,255,0.06)` | Count pill border, close-button border, icon box border |
-| `white-7` | `rgba(255,255,255,0.07)` | Select-trigger and secondary-button border; top inner highlight |
+| `white-7` | `rgba(255,255,255,0.07)` | Select-trigger and tertiary-button border; top inner highlight |
 | `white-8` | `rgba(255,255,255,0.08)` | Progress track; inactive stepper index border |
 | `white-20` | `rgba(255,255,255,0.20)` | Toggle option outline |
 | `ice-4` | `rgba(172,195,255,0.04)` | Wells, nested groups, selected tab pill, picker rows |
@@ -160,7 +160,7 @@ Primitive names are **reference labels** for traceability; they are not emitted 
 | `white` | `#ffffff` | Titles, numbers, active labels |
 | `slate-50` | `#f4f6f8` | Tooltip values |
 | `slate-75` | `#f4f7fa` | Matrix row labels |
-| `slate-200` | `#e2e8f0` | Select values, secondary-button labels |
+| `slate-200` | `#e2e8f0` | Select values, tertiary-button labels |
 | `slate-300` | `#cbd5e1` | Secondary text: cells, form labels, field values |
 | `slate-350` | `#aeb8c5` | Tooltip labels |
 | `slate-375` | `#9eacba` | Chart subtitles and axis captions |
@@ -187,11 +187,11 @@ Primitive names are **reference labels** for traceability; they are not emitted 
 
 | Primitive | HEX | Figma usage |
 |---|---|---|
-| `green-400` | `#34d399` | Success text and dot; running segment; progress gradient start |
-| `green-500` | `#10b981` | Success glow; "good products"; completed step; presence dot |
-| `amber-400` | `#fbbf24` | Warning text, dot and glow |
-| `orange-500` | `#ff5825` | Error / stopped / offline dot, glow, bars, detection frame |
-| `orange-400` | `#ff7043` | **[STANDARDIZED]** Error text on tinted pills (R-04) |
+| `green-400` | `#6aa760` | Success text and dot; running segment; progress gradient start |
+| `green-500` | `#6aa760` | Success glow; "good products"; completed step; presence dot |
+| `amber-400` | `#e8b94a` | Warning text, dot and glow |
+| `orange-500` | `#e5575f` | Error / stopped / offline dot, glow, bars, detection frame |
+| `orange-400` | `#e5575f` | **[STANDARDIZED]** Error text on tinted pills (R-04) |
 | `rose-400` | `#fb7185` | Required asterisk; validation (R-05) |
 | `red-live` | `#d33434` | "Live" indicator core (halo at 40 %) |
 
@@ -199,10 +199,18 @@ Primitive names are **reference labels** for traceability; they are not emitted 
 
 | Primitive | HEX | Role |
 |---|---|---|
-| `--ds-chart-cat-1` | `#016ffe` | Donut segment 1 |
-| `--ds-chart-cat-2` | `#8b34fd` | Donut segment 2 |
-| `--ds-chart-cat-3` | `#fbb645` | Donut segment 3 |
-| `--ds-chart-cat-4` | `#00bac9` | Donut segment 4 |
+| `--ds-chart-cat-1` | `#60a5fa` | 1 · Sky, categorical series 1 (Figma `chart/line-1`) |
+| `--ds-chart-cat-2` | `#2563eb` | 2 · Royal blue, categorical series 2 (Figma `chart/line-2`) |
+| `--ds-chart-cat-3` | `#6366f1` | 3 · Indigo, categorical series 3 (Figma `chart/line-3`) |
+| `--ds-chart-cat-4` | `#4b10a3` | 4 · Purple, categorical series 4 (Figma `chart/line-4`) |
+| `--ds-chart-cat-5` | `#f383a3` | 5 · Pink, categorical series 5 (Figma `chart/line-5`) |
+| `--ds-chart-cat-6` | `#23b9ac` | 6 · Teal, categorical series 6 (Figma `chart/line-6`) |
+| `--ds-chart-cat-7` | `#ad77c2` | 7 · Mauve, categorical series 7 (Figma `chart/line-7`) |
+| `--ds-chart-cat-8` | `#6aa760` | 8 · Green, categorical series 8 (Figma `chart/line-8`) |
+| `--ds-chart-cat-9` | `#da825d` | 9 · Terracotta, categorical series 9 (Figma `chart/line-9`) |
+| `--ds-chart-cat-10` | `#1397bb` | 10 · Ocean blue, categorical series 10 (Figma `chart/line-10`) |
+| `--ds-chart-status-red` | `#e5575f` | Red: Stopped · failed · error (Figma `chart/status-red`) |
+| `--ds-chart-status-yellow` | `#e8b94a` | Yellow: Attention · no plan · warning (Figma `chart/status-yellow`) |
 | `--ds-tag-purple` | `#4d3f9d` | Role tag "HUL Admin" |
 | `--ds-tag-blue` | `#3f779d` | Role tag "Factory Admin" |
 | `--ds-tag-green` | `#457e32` | Role tag "Factory Operator" (Figma `#569d3f`, darkened for AA, R-06) |
@@ -225,8 +233,8 @@ Primitive names are **reference labels** for traceability; they are not emitted 
 | `--ds-color-bg-app` | `#0b1020` | Solid fallback of the app background; `theme-color` |
 | `--ds-gradient-app` | `linear-gradient(90deg, #0b1020 0%, #0f172a 55%, #020617 100%)` | The viewport behind the shell; slide-panel body |
 | `--ds-color-glow-brand` | `rgba(59,130,246,0.10)` | Ambient glow, top-left of the viewport (420 px) |
-| `--ds-color-glow-success` | `rgba(52,211,153,0.08)` | Ambient glow, bottom-right of the viewport (360 px) |
-| `--ds-gradient-glass` | `linear-gradient(180deg, brand-strong/2.5% 0%, brand-strong/1% 100%)` (CTA blue `#2563eb`; white glass greyed the navy) | **Every glass surface**: sidebar, cards, fields, select triggers, secondary buttons, tab tracks, glass badges, table section bodies |
+| `--ds-color-glow-success` | `rgba(106,167,96,0.08)` | Ambient glow, bottom-right of the viewport (360 px) |
+| `--ds-gradient-glass` | `linear-gradient(180deg, brand-strong/2.5% 0%, brand-strong/1% 100%)` (CTA blue `#2563eb`; white glass greyed the navy) | **Every glass surface**: sidebar, cards, fields, select triggers, tertiary buttons, tab tracks, glass badges, table section bodies |
 | `--ds-gradient-glass-strong` | `linear-gradient(180deg, brand-strong/5% 0%, brand-strong/1% 100%)` | Main content panel; media-card header and footer bars |
 | `--ds-gradient-glass-up` | `linear-gradient(0deg, brand-strong/2.5% 0%, brand-strong/1% 100%)` | Footers that sit at the bottom edge (slide-panel footer, pagination) |
 | `--ds-gradient-glass-kpi` | `linear-gradient(180deg, brand-strong/2.5% 0%, brand-strong/1% 100%)` | KPI cards only |
@@ -262,7 +270,7 @@ Primitive names are **reference labels** for traceability; they are not emitted 
 | Token | Value | Use exactly for |
 |---|---|---|
 | `--ds-color-text-primary` | `#ffffff` | Titles, numbers, active labels, first table column |
-| `--ds-color-text-emphasis` | `#e2e8f0` | Select-trigger values, secondary and subtle button labels |
+| `--ds-color-text-emphasis` | `#e2e8f0` | Select-trigger values, tertiary and subtle button labels |
 | `--ds-color-text-secondary` | `#cbd5e1` | Table values, form labels, field values, detected values, body copy |
 | `--ds-color-text-muted` | `#94a3b8` | KPI labels, table headers, meta, inactive nav and tabs, descriptions |
 | `--ds-color-text-tertiary` | `#8a99ae` | **[STANDARDIZED]** Quietest readable text: counts in tabs, section labels, barcode labels, step subtitles, helper notes (≥ 4.72:1) |
@@ -288,7 +296,7 @@ Primitive names are **reference labels** for traceability; they are not emitted 
 | `--ds-color-border-track` | `var(--ds-color-border-edge)` | Tab track, card-header bottom divider, pagination top divider |
 | `--ds-color-border-faint` | `var(--ds-color-border-edge)` | Section dividers, drawer edge |
 | `--ds-color-border-subtle` | `var(--ds-color-border-edge)` | Count pill, close button, entity icon box, modal/drawer header dividers |
-| `--ds-color-border-control` | `var(--ds-color-border-edge)` | Select triggers, secondary buttons |
+| `--ds-color-border-control` | `var(--ds-color-border-edge)` | Select triggers, tertiary buttons |
 | `--ds-color-border-strong` | `rgba(255,255,255,0.08)` | Inactive stepper index |
 | `--ds-color-border-control-hover` | `rgba(255,255,255,0.20)` | Toggle / radio-card options; hover outline of controls |
 | `--ds-color-border-control-strong` | `#6b7280` | Unchecked checkbox; boundary mode (§9.3) |
@@ -312,13 +320,13 @@ Primitive names are **reference labels** for traceability; they are not emitted 
 | `--ds-gradient-button-primary-hover` | `linear-gradient(180deg, #3b82f6 0%, #2563eb 100%)` | **[INFERRED]** Primary button hover |
 | `--ds-gradient-nav-active` | `linear-gradient(101deg, rgba(33,88,225,0.225) 0%, rgba(33,88,225,0.125) 43%, rgba(33,88,225,0) 100%), linear-gradient(180deg, rgba(255,255,255,0.039) 0%, rgba(255,255,255,0.012) 100%)` | Current sidebar item only |
 | `--ds-gradient-stepper-active` | `linear-gradient(90deg, rgba(59,130,246,0.60) 0%, #1f2636 100%)` | Connector after the current / completed step |
-| `--ds-gradient-progress-success` | `linear-gradient(90deg, #34d399 0%, #10b981 100%)` | Fill of healthy progress bars |
+| `--ds-gradient-progress-success` | `linear-gradient(90deg, #6aa760 0%, #6aa760 100%)` | Fill of healthy progress bars |
 | `--ds-gradient-sheen` | `linear-gradient(90deg, rgba(96,165,250,0) 0%, rgba(96,165,250,0.30) 50%, rgba(96,165,250,0) 100%)` | 1 px top edge of slide panels |
 | `--ds-color-brand-text` | `#93c5fd` | Info chip text |
 | `--ds-color-link` | `#60a5fa` | Blue text: links, link actions, eyebrows, roles under names, active step subtitle |
 | `--ds-color-link-hover` | `#93c5fd` | Hover of link text |
 | `--ds-color-brand-tint-10` | `rgba(59,130,246,0.10)` | Icon tile and info chip fill |
-| `--ds-color-brand-tint-20` | `rgba(59,130,246,0.20)` | Icon tile and info chip border; tonal button; user-card glow |
+| `--ds-color-brand-tint-20` | `rgba(59,130,246,0.20)` | Pressed toggle-chip border; tonal button; user-card glow |
 | `--ds-color-brand-tint-30` | `rgba(59,130,246,0.30)` | Tonal button hover |
 | `--ds-color-brand-border-hover` | `rgba(59,130,246,0.40)` | Clickable media-card hover outline |
 | `--ds-color-brand-avatar-border` | `rgba(147,197,253,0.30)` | Initials-avatar outline |
@@ -331,18 +339,18 @@ Primitive names are **reference labels** for traceability; they are not emitted 
 
 | Token | Value | Use exactly for |
 |---|---|---|
-| `--ds-color-success-text` | `#34d399` | Success text, dot core |
-| `--ds-color-success-glow` | `#10b981` | Success halo, completed step fill, presence dot |
-| `--ds-color-success-bg` | `rgba(16,185,129,0.10)` | Success pill fill |
-| `--ds-color-success-border` | `rgba(16,185,129,0.20)` | Success pill outline |
-| `--ds-color-warning-text` | `#fbbf24` | Warning text, dot core and halo |
-| `--ds-color-warning-bg` | `rgba(251,191,36,0.10)` | Warning pill fill |
-| `--ds-color-warning-border` | `rgba(251,191,36,0.20)` | Warning pill outline |
-| `--ds-color-danger` | `#ff5825` | Error / stopped / offline dot, halo, bars, detection frames |
-| `--ds-color-danger-text` | `#ff7043` | Error-status text on tinted and glass surfaces (R-04) |
-| `--ds-color-danger-bg` | `rgba(255,88,37,0.10)` | Error pill fill, danger button |
-| `--ds-color-danger-bg-hover` | `rgba(255,88,37,0.20)` | **[INFERRED]** Danger button hover |
-| `--ds-color-danger-border` | `rgba(255,88,37,0.20)` | Error pill outline |
+| `--ds-color-success-text` | `#6aa760` | Success text, dot core |
+| `--ds-color-success-glow` | `#6aa760` | Success halo, completed step fill, presence dot |
+| `--ds-color-success-bg` | `rgba(106,167,96,0.10)` | Success pill fill |
+| `--ds-color-success-border` | `rgba(106,167,96,0.20)` | Success pill outline |
+| `--ds-color-warning-text` | `#e8b94a` | Warning text, dot core and halo |
+| `--ds-color-warning-bg` | `rgba(232,185,74,0.10)` | Warning pill fill |
+| `--ds-color-warning-border` | `rgba(232,185,74,0.20)` | Warning pill outline |
+| `--ds-color-danger` | `#e5575f` | Error / stopped / offline dot, halo, bars, detection frames |
+| `--ds-color-danger-text` | `#e5575f` | Error-status text on tinted and glass surfaces (R-04) |
+| `--ds-color-danger-bg` | `rgba(229,87,95,0.10)` | Error pill fill, danger button |
+| `--ds-color-danger-bg-hover` | `rgba(229,87,95,0.20)` | **[INFERRED]** Danger button hover |
+| `--ds-color-danger-border` | `rgba(229,87,95,0.20)` | Error pill outline |
 | `--ds-color-error` | `#fb7185` | Field error ring and validation (form errors, not system state) |
 | `--ds-color-error-text` | `#fb7185` | Required asterisk, validation messages |
 | `--ds-color-live` | `#d33434` | "Live" indicator core |
@@ -350,8 +358,8 @@ Primitive names are **reference labels** for traceability; they are not emitted 
 | `--ds-color-info-text` | `#93c5fd` | **[EXTENSION]** Informational text |
 | `--ds-color-info-bg` | `rgba(59,130,246,0.10)` | **[EXTENSION]** Info pill fill |
 | `--ds-color-info-border` | `rgba(59,130,246,0.20)` | **[EXTENSION]** Info pill outline |
-| `--ds-color-row-warning` | `rgba(251,191,36,0.03)` | **[EXTENSION]** Warning row tint |
-| `--ds-color-row-critical` | `rgba(255,88,37,0.03)` | **[EXTENSION]** Stopped / failed row tint |
+| `--ds-color-row-warning` | `rgba(232,185,74,0.03)` | **[EXTENSION]** Warning row tint |
+| `--ds-color-row-critical` | `rgba(229,87,95,0.03)` | **[EXTENSION]** Stopped / failed row tint |
 | `--ds-color-alert-count` | `#fb7185` | Non-zero alert counts in cells |
 
 #### Overlays
@@ -558,7 +566,7 @@ Base unit **4 px**, with 2 px half-steps (2, 6, 10, 14) inside components. [PRES
 | `--ds-shadow-glass` | `0 12px 28px 0 rgba(0,0,0,0.20)` | KPI cards, content cards (through `shadow-surface`), camera tiles |
 | `--ds-shadow-glass-soft` | `0 12px 28px -10px rgba(0,0,0,0.20)` | Collapsible section cards |
 | `--ds-shadow-control` | `0 10px 24px 0 rgba(0,0,0,0.15)` | Single-select triggers, glass badges |
-| `--ds-shadow-field` | `0 10px 24px -10px rgba(0,0,0,0.15)` | Inputs, textareas, field selects, secondary buttons, attach buttons (fields add `shadow-edge` as their border) |
+| `--ds-shadow-field` | `0 10px 24px -10px rgba(0,0,0,0.15)` | Inputs, textareas, field selects, tertiary buttons, attach buttons (fields add `shadow-edge` as their border) |
 | `--ds-shadow-xs` | `0 1px 2px 0 rgba(0,0,0,0.05)` | Extra lift under field select and picker triggers |
 | `--ds-shadow-highlight` | `inset 0 1px 0 0 rgba(255,255,255,0.07)` | Top inner highlight (Figma "IS 2") |
 | `--ds-shadow-card` | `0 2px 36px 0 rgba(0,0,0,0.12), 0 2px 12px 0 rgba(0,0,0,0.40), inset 0 1px 0 0 rgba(255,255,255,0.07)` | Current nav item, current page button, raised role tags (Figma style "IS 2") |
@@ -580,9 +588,9 @@ Base unit **4 px**, with 2 px half-steps (2, 6, 10, 14) inside components. [PRES
 | `--ds-shadow-avatar-orb` | `0 7px 10px -2px rgba(59,130,246,0.30), 0 3px 4px -3px rgba(59,130,246,0.30)` | Unused (DEOC's photo avatar has no glow); kept for compatibility |
 | `--ds-shadow-header-scrolled` | `0 8px 16px -6px rgba(0,0,0,0.60)` | Panel header, pinned table header while content is scrolled [PRESERVED] |
 | `--ds-shadow-footer-scrolled` | `0 -8px 16px -6px rgba(0,0,0,0.60)` | Slide-panel footer while more content sits below the fold (D-9) |
-| `--ds-shadow-status-success` | `0 0 10px 0 #10b981, 0 0 2px 0 #34d399` | Success dot halo |
-| `--ds-shadow-status-warning` | `0 0 10px 0 #fbbf24, 0 0 2px 0 #fbbf24` | Warning dot halo |
-| `--ds-shadow-status-error` | `0 0 10px 0 #ff5825, 0 0 2px 0 #ff5825` | Error / stopped / offline dot halo |
+| `--ds-shadow-status-success` | `0 0 10px 0 #6aa760, 0 0 2px 0 #6aa760` | Success dot halo |
+| `--ds-shadow-status-warning` | `0 0 10px 0 #e8b94a, 0 0 2px 0 #e8b94a` | Warning dot halo |
+| `--ds-shadow-status-error` | `0 0 10px 0 #e5575f, 0 0 2px 0 #e5575f` | Error / stopped / offline dot halo |
 
 #### Edge tokens
 
@@ -775,7 +783,7 @@ Reuse an existing asset whose object fits first. Never generate, trace or imitat
 
 #### D. Fallback: icon tile
 
-A box with `brand-tint-10` fill and a 1 px `brand-tint-20` border holding a `link`-colored outline glyph: 40 px (radius 12, glyph 20), 28 px (radius 12, glyph 14–16 — the camera-tile header icon, OBSERVED), or 20 px **health tile** (`surface-icon-tile`, radius 6, glyph 12, OBSERVED). Status variants use the matching `*-bg`, `*-border` and text color. No emoji, no flat circles.
+A box with `brand-tint-10` fill and no visible border (a 1 px transparent one; [PRODUCT DECISION] Polaris Factory, 2026-11-03) holding a `link`-colored outline glyph: 40 px (radius 12, glyph 20), 28 px (radius 12, glyph 14–16 — the camera-tile header icon, OBSERVED), or 20 px **health tile** (`surface-icon-tile`, radius 6, glyph 12, OBSERVED). Status variants use the matching `*-bg` and text color. No emoji, no flat circles.
 
 #### E. Outline UI icons
 
@@ -846,6 +854,9 @@ Copy this verbatim into the global stylesheet. **Every value used by a component
   --ds-font-size-value: 16px;      --ds-line-height-value: 22px;
   --ds-font-size-heading: 20px;    --ds-line-height-heading: 28px;
   --ds-font-size-title: 24px;      --ds-line-height-title: 32px;
+  /* Alternate leadings: DEOC sets some steps on a tighter or looser line (D-10, §11). Use only where a component spec names one. */
+  --ds-leading-12: 12px; --ds-leading-13: 13px; --ds-leading-15: 15px; --ds-leading-16: 16px; --ds-leading-18: 18px;
+  --ds-leading-22: 22px; --ds-leading-24: 24px; --ds-leading-26: 26px; --ds-leading-28: 28px; --ds-leading-16-5: 16.5px;
 
   --ds-tracking-title: -0.35px;
   --ds-tracking-heading: -0.5px;
@@ -855,6 +866,8 @@ Copy this verbatim into the global stylesheet. **Every value used by a component
   --ds-tracking-tight: -0.4px;
   --ds-tracking-upper: 0.55px;
   --ds-tracking-upper-sm: 0.4px;
+  --ds-tracking-step: 0.3px;
+  --ds-tracking-chart-label: -0.2px;
   --ds-tracking-table-header: 0.3px;
   --ds-tracking-identifier: 0.55px;
   --ds-tracking-field: 0.5px;   /* read-only identifier values (DEOC barcodes) */
@@ -863,7 +876,7 @@ Copy this verbatim into the global stylesheet. **Every value used by a component
   --ds-color-bg-app: #0b1020;
   --ds-gradient-app: linear-gradient(90deg, #0b1020 0%, #0f172a 55%, #020617 100%);
   --ds-color-glow-brand: rgba(59,130,246,0.10);
-  --ds-color-glow-success: rgba(52,211,153,0.08);
+  --ds-color-glow-success: rgba(106,167,96,0.08);
   --ds-gradient-glass: linear-gradient(180deg, rgba(37,99,235,0.025) 0%, rgba(37,99,235,0.01) 100%);   /* CTA-blue glass (brand-strong #2563eb): white glass greyed the navy */
   --ds-gradient-glass-strong: linear-gradient(180deg, rgba(37,99,235,0.05) 0%, rgba(37,99,235,0.01) 100%);
   --ds-gradient-glass-up: linear-gradient(0deg, rgba(37,99,235,0.025) 0%, rgba(37,99,235,0.01) 100%);
@@ -957,19 +970,19 @@ Copy this verbatim into the global stylesheet. **Every value used by a component
   --ds-color-focus-ring-on-color: #ffffff;
 
   /* ── Color: status ────────────────────────────────────── */
-  --ds-color-success-text: #34d399;
-  --ds-color-success-glow: #10b981;
-  --ds-color-success-bg: rgba(16,185,129,0.10);
-  --ds-color-success-border: rgba(16,185,129,0.20);
-  --ds-gradient-progress-success: linear-gradient(90deg, #34d399 0%, #10b981 100%);
-  --ds-color-warning-text: #fbbf24;
-  --ds-color-warning-bg: rgba(251,191,36,0.10);
-  --ds-color-warning-border: rgba(251,191,36,0.20);
-  --ds-color-danger: #ff5825;
-  --ds-color-danger-text: #ff7043;
-  --ds-color-danger-bg: rgba(255,88,37,0.10);
-  --ds-color-danger-bg-hover: rgba(255,88,37,0.20);
-  --ds-color-danger-border: rgba(255,88,37,0.20);
+  --ds-color-success-text: #6aa760;
+  --ds-color-success-glow: #6aa760;
+  --ds-color-success-bg: rgba(106,167,96,0.10);
+  --ds-color-success-border: rgba(106,167,96,0.20);
+  --ds-gradient-progress-success: linear-gradient(90deg, #6aa760 0%, #6aa760 100%);
+  --ds-color-warning-text: #e8b94a;
+  --ds-color-warning-bg: rgba(232,185,74,0.10);
+  --ds-color-warning-border: rgba(232,185,74,0.20);
+  --ds-color-danger: #e5575f;
+  --ds-color-danger-text: #e5575f;
+  --ds-color-danger-bg: rgba(229,87,95,0.10);
+  --ds-color-danger-bg-hover: rgba(229,87,95,0.20);
+  --ds-color-danger-border: rgba(229,87,95,0.20);
   --ds-color-error: #fb7185;
   --ds-color-error-text: #fb7185;
   --ds-color-live: #d33434;
@@ -977,8 +990,8 @@ Copy this verbatim into the global stylesheet. **Every value used by a component
   --ds-color-info-text: #93c5fd;
   --ds-color-info-bg: rgba(59,130,246,0.10);
   --ds-color-info-border: rgba(59,130,246,0.20);
-  --ds-color-row-warning: rgba(251,191,36,0.03);
-  --ds-color-row-critical: rgba(255,88,37,0.03);
+  --ds-color-row-warning: rgba(232,185,74,0.03);
+  --ds-color-row-critical: rgba(229,87,95,0.03);
   --ds-color-alert-count: #fb7185;
 
   /* ── Color: overlays ──────────────────────────────────── */
@@ -986,14 +999,22 @@ Copy this verbatim into the global stylesheet. **Every value used by a component
   --ds-overlay-blur: 4px;
 
   /* ── Color: data visualization ────────────────────────── */
-  --ds-chart-cat-1: #016ffe;
-  --ds-chart-cat-2: #8b34fd;
-  --ds-chart-cat-3: #fbb645;
-  --ds-chart-cat-4: #00bac9;
+  --ds-chart-cat-1: #60a5fa;
+  --ds-chart-cat-2: #2563eb;
+  --ds-chart-cat-3: #6366f1;
+  --ds-chart-cat-4: #4b10a3;
+  --ds-chart-cat-5: #f383a3;
+  --ds-chart-cat-6: #23b9ac;
+  --ds-chart-cat-7: #ad77c2;
+  --ds-chart-cat-8: #6aa760;
+  --ds-chart-cat-9: #da825d;
+  --ds-chart-cat-10: #1397bb;
+  --ds-chart-status-red: #e5575f;
+  --ds-chart-status-yellow: #e8b94a;
   --ds-chart-positive: var(--ds-color-success-glow);
-  --ds-chart-negative: var(--ds-color-danger);
+  --ds-chart-negative: var(--ds-chart-status-red);
   --ds-chart-running: var(--ds-color-success-text);
-  --ds-chart-stopped: var(--ds-color-danger);
+  --ds-chart-stopped: var(--ds-chart-status-red);
   --ds-chart-trend: #ffffff;
   --ds-chart-track: var(--ds-color-track);
   --ds-chart-baseline: rgba(255,255,255,0.06);
@@ -1093,9 +1114,9 @@ Copy this verbatim into the global stylesheet. **Every value used by a component
   --ds-shadow-avatar-orb: 0 7px 10px -2px rgba(59,130,246,0.30), 0 3px 4px -3px rgba(59,130,246,0.30);
   --ds-shadow-header-scrolled: 0 8px 16px -6px rgba(0,0,0,0.60);
   --ds-shadow-footer-scrolled: 0 -8px 16px -6px rgba(0,0,0,0.60);
-  --ds-shadow-status-success: 0 0 10px 0 #10b981, 0 0 2px 0 #34d399;
-  --ds-shadow-status-warning: 0 0 10px 0 #fbbf24, 0 0 2px 0 #fbbf24;
-  --ds-shadow-status-error: 0 0 10px 0 #ff5825, 0 0 2px 0 #ff5825;
+  --ds-shadow-status-success: 0 0 10px 0 #6aa760, 0 0 2px 0 #6aa760;
+  --ds-shadow-status-warning: 0 0 10px 0 #e8b94a, 0 0 2px 0 #e8b94a;
+  --ds-shadow-status-error: 0 0 10px 0 #e5575f, 0 0 2px 0 #e5575f;
   --ds-blur-ambient: 60px;
 
   /* Focus (rendered with outline, §2.7) */
@@ -1145,6 +1166,7 @@ Copy this verbatim into the global stylesheet. **Every value used by a component
   --ds-size-badge-dot: 6px;
   --ds-size-checkbox: 16px;
   --ds-size-menu-max-height: 260px;
+  --ds-size-feed-max-height: 380px;   /* notification feed list (§5.47 extension) */
   --ds-size-picker-max-height: 280px;
   --ds-size-dialog: 440px;
   --ds-size-modal: 720px;
@@ -1152,6 +1174,9 @@ Copy this verbatim into the global stylesheet. **Every value used by a component
   --ds-size-panel-md: 560px;
   --ds-size-panel-lg: 680px;
   --ds-size-panel-xl: 820px;
+  --ds-size-form-column: 820px;       /* full-page form column (§6.10 extension) */
+  --ds-size-form-column-wide: 980px;
+  --ds-size-form-guide: 480px;
   --ds-size-popover-date: 360px;
   --ds-size-tooltip: 314px;
   --ds-size-filter: 180px;
@@ -1215,6 +1240,7 @@ h1, h2, h3, h4, p, dl, dd, ol, ul, figure { margin: 0; }
 ul, ol { padding: 0; list-style: none; }
 button, input, select, textarea { font: inherit; color: inherit; }
 button { background: none; border: 0; padding: 0; cursor: pointer; }
+a:where([class]) { color: inherit; text-decoration: none; }  /* component links (tabs, nav items, link actions, menu rows) style themselves; prose links keep the browser underline */
 img, svg { display: block; }
 [hidden] { display: none !important; }  /* component display rules must never reveal hidden content */
 
@@ -1228,11 +1254,11 @@ input:focus-visible, textarea:focus-visible, select:focus-visible { outline-widt
 
 /* Increased-contrast boundary mode (§9.3): glass edges are 2–7 % white; this raises every control edge to 3:1. */
 @media (prefers-contrast: more) {
-  :is(.ds-input, .ds-select__trigger, .ds-attach__field, .ds-tabs, .ds-tab[aria-selected="true"], .ds-radio-card, .ds-toggle__opt, .ds-nav__item[aria-current="page"], .ds-btn--secondary, .ds-btn--subtle, .ds-btn--ghost, .ds-dropzone) {
+  :is(.ds-input, .ds-select__trigger, .ds-attach__field, .ds-tabs, .ds-tab[aria-selected="true"], .ds-radio-card, .ds-toggle__opt, .ds-nav__item[aria-current="page"], .ds-btn--tertiary, .ds-btn--subtle, .ds-btn--ghost, .ds-dropzone) {
     border: 1px solid var(--ds-color-border-control-strong);
   }
 }
-[data-contrast="more"] :is(.ds-input, .ds-select__trigger, .ds-attach__field, .ds-tabs, .ds-tab[aria-selected="true"], .ds-radio-card, .ds-toggle__opt, .ds-nav__item[aria-current="page"], .ds-btn--secondary, .ds-btn--subtle, .ds-btn--ghost, .ds-dropzone) {
+[data-contrast="more"] :is(.ds-input, .ds-select__trigger, .ds-attach__field, .ds-tabs, .ds-tab[aria-selected="true"], .ds-radio-card, .ds-toggle__opt, .ds-nav__item[aria-current="page"], .ds-btn--tertiary, .ds-btn--subtle, .ds-btn--ghost, .ds-dropzone) {
   border: 1px solid var(--ds-color-border-control-strong);
 }
 
@@ -1261,21 +1287,21 @@ input[type="search"]::-webkit-search-cancel-button { -webkit-appearance: none; }
 }
 
 /* Text-style helpers that components use directly (the full set is .ds-ts-<name>, generated from §2.3) */
-.ds-text-page-title   { font-size: var(--ds-font-size-title); font-weight: 600; line-height: 32px; letter-spacing: var(--ds-tracking-title); color: var(--ds-color-text-primary); }
-.ds-text-dialog-title { font-size: var(--ds-font-size-heading); font-weight: 700; line-height: 28px; letter-spacing: var(--ds-tracking-heading); color: var(--ds-color-text-primary); }
-.ds-text-card-title   { font-size: var(--ds-font-size-heading); font-weight: 600; line-height: 24px; letter-spacing: var(--ds-tracking-card-title); color: var(--ds-color-text-primary); }
-.ds-text-group-title  { font-size: var(--ds-font-size-heading); font-weight: 700; line-height: 24px; letter-spacing: var(--ds-tracking-heading); color: var(--ds-color-text-primary); }
-.ds-text-subgroup-title { font-size: var(--ds-font-size-value); font-weight: 700; line-height: 22px; letter-spacing: var(--ds-tracking-heading); color: var(--ds-color-text-primary); }
-.ds-text-kpi-value    { font-size: var(--ds-font-size-heading); font-weight: 700; line-height: 28px; letter-spacing: var(--ds-tracking-number); color: var(--ds-color-text-primary); }
-.ds-text-kpi-label    { font-size: var(--ds-font-size-label); font-weight: 700; line-height: 16px; letter-spacing: var(--ds-tracking-upper); color: var(--ds-color-text-muted); text-transform: uppercase; }
-.ds-text-metric-value { font-size: var(--ds-font-size-heading); font-weight: 700; line-height: 28px; letter-spacing: var(--ds-tracking-number); color: var(--ds-color-text-primary); }
-.ds-text-metric-label { font-size: var(--ds-font-size-label); font-weight: 500; line-height: 18px; letter-spacing: var(--ds-tracking-upper-sm); color: var(--ds-color-text-muted); text-transform: uppercase; }
-.ds-text-body         { font-size: var(--ds-font-size-body); font-weight: 400; line-height: 20px; color: var(--ds-color-text-secondary); }
-.ds-text-body-muted   { font-size: var(--ds-font-size-body); font-weight: 400; line-height: 20px; color: var(--ds-color-text-muted); }
-.ds-text-body-strong  { font-size: var(--ds-font-size-body); font-weight: 500; line-height: 20px; color: var(--ds-color-text-primary); }
-.ds-text-small        { font-size: var(--ds-font-size-label); font-weight: 400; line-height: 16px; color: var(--ds-color-text-muted); }
-.ds-text-caption      { font-size: var(--ds-font-size-caption); font-weight: 400; line-height: 14px; color: var(--ds-color-text-tertiary); }
-.ds-text-validation   { font-size: var(--ds-font-size-label); font-weight: 400; line-height: 16px; color: var(--ds-color-error-text); }
+.ds-text-page-title   { font-size: var(--ds-font-size-title); font-weight: 600; line-height: var(--ds-line-height-title); letter-spacing: var(--ds-tracking-title); color: var(--ds-color-text-primary); }
+.ds-text-dialog-title { font-size: var(--ds-font-size-heading); font-weight: 700; line-height: var(--ds-line-height-heading); letter-spacing: var(--ds-tracking-heading); color: var(--ds-color-text-primary); }
+.ds-text-card-title   { font-size: var(--ds-font-size-heading); font-weight: 600; line-height: var(--ds-leading-24); letter-spacing: var(--ds-tracking-card-title); color: var(--ds-color-text-primary); }
+.ds-text-group-title  { font-size: var(--ds-font-size-heading); font-weight: 700; line-height: var(--ds-leading-24); letter-spacing: var(--ds-tracking-heading); color: var(--ds-color-text-primary); }
+.ds-text-subgroup-title { font-size: var(--ds-font-size-value); font-weight: 700; line-height: var(--ds-line-height-value); letter-spacing: var(--ds-tracking-heading); color: var(--ds-color-text-primary); }
+.ds-text-kpi-value    { font-size: var(--ds-font-size-heading); font-weight: 700; line-height: var(--ds-line-height-heading); letter-spacing: var(--ds-tracking-number); color: var(--ds-color-text-primary); }
+.ds-text-kpi-label    { font-size: var(--ds-font-size-label); font-weight: 700; line-height: var(--ds-line-height-label); letter-spacing: var(--ds-tracking-upper); color: var(--ds-color-text-muted); text-transform: uppercase; }
+.ds-text-metric-value { font-size: var(--ds-font-size-heading); font-weight: 700; line-height: var(--ds-line-height-heading); letter-spacing: var(--ds-tracking-number); color: var(--ds-color-text-primary); }
+.ds-text-metric-label { font-size: var(--ds-font-size-label); font-weight: 500; line-height: var(--ds-leading-18); letter-spacing: var(--ds-tracking-upper-sm); color: var(--ds-color-text-muted); text-transform: uppercase; }
+.ds-text-body         { font-size: var(--ds-font-size-body); font-weight: 400; line-height: var(--ds-line-height-body); color: var(--ds-color-text-secondary); }
+.ds-text-body-muted   { font-size: var(--ds-font-size-body); font-weight: 400; line-height: var(--ds-line-height-body); color: var(--ds-color-text-muted); }
+.ds-text-body-strong  { font-size: var(--ds-font-size-body); font-weight: 500; line-height: var(--ds-line-height-body); color: var(--ds-color-text-primary); }
+.ds-text-small        { font-size: var(--ds-font-size-label); font-weight: 400; line-height: var(--ds-line-height-label); color: var(--ds-color-text-muted); }
+.ds-text-caption      { font-size: var(--ds-font-size-caption); font-weight: 400; line-height: var(--ds-line-height-caption); color: var(--ds-color-text-tertiary); }
+.ds-text-validation   { font-size: var(--ds-font-size-label); font-weight: 400; line-height: var(--ds-line-height-label); color: var(--ds-color-error-text); }
 .ds-truncate          { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0; }
 .ds-clamp-2           { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
 
@@ -1316,7 +1342,7 @@ input[type="search"]::-webkit-search-cancel-button { -webkit-appearance: none; }
 
 | Part | Spec |
 |---|---|
-| Container | padding `space-2-5` `space-4` (10 × 16), radius `radius-control` (12). Bordered variants (primary, secondary, subtle, danger) add a 1 px border, so they are 42 px tall; borderless variants (tonal, ghost, section) are 40 px |
+| Container | padding `space-2-5` `space-4` (10 × 16), radius `radius-control` (12). Bordered variants (primary, secondary, tertiary, subtle, danger) add a 1 px border (transparent on secondary), so they are 42 px tall; borderless variants (tonal, ghost, section) are 40 px |
 | Label | `button-md` 14/600 in every variant |
 | Leading icon | 14 px (plus, changeover) or 20 px (back arrow); gap `space-2` |
 | Trailing icon | 14 px chevron pointing inline-end (Next / Save) |
@@ -1324,7 +1350,8 @@ input[type="search"]::-webkit-search-cancel-button { -webkit-appearance: none; }
 | Variant | Fill | Border | Text | Shadow | Figma |
 |---|---|---|---|---|---|
 | **primary** | `gradient-button-primary` | `brand` | `text-on-brand` | `shadow-button-primary` | OBSERVED |
-| **secondary** | `gradient-glass` | `border-control` | `text-emphasis` | `shadow-field` | OBSERVED (Back, Cancel, Skip, Export) |
+| **secondary** | `brand-tint-10` | transparent | `link` | none | **[PRODUCT DECISION] 2026-11-03** light-blue CTA, same fill and text as the §5.36 icon tile; row quick actions (Restart stream, Start) |
+| **tertiary** | `gradient-glass` | `border-control` | `text-emphasis` | `shadow-field` | OBSERVED (Back, Cancel, Skip, Export); named "secondary" before 2026-11-03 |
 | **subtle** | `surface-control` | `border-hairline` | `text-emphasis` | none | OBSERVED (View factory) |
 | **section** | `surface-control` | none (`inset 0 0 0 1px border-hairline`) | `text-emphasis` | — | DEOC section-header action ("Add Camera" on a line) |
 | **tonal** | `brand-tint-20` | none | `brand-text` | none | EXTENSION |
@@ -1333,30 +1360,34 @@ input[type="search"]::-webkit-search-cancel-button { -webkit-appearance: none; }
 
 Sizes: **sm** padding 6 × 12 (`button-sm`, 28 px + border), **md** padding 10 × 16 (default), **lg** padding 12 × 20 (`button-lg`, 46 px + border). Optional minimum width `size-header-button` (180) for header and footer primaries (OBSERVED: every primary in the screens is 180 px wide).
 
-**States.** Hover: primary → `gradient-button-primary-hover`; secondary → `border-control-hover`; subtle and section → `surface-control-hover`; tonal → `brand-tint-30`; ghost → `surface-hover` + primary text; danger → `danger-bg-hover`. Loading: spinner replaces the leading icon, `aria-busy="true"`, clicks ignored. Disabled: 0.4.
+**States.** Hover: primary → `gradient-button-primary-hover`; secondary → `brand-tint-20`; tertiary → `border-control-hover`; subtle and section → `surface-control-hover`; tonal → `brand-tint-30`; ghost → `surface-hover` + primary text; danger → `danger-bg-hover`. Loading: spinner replaces the leading icon, `aria-busy="true"`, clicks ignored. Disabled: 0.4.
 
 **Behavior.** Native `<button type="button">`. One primary per view region. Icon-only buttons use §5.2.
+
+**Floating add button** **[PRODUCT DECISION] 2026-11-04** The "Add …" CTA of a list screen (Add weighing machine, Add line, Add validation) is not a full-width button above the list: it is `ds-btn ds-btn--primary ds-fab`, a 56 px round + (24 px glyph) fixed `space-4` from the inline-end edge and 96 px above the bottom of the viewport so it clears the mobile bottom nav. Icon-only, so it carries `aria-label` and `title` with the full action name.
 
 ```css
 .ds-btn {
   display: inline-flex; align-items: center; justify-content: center; gap: var(--ds-space-2);
   padding: var(--ds-space-2-5) var(--ds-space-4);
   border: 0; border-radius: var(--ds-radius-control);
-  font-size: var(--ds-font-size-body); line-height: 20px; font-weight: 600;
+  font-size: var(--ds-font-size-body); line-height: var(--ds-line-height-body); font-weight: 600;
   white-space: normal; text-align: center; cursor: pointer;
   transition: background-color var(--ds-duration-fast) var(--ds-ease-standard), border-color var(--ds-duration-fast) var(--ds-ease-standard),
               color var(--ds-duration-fast) var(--ds-ease-standard), box-shadow var(--ds-duration-fast) var(--ds-ease-standard);
 }
 .ds-btn:disabled { opacity: 0.4; pointer-events: none; }
 .ds-btn[aria-disabled="true"] { opacity: 0.4; cursor: not-allowed; }
-.ds-btn--sm { padding: var(--ds-space-1-5) var(--ds-space-3); font-size: var(--ds-font-size-label); line-height: 16px; }
-.ds-btn--lg { padding: var(--ds-space-3) var(--ds-space-5); font-size: var(--ds-font-size-value); line-height: 22px; }
+.ds-btn--sm { padding: var(--ds-space-1-5) var(--ds-space-3); font-size: var(--ds-font-size-label); line-height: var(--ds-line-height-label); }
+.ds-btn--lg { padding: var(--ds-space-3) var(--ds-space-5); font-size: var(--ds-font-size-value); line-height: var(--ds-line-height-value); }
 .ds-btn--minw { min-width: var(--ds-size-header-button); }
 
 .ds-btn--primary { background: var(--ds-gradient-button-primary); border: 1px solid var(--ds-color-brand); color: var(--ds-color-text-on-brand); box-shadow: var(--ds-shadow-button-primary); }
 .ds-btn--primary:hover { background: var(--ds-gradient-button-primary-hover); }
-.ds-btn--secondary { background: var(--ds-gradient-glass); border: 1px solid var(--ds-color-border-control); color: var(--ds-color-text-emphasis); box-shadow: var(--ds-shadow-field); }
-.ds-btn--secondary:hover { border-color: var(--ds-color-border-control-hover); }
+.ds-btn--secondary { background: var(--ds-color-brand-tint-10); border: 1px solid transparent; color: var(--ds-color-link); }
+.ds-btn--secondary:hover { background: var(--ds-color-brand-tint-20); }
+.ds-btn--tertiary { background: var(--ds-gradient-glass); border: 1px solid var(--ds-color-border-control); color: var(--ds-color-text-emphasis); box-shadow: var(--ds-shadow-field); }
+.ds-btn--tertiary:hover { border-color: var(--ds-color-border-control-hover); }
 .ds-btn--subtle { background: var(--ds-color-surface-control); border: 1px solid var(--ds-color-border-hairline); color: var(--ds-color-text-emphasis); }
 .ds-btn--subtle:hover { background: var(--ds-color-surface-control-hover); }
 .ds-btn--section { background: var(--ds-color-surface-control); box-shadow: inset 0 0 0 1px var(--ds-color-border-hairline); color: var(--ds-color-text-emphasis); }
@@ -1367,6 +1398,11 @@ Sizes: **sm** padding 6 × 12 (`button-sm`, 28 px + border), **md** padding 10 �
 .ds-btn--ghost:hover { background: var(--ds-color-surface-hover); color: var(--ds-color-text-primary); }
 .ds-btn--danger { background: var(--ds-color-danger-bg); border: 1px solid var(--ds-color-danger-border); color: var(--ds-color-danger-text); }
 .ds-btn--danger:hover { background: var(--ds-color-danger-bg-hover); }
+
+/* Floating add button [EXTENSION] */
+.ds-fab { position: fixed; right: var(--ds-space-4); bottom: calc(96px + env(safe-area-inset-bottom, 0px)); z-index: var(--ds-z-sidebar);
+  width: 56px; height: 56px; padding: 0; border-radius: var(--ds-radius-full); box-shadow: var(--ds-shadow-float); }
+.ds-fab svg { width: 24px; height: 24px; }
 
 .ds-spinner { width: 16px; height: 16px; animation: ds-spin 1s linear infinite; }
 @keyframes ds-spin { to { transform: rotate(360deg); } }
@@ -1408,14 +1444,21 @@ Row actions are `sm` buttons in a `ds-row-actions` cluster with `space-3` gaps. 
 
 ```css
 .ds-link-action { display: inline-flex; align-items: center; gap: var(--ds-space-2); align-self: flex-start;
-  font-size: var(--ds-font-size-body); line-height: 20px; font-weight: 600; color: var(--ds-color-brand); border-radius: var(--ds-radius-xs);
+  font-size: var(--ds-font-size-body); line-height: var(--ds-line-height-body); font-weight: 600; color: var(--ds-color-brand); border-radius: var(--ds-radius-xs);
   transition: color var(--ds-duration-fast) var(--ds-ease-standard); }
 .ds-link-action:hover { color: var(--ds-color-link); }
+/* [EXTENSION] a related record named inside text or a table cell: link colour, medium weight, underline on hover (R-08 link colour). */
+.ds-entity-link { color: var(--ds-color-link); font-weight: 500; text-decoration: none; border-radius: var(--ds-radius-xs); transition: color var(--ds-duration-fast); }
+.ds-entity-link:hover, .ds-entity-link.is-hover { color: var(--ds-color-link-hover); text-decoration: underline; text-underline-offset: 3px; }
+.ds-table tbody td .ds-entity-link { font-weight: 500; }
+/* A running-state glyph (deployment steps): the spinner's rotation, reduced-motion safe. */
+.ds-spin { animation: ds-spin 1s linear infinite; }
+@media (prefers-reduced-motion: reduce) { .ds-spin { animation: none; } }
 ```
 
 ### 5.4 Action group
 
-**Purpose** A row of related actions. Header actions: filters → primary, `space-header-actions` (12) apart (OBSERVED in every header). Footer actions: secondary at the inline-start, helper text + primary at the inline-end (OBSERVED in drawer footers). Modal actions: secondary (120 px) then primary (180 px), 16 px apart, aligned inline-end (OBSERVED). **[EXTENSION]** split button: a primary whose menu toggle shares its edge.
+**Purpose** A row of related actions. Header actions: filters → primary, `space-header-actions` (12) apart (OBSERVED in every header). Footer actions: tertiary at the inline-start, helper text + primary at the inline-end (OBSERVED in drawer footers). Modal actions: tertiary (120 px) then primary (180 px), 16 px apart, aligned inline-end (OBSERVED). **[EXTENSION]** split button: a primary whose menu toggle shares its edge.
 
 ```css
 .ds-action-row { display: flex; align-items: center; justify-content: flex-end; gap: var(--ds-space-4); flex-wrap: wrap; }
@@ -1442,7 +1485,7 @@ Row actions are `sm` buttons in a `ds-row-actions` cluster with `space-3` gaps. 
   width: 100%; padding: var(--ds-space-2-5) var(--ds-space-4);
   border: 0; border-radius: var(--ds-radius-control);
   background: var(--ds-gradient-glass); box-shadow: var(--ds-shadow-field), var(--ds-shadow-edge);
-  font-size: var(--ds-font-size-body); line-height: 20px; color: var(--ds-color-text-primary);
+  font-size: var(--ds-font-size-body); line-height: var(--ds-line-height-body); color: var(--ds-color-text-primary);
   transition: box-shadow var(--ds-duration-fast) var(--ds-ease-standard);
 }
 .ds-input::placeholder { color: var(--ds-color-text-placeholder); opacity: 1; }
@@ -1452,7 +1495,7 @@ Row actions are `sm` buttons in a `ds-row-actions` cluster with `space-3` gaps. 
 .ds-input-wrap { position: relative; }
 .ds-input--suffix { padding-inline-end: var(--ds-space-12); }
 .ds-input__suffix { position: absolute; inset-inline-end: 16px; top: 50%; transform: translateY(-50%); pointer-events: none;
-  font-size: var(--ds-font-size-label); line-height: 16px; color: var(--ds-color-text-muted); }
+  font-size: var(--ds-font-size-label); line-height: var(--ds-line-height-label); color: var(--ds-color-text-muted); }
 .ds-input--trailing { padding-inline-end: 44px; }
 .ds-input__trailing { position: absolute; inset-inline-end: 12px; top: 50%; transform: translateY(-50%); width: 24px; height: 24px;
   display: flex; align-items: center; justify-content: center; border-radius: var(--ds-radius-xs); color: var(--ds-color-text-muted); opacity: 0.7; }
@@ -1498,11 +1541,11 @@ Row actions are `sm` buttons in a `ds-row-actions` cluster with `space-3` gaps. 
 
 ```css
 .ds-field { display: flex; flex-direction: column; gap: var(--ds-space-form-label); min-width: 0; }
-.ds-field__label { font-size: var(--ds-font-size-label); line-height: 16px; font-weight: 500; color: var(--ds-color-text-muted); }
+.ds-field__label { font-size: var(--ds-font-size-label); line-height: var(--ds-line-height-label); font-weight: 500; color: var(--ds-color-text-muted); }
 .ds-field--caps .ds-field__label { color: var(--ds-color-text-muted); text-transform: uppercase; letter-spacing: var(--ds-tracking-upper); }
-.ds-field__req { color: var(--ds-color-error-text); margin-inline-start: 2px; }
-.ds-field__help { font-size: var(--ds-font-size-label); line-height: 16px; color: var(--ds-color-text-tertiary); margin-top: 2px; }
-.ds-field__error { font-size: var(--ds-font-size-label); line-height: 16px; color: var(--ds-color-error-text); margin-top: 2px; }
+.ds-field__req { color: var(--ds-color-error-text); margin-inline-start: var(--ds-space-0-5); }
+.ds-field__help { font-size: var(--ds-font-size-label); line-height: var(--ds-line-height-label); color: var(--ds-color-text-tertiary); margin-top: var(--ds-space-0-5); }
+.ds-field__error { font-size: var(--ds-font-size-label); line-height: var(--ds-line-height-label); color: var(--ds-color-error-text); margin-top: var(--ds-space-0-5); }
 .ds-form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: var(--ds-space-form-col); row-gap: var(--ds-space-form-row); }
 .ds-form-grid--1 { grid-template-columns: minmax(0, 1fr); }
 .ds-form-grid--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
@@ -1510,7 +1553,7 @@ Row actions are `sm` buttons in a `ds-row-actions` cluster with `space-3` gaps. 
 .ds-form-grid > .ds-span-all { grid-column: 1 / -1; }
 .ds-form-section { display: flex; flex-direction: column; gap: var(--ds-space-form-section); }
 .ds-form-section__title { padding-bottom: var(--ds-space-4); border-bottom: 1px solid var(--ds-color-border-subtle);
-  font-size: var(--ds-font-size-body); line-height: 18px; font-weight: 400; color: var(--ds-color-text-primary); }
+  font-size: var(--ds-font-size-body); line-height: var(--ds-leading-18); font-weight: 400; color: var(--ds-color-text-primary); }
 @media (max-width: 1023px) {
   .ds-form-grid, .ds-form-grid--3 { grid-template-columns: minmax(0, 1fr); }
   .ds-form-grid > .ds-span-2 { grid-column: auto; }
@@ -1533,7 +1576,7 @@ Chevron 18 px `icon-chevron`, rotates 180° when open. Default filter width `siz
 .ds-select__trigger {
   display: flex; align-items: center; justify-content: space-between; gap: var(--ds-space-2);
   width: 100%; border: 0; border-radius: var(--ds-radius-control);
-  font-size: var(--ds-font-size-body); line-height: 20px; text-align: start;
+  font-size: var(--ds-font-size-body); line-height: var(--ds-line-height-body); text-align: start;
   transition: background-color var(--ds-duration-fast) var(--ds-ease-standard);
 }
 .ds-select__trigger--filter { position: relative; padding: var(--ds-space-2-5) var(--ds-space-3) var(--ds-space-2-5) var(--ds-space-4); background: var(--ds-gradient-glass);
@@ -1578,17 +1621,28 @@ Chevron 18 px `icon-chevron`, rotates 180° when open. Default filter width `siz
 .ds-menu__search { padding: var(--ds-space-2); border-bottom: 1px solid var(--ds-color-border-subtle); }
 .ds-menu__list { max-height: var(--ds-size-menu-max-height); overflow-y: auto; }
 .ds-menu__option { display: flex; align-items: center; gap: var(--ds-space-2); padding: var(--ds-space-2-5) var(--ds-space-4);
-  cursor: pointer; font-size: var(--ds-font-size-body); line-height: 20px; color: var(--ds-color-text-muted);
+  cursor: pointer; font-size: var(--ds-font-size-body); line-height: var(--ds-line-height-body); color: var(--ds-color-text-muted);
   transition: background-color var(--ds-duration-fast), color var(--ds-duration-fast); }
 .ds-menu__option:hover, .ds-menu__option.is-active { background: var(--ds-color-surface-hover); color: var(--ds-color-text-primary); }
 .ds-menu:focus-within .ds-menu__option.is-active { outline: var(--ds-focus-width) solid var(--ds-color-focus-ring); outline-offset: var(--ds-focus-offset-inset); }
 .ds-menu__option[aria-selected="true"] { background: var(--ds-color-surface-hover); color: var(--ds-color-text-primary); }
 .ds-menu__option[aria-disabled="true"] { opacity: 0.4; cursor: not-allowed; }
 .ds-menu__check { display: none; }  /* DEOC marks the selected option by its fill only */
-.ds-menu__empty { padding: var(--ds-space-2-5) var(--ds-space-4); font-size: var(--ds-font-size-body); line-height: 20px; color: var(--ds-color-text-muted); }
+.ds-menu__empty { padding: var(--ds-space-2-5) var(--ds-space-4); font-size: var(--ds-font-size-body); line-height: var(--ds-line-height-body); color: var(--ds-color-text-muted); }
+/* [EXTENSION] grouped results (global search): a section-label heading per group; two-line options (label + sub). */
+.ds-menu__group { padding: var(--ds-space-2-5) var(--ds-space-4) var(--ds-space-1); font-size: var(--ds-font-size-label); line-height: var(--ds-line-height-label);
+  font-weight: 700; letter-spacing: var(--ds-tracking-upper); text-transform: uppercase; color: var(--ds-color-text-tertiary); }
+.ds-menu__option-text { display: flex; flex-direction: column; min-width: 0; }
+.ds-menu__option-text > * { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+/* [EXTENSION] command menu ("More actions", role=menu, §5.55): anchored to the trigger's inline-end, a destructive item in danger text. */
+.ds-menu--end { inset-inline-start: auto; inset-inline-end: 0; min-width: var(--ds-size-header-button); }
+.ds-menu__option--danger { color: var(--ds-color-danger-text); }
+.ds-menu__option--danger:hover, .ds-menu__option--danger.is-hover { color: var(--ds-color-danger-text); background: var(--ds-color-danger-bg); }
+.ds-menu__option:disabled { opacity: 0.4; cursor: not-allowed; }
+button.ds-menu__option { width: 100%; text-align: start; }
 .ds-menu__action { position: sticky; bottom: 0; display: flex; align-items: center; gap: var(--ds-space-2); width: 100%; padding: var(--ds-space-2-5) var(--ds-space-4);
   border-top: 1px solid var(--ds-color-border-subtle); background: var(--ds-color-surface-raised);
-  font-size: var(--ds-font-size-body); line-height: 20px; font-weight: 500; color: var(--ds-color-brand-text); text-align: start; }
+  font-size: var(--ds-font-size-body); line-height: var(--ds-line-height-body); font-weight: 500; color: var(--ds-color-brand-text); text-align: start; }
 .ds-menu__list > .ds-menu__action:first-child { border-top: 0; }
 .ds-menu__action:hover { color: var(--ds-color-text-primary); }
 .ds-menu__action:focus-visible { outline-offset: var(--ds-focus-offset-inset); }
@@ -1605,12 +1659,34 @@ Chevron 18 px `icon-chevron`, rotates 180° when open. Default filter width `siz
 .ds-menu__option[aria-selected="true"] .ds-check__box { background: var(--ds-color-brand-strong); border-color: var(--ds-color-brand); }
 ```
 
+#### Chips field [EXTENSION]
+
+Free-text values entered one at a time (labels, recipients): a §5.5 field whose content is a wrapping row of removable §5.31 chips followed by a bare input. Enter or comma adds, Backspace on an empty input removes the last chip. The field grows in height as chips wrap; focus shows on the field, not the inner input.
+
+```css
+.ds-chips-field { display: flex; flex-wrap: wrap; align-items: center; gap: var(--ds-space-1-5); height: auto; min-height: var(--ds-size-control); padding-block: var(--ds-space-1-5); cursor: text; }
+.ds-chips-field:focus-within { outline: var(--ds-focus-width-field) solid var(--ds-color-focus-ring); outline-offset: var(--ds-focus-offset-tight); }
+.ds-chips-field__input { flex: 1; min-width: 120px; height: var(--ds-size-control-sm); padding: 0 var(--ds-space-1); border: 0; background: transparent;
+  font-size: var(--ds-font-size-body); line-height: var(--ds-line-height-body); color: var(--ds-color-text-primary); }
+.ds-chips-field__input:focus-visible { outline: none; }
+.ds-chips-field__input::placeholder { color: var(--ds-color-text-placeholder); }
+.ds-chip--removable { display: inline-flex; align-items: center; gap: var(--ds-space-1); }
+.ds-chip--removable button { display: inline-flex; border-radius: var(--ds-radius-xs); color: inherit; }
+.ds-chip--removable button:hover { color: var(--ds-color-text-primary); }
+/* [EXTENSION] toggle chip: a button[aria-pressed] filter or option chip. Off is the neutral control surface; on is the brand chip. */
+.ds-chip--toggle { cursor: pointer; background: var(--ds-color-surface-control); border-color: var(--ds-color-border-subtle); color: var(--ds-color-text-muted);
+  transition: background-color var(--ds-duration-fast), color var(--ds-duration-fast); }
+.ds-chip--toggle:hover, .ds-chip--toggle.is-hover { color: var(--ds-color-text-primary); }
+.ds-chip--toggle[aria-pressed="true"] { background: var(--ds-color-brand-tint-10); border-color: var(--ds-color-brand-tint-20); color: var(--ds-color-brand-text); }
+.ds-chip--toggle:focus-visible, .ds-chip--toggle.is-focus-visible { outline-offset: var(--ds-focus-offset); }
+```
+
 ### 5.12 Checkbox [EXTENSION]
 
 16 px box, radius 4, 1 px `border-control-hover` (white/20 %, as DEOC; boundary mode §9.3 raises it). Checked / indeterminate: `brand-strong` fill, `brand` border, white mark. Label 14/400 `text-secondary`, 12 px gap. The native input sits invisibly over the box.
 
 ```css
-.ds-check { position: relative; display: inline-flex; align-items: center; gap: var(--ds-space-3); font-size: var(--ds-font-size-body); line-height: 20px; color: var(--ds-color-text-secondary); cursor: pointer; }
+.ds-check { position: relative; display: inline-flex; align-items: center; gap: var(--ds-space-3); font-size: var(--ds-font-size-body); line-height: var(--ds-line-height-body); color: var(--ds-color-text-secondary); cursor: pointer; }
 .ds-check input { position: absolute; inset-inline-start: 0; top: 50%; width: var(--ds-size-checkbox); height: var(--ds-size-checkbox); margin: 0; transform: translateY(-50%); opacity: 0; cursor: inherit; }
 .ds-check__box { width: var(--ds-size-checkbox); height: var(--ds-size-checkbox); border-radius: var(--ds-radius-xs); border: 1px solid var(--ds-color-border-control-hover);
   display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; transition: background-color var(--ds-duration-fast), border-color var(--ds-duration-fast); }
@@ -1630,7 +1706,7 @@ Chevron 18 px `icon-chevron`, rotates 180° when open. Default filter width `siz
 .ds-radio-group--vertical { flex-direction: column; }
 .ds-radio-card { flex: 1 1 0; min-width: 0; display: flex; align-items: center; gap: var(--ds-space-2);
   padding: var(--ds-space-2-5) var(--ds-space-4); border-radius: var(--ds-radius-sm); border: 1px solid var(--ds-color-border-control-hover);
-  background: transparent; color: var(--ds-color-text-placeholder); font-size: var(--ds-font-size-body); line-height: 20px; text-align: start;
+  background: transparent; color: var(--ds-color-text-placeholder); font-size: var(--ds-font-size-body); line-height: var(--ds-line-height-body); text-align: start;
   transition: border-color var(--ds-duration-fast), background-color var(--ds-duration-fast), color var(--ds-duration-fast); }
 .ds-radio-card[aria-checked="true"] { background: var(--ds-color-surface-nested); border-color: var(--ds-color-brand-strong); color: var(--ds-color-text-primary); }
 .ds-radio-card:focus-visible { outline-width: var(--ds-focus-width-field); outline-offset: var(--ds-focus-offset-tight); }
@@ -1648,7 +1724,7 @@ Chevron 18 px `icon-chevron`, rotates 180° when open. Default filter width `siz
   background: var(--ds-gradient-toggle); border: 1px solid var(--ds-color-border-subtle); }
 .ds-toggle__opt { flex: 1 1 0; display: flex; align-items: center; justify-content: center; gap: var(--ds-space-1-5); padding: var(--ds-space-2) var(--ds-space-4);
   border-radius: var(--ds-radius-sm); background: transparent;
-  font-size: var(--ds-font-size-body); line-height: 20px; font-weight: 500; color: var(--ds-color-text-muted);
+  font-size: var(--ds-font-size-body); line-height: var(--ds-line-height-body); font-weight: 500; color: var(--ds-color-text-muted);
   transition: background-color var(--ds-duration-fast), color var(--ds-duration-fast); }
 .ds-toggle__opt:hover { background: var(--ds-color-surface-hover-subtle); color: var(--ds-color-text-primary); }
 .ds-toggle__opt[aria-checked="true"] { background: var(--ds-gradient-toggle-active); color: var(--ds-color-text-primary); }
@@ -1690,12 +1766,12 @@ Chevron 18 px `icon-chevron`, rotates 180° when open. Default filter width `siz
 .ds-dropzone:focus-visible { outline: none; border-color: var(--ds-color-brand); }  /* replacement indicator, as DEOC */
 .ds-dropzone[aria-invalid="true"] { border-color: var(--ds-color-error); }
 .ds-dropzone__icon { display: flex; color: var(--ds-color-text-muted); opacity: 0.6; }
-.ds-dropzone__title { font-size: var(--ds-font-size-body); line-height: 20px; font-weight: 500; color: var(--ds-color-text-secondary); }
-.ds-dropzone__hint { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--ds-space-1-5); font-size: var(--ds-font-size-label); line-height: 16px; color: var(--ds-color-text-placeholder); }
+.ds-dropzone__title { font-size: var(--ds-font-size-body); line-height: var(--ds-line-height-body); font-weight: 500; color: var(--ds-color-text-secondary); }
+.ds-dropzone__hint { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--ds-space-1-5); font-size: var(--ds-font-size-label); line-height: var(--ds-line-height-label); color: var(--ds-color-text-placeholder); }
 .ds-dropzone__title + .ds-dropzone__hint { margin-top: calc(var(--ds-space-0-5) - var(--ds-space-2)); }
 .ds-file-list { display: flex; flex-direction: column; gap: var(--ds-space-2); margin-top: var(--ds-space-2); }
 .ds-file-list li { display: flex; align-items: center; justify-content: space-between; gap: var(--ds-space-3); padding: var(--ds-space-2) var(--ds-space-3);
-  border-radius: var(--ds-radius-sm); background: var(--ds-color-surface-nested); font-size: var(--ds-font-size-label); line-height: 16px; color: var(--ds-color-text-secondary); overflow-wrap: anywhere; }
+  border-radius: var(--ds-radius-sm); background: var(--ds-color-surface-nested); font-size: var(--ds-font-size-label); line-height: var(--ds-line-height-label); color: var(--ds-color-text-secondary); overflow-wrap: anywhere; }
 .ds-file-list img { width: 32px; height: 32px; border-radius: var(--ds-radius-xs); object-fit: cover; }
 ```
 
@@ -1709,7 +1785,7 @@ A §5.5 field (radius 8) holding a thumbnail and the value, followed by an "Uplo
   padding: 0 var(--ds-space-4); border: 0; border-radius: var(--ds-radius-sm); background: var(--ds-gradient-glass); box-shadow: var(--ds-shadow-field), var(--ds-shadow-edge); }
 .ds-attach__field:has([aria-invalid="true"]), .ds-attach__field--error { box-shadow: var(--ds-error-ring), var(--ds-shadow-field), var(--ds-shadow-edge); }
 .ds-attach__field:focus-within { outline: var(--ds-focus-width-field) solid var(--ds-color-focus-ring); outline-offset: var(--ds-focus-offset-tight); }
-.ds-attach__input { flex: 1; min-width: 0; background: transparent; border: 0; font-size: var(--ds-font-size-body); line-height: 20px; color: var(--ds-color-text-primary); }
+.ds-attach__input { flex: 1; min-width: 0; background: transparent; border: 0; font-size: var(--ds-font-size-body); line-height: var(--ds-line-height-body); color: var(--ds-color-text-primary); }
 .ds-attach__input:focus-visible { outline: none; }  /* the wrapper draws the ring (replacement, §2.7) */
 .ds-attach__input::placeholder { color: var(--ds-color-text-placeholder); }
 .ds-attach__thumb { position: relative; flex-shrink: 0; width: 20px; height: 20px; padding: 3px; }
@@ -1718,7 +1794,7 @@ A §5.5 field (radius 8) holding a thumbnail and the value, followed by an "Uplo
   display: flex; align-items: center; justify-content: center; background: var(--ds-color-surface-raised); border: 1px solid var(--ds-color-border-subtle); color: var(--ds-color-text-muted); }
 .ds-attach__btn { height: var(--ds-size-control); display: inline-flex; align-items: center; gap: var(--ds-space-1-5); padding: var(--ds-space-2) var(--ds-space-3-5);
   border-radius: var(--ds-radius-sm); border: 1px solid var(--ds-color-border-glass); background: var(--ds-color-surface-control); box-shadow: var(--ds-shadow-field);
-  font-size: var(--ds-font-size-body); line-height: 20px; font-weight: 500; color: var(--ds-color-text-secondary); white-space: nowrap; transition: opacity var(--ds-duration-fast); }
+  font-size: var(--ds-font-size-body); line-height: var(--ds-line-height-body); font-weight: 500; color: var(--ds-color-text-secondary); white-space: nowrap; transition: opacity var(--ds-duration-fast); }
 .ds-attach__btn:hover { opacity: 0.8; }
 ```
 
@@ -1738,12 +1814,12 @@ A §5.5 field (radius 8) holding a thumbnail and the value, followed by an "Uplo
 .ds-picker-row[aria-selected="true"] { background: var(--ds-color-surface-selected); }
 .ds-picker__list:focus-within .ds-picker-row.is-active { outline: var(--ds-focus-width) solid var(--ds-color-focus-ring); outline-offset: var(--ds-focus-offset-inset); }
 .ds-picker-row__text { display: flex; flex-direction: column; gap: 1.5px; min-width: 0; }
-.ds-picker-row__line1 { display: flex; align-items: center; gap: var(--ds-space-2); flex-wrap: wrap; font-size: var(--ds-font-size-label); line-height: 16px; font-weight: 600; color: var(--ds-color-text-primary); }
-.ds-picker-row__line2 { display: flex; align-items: center; gap: var(--ds-space-1); font-size: var(--ds-font-size-label); line-height: 16px; color: var(--ds-color-text-muted); min-width: 0; }
+.ds-picker-row__line1 { display: flex; align-items: center; gap: var(--ds-space-2); flex-wrap: wrap; font-size: var(--ds-font-size-label); line-height: var(--ds-line-height-label); font-weight: 600; color: var(--ds-color-text-primary); }
+.ds-picker-row__line2 { display: flex; align-items: center; gap: var(--ds-space-1); font-size: var(--ds-font-size-label); line-height: var(--ds-line-height-label); color: var(--ds-color-text-muted); min-width: 0; }
 .ds-picker-footer { display: flex; align-items: center; justify-content: center; gap: var(--ds-space-2); width: 100%; padding: var(--ds-space-2-5) 0;
   background: var(--ds-color-surface-nested); border: 0;
   border-end-start-radius: var(--ds-radius-sm); border-end-end-radius: var(--ds-radius-sm);
-  font-size: var(--ds-font-size-body); line-height: 20px; color: var(--ds-color-brand); transition: background-color var(--ds-duration-fast); }
+  font-size: var(--ds-font-size-body); line-height: var(--ds-line-height-body); color: var(--ds-color-brand); transition: background-color var(--ds-duration-fast); }
 .ds-picker-footer:hover { background: var(--ds-color-surface-nested-hover); }
 .ds-rich-row { display: flex; align-items: center; gap: var(--ds-space-3-5); min-width: 0; text-align: start; }
 .ds-select--rich .ds-select__trigger { gap: var(--ds-space-3); }
@@ -1757,7 +1833,7 @@ A neutral note inside forms: `surface-nested` fill, 1 px `border-glass`, radius 
 ```css
 .ds-callout { display: flex; flex-direction: column; gap: var(--ds-space-1); padding: var(--ds-space-3-5); border-radius: var(--ds-radius-sm);
   background: var(--ds-color-surface-nested); border: 1px solid var(--ds-color-border-glass); }
-.ds-callout__title { font-size: var(--ds-font-size-label); line-height: 16px; font-weight: 600; color: inherit; }
+.ds-callout__title { font-size: var(--ds-font-size-label); line-height: var(--ds-line-height-label); font-weight: 600; color: inherit; }
 .ds-callout:not([class*="--"]) .ds-callout__title { color: var(--ds-color-text-secondary); }
 .ds-callout__body { font-size: var(--ds-font-size-label); line-height: 1.45; color: var(--ds-color-text-secondary); }
 .ds-callout:not([class*="--"]) .ds-callout__body { color: var(--ds-color-text-muted); }
@@ -1797,15 +1873,15 @@ As in DEOC, the whole upcoming step (index and text, not the connector) is dimme
 .ds-step[aria-current="step"]:not(:last-child)::after, .ds-step--done:not(:last-child)::after { background: var(--ds-gradient-stepper-active); }
 .ds-step__index { flex-shrink: 0; width: var(--ds-size-pagination-button); height: var(--ds-size-pagination-button); display: flex; align-items: center; justify-content: center; border-radius: var(--ds-radius-sm);
   background: var(--ds-color-surface-sunken-button); border: 1px solid var(--ds-color-border-strong); box-shadow: var(--ds-shadow-stepper-idle);
-  font-size: var(--ds-font-size-label); line-height: 16px; font-weight: 500; color: var(--ds-color-text-muted); }
+  font-size: var(--ds-font-size-label); line-height: var(--ds-line-height-label); font-weight: 500; color: var(--ds-color-text-muted); }
 .ds-step[aria-current] ~ .ds-step :is(.ds-step__index, .ds-step__text) { opacity: 0.5; }
 .ds-step[aria-current] ~ .ds-step ~ .ds-step :is(.ds-step__index, .ds-step__text) { opacity: 0.4; }
 .ds-step[aria-current="step"] .ds-step__index { background: var(--ds-color-brand-strong); border-color: var(--ds-color-stepper-active-border); color: var(--ds-color-text-on-brand); font-weight: 600; box-shadow: var(--ds-shadow-stepper-active); }
 .ds-step--done .ds-step__index { background: var(--ds-color-success-glow); border-color: var(--ds-color-stepper-active-border); color: var(--ds-color-text-on-brand); box-shadow: var(--ds-shadow-stepper-active); }
-.ds-step__text { display: flex; flex-direction: column; min-width: 0; padding-inline-start: var(--ds-space-3); font-size: var(--ds-font-size-label); line-height: 16px; }
+.ds-step__text { display: flex; flex-direction: column; min-width: 0; padding-inline-start: var(--ds-space-3); font-size: var(--ds-font-size-label); line-height: var(--ds-line-height-label); }
 .ds-step__title { font-weight: 500; color: var(--ds-color-text-secondary); white-space: nowrap; }
 .ds-step__sub { color: var(--ds-color-text-tertiary); white-space: nowrap; }
-.ds-step[aria-current="step"] .ds-step__title, .ds-step--done .ds-step__title { font-weight: 700; letter-spacing: 0.3px; color: var(--ds-color-text-primary); }
+.ds-step[aria-current="step"] .ds-step__title, .ds-step--done .ds-step__title { font-weight: 700; letter-spacing: var(--ds-tracking-step); color: var(--ds-color-text-primary); }
 .ds-step[aria-current="step"] .ds-step__sub { font-weight: 500; color: var(--ds-color-link); }
 .ds-step--done .ds-step__sub { font-weight: 500; color: var(--ds-color-success-text); }
 @media (max-width: 639px) {
@@ -1815,13 +1891,13 @@ As in DEOC, the whole upcoming step (index and text, not the connector) is dimme
 
 ### 5.23 KPI card
 
-**Purpose** One headline metric. **DEOC** `KPICard`: glass KPI gradient, radius 24, 16 px padding, 40 px 3D illustration, 12 px gap, label `kpi-label` (12/700 uppercase) directly above the value `kpi-value` (20/700); both truncate on one line. Rows of 3–6 cards, 16 px apart.
+**Purpose** One headline metric. **DEOC** `KPICard`: glass KPI gradient, radius 24, 16 px padding, 40 px 3D illustration, 12 px gap, label `kpi-label` (12/700 uppercase) 8 px (`space-2`) above the value `kpi-value` (20/700); both truncate on one line. Rows of 3–6 cards, 16 px apart.
 
 | Part | Spec |
 |---|---|
 | Container | min-height `size-kpi-card` (76), padding `space-card` (16), radius `radius-panel`, `gradient-glass-kpi`, `shadow-glass` + `shadow-kpi-lift` + `shadow-edge` |
 | Icon | 40 × 40 illustration (crop per §2.11-B), decorative |
-| Label | `kpi-label`, one line with ellipsis (full text in the accessible name) |
+| Label | `kpi-label`, one line with ellipsis (full text in the accessible name); `space-2` (8 px) below it, before the value |
 | Value | `kpi-value`, tabular numbers; "a / b" ratios keep spaces as written |
 
 **Variants** static (default); **clickable** (a `<button>` that sets a page filter, as the Cameras KPIs; pressed state with an inset 1 px `brand` ring is an [EXTENSION]); optional status ball (14 px, status fill and glow) and delta line [EXTENSION]. **States** clickable hover `brightness(1.1)`.
@@ -1837,14 +1913,14 @@ button.ds-kpi:hover { filter: brightness(1.1); }
 button.ds-kpi[aria-pressed="true"] { box-shadow: var(--ds-shadow-glass), var(--ds-shadow-kpi-lift), inset 0 0 0 1px var(--ds-color-brand); }
 .ds-kpi__icon { position: relative; width: var(--ds-size-kpi-icon); height: var(--ds-size-kpi-icon); flex-shrink: 0; }
 .ds-kpi__text { display: flex; flex-direction: column; min-width: 0; }
-.ds-kpi__label { font-size: var(--ds-font-size-label); line-height: 16px; font-weight: 700; letter-spacing: var(--ds-tracking-upper); text-transform: uppercase;
+.ds-kpi__label { margin-block-end: var(--ds-space-2); font-size: var(--ds-font-size-label); line-height: var(--ds-line-height-label); font-weight: 700; letter-spacing: var(--ds-tracking-upper); text-transform: uppercase;
   color: var(--ds-color-text-muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.ds-kpi__value { font-size: var(--ds-font-size-heading); line-height: 28px; font-weight: 700; letter-spacing: var(--ds-tracking-number);
+.ds-kpi__value { font-size: var(--ds-font-size-heading); line-height: var(--ds-line-height-heading); font-weight: 700; letter-spacing: var(--ds-tracking-number);
   color: var(--ds-color-text-primary); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-variant-numeric: tabular-nums; }
 .ds-kpi__ball { position: absolute; inset-inline-end: 0; bottom: 0; width: 14px; height: 14px; border-radius: var(--ds-radius-full);
   background: var(--ds-color-success-glow); box-shadow: var(--ds-shadow-status-success); }
 .ds-kpi__ball--error { background: var(--ds-color-danger); box-shadow: var(--ds-shadow-status-error); }
-.ds-kpi__delta { font-size: var(--ds-font-size-label); line-height: 16px; }
+.ds-kpi__delta { font-size: var(--ds-font-size-label); line-height: var(--ds-line-height-label); }
 .ds-kpi__delta--up { color: var(--ds-color-success-text); } .ds-kpi__delta--down { color: var(--ds-color-danger-text); }
 @media (max-width: 1279px) { .ds-kpi-row { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(260px, 100%), 1fr)); } }
 ```
@@ -1867,24 +1943,33 @@ In DEOC the whole card opens the record on click (`brightness(1.1)` on hover); t
 .ds-entity--link { cursor: pointer; }
 .ds-entity--link:hover { filter: brightness(1.1); }
 .ds-entity__header { display: flex; justify-content: space-between; align-items: center; gap: var(--ds-space-3); }
-.ds-entity__header .ds-text-card-title { line-height: 28px; }
+.ds-entity__header .ds-text-card-title { line-height: var(--ds-leading-28); }
 .ds-entity__lead { display: flex; align-items: center; gap: var(--ds-space-3); min-width: 0; }
 .ds-entity__icon { position: relative; width: var(--ds-size-entity-icon); height: var(--ds-size-entity-icon); flex-shrink: 0; overflow: hidden; }
 .ds-entity__titles { display: flex; flex-direction: column; gap: var(--ds-space-1); min-width: 0; }
-.ds-entity__place { display: flex; align-items: center; gap: var(--ds-space-1); font-size: var(--ds-font-size-body); line-height: 16px; color: var(--ds-color-text-muted); }
+.ds-entity__place { display: flex; align-items: center; gap: var(--ds-space-1); font-size: var(--ds-font-size-body); line-height: var(--ds-leading-16); color: var(--ds-color-text-muted); }
 .ds-entity__place svg { color: var(--ds-color-icon); flex-shrink: 0; }
 .ds-entity__well { display: flex; flex-direction: column; gap: var(--ds-space-2); padding: var(--ds-space-4); border-radius: var(--ds-radius-track); background: var(--ds-color-surface-nested); }
 .ds-entity__wellrow { display: flex; align-items: center; justify-content: space-between; gap: var(--ds-space-3); flex-wrap: wrap; }
 .ds-entity__value { display: flex; align-items: baseline; gap: var(--ds-space-1-5); }
-.ds-entity__meta { display: flex; align-items: center; gap: var(--ds-space-1-5); font-size: var(--ds-font-size-body); line-height: 20px; color: var(--ds-color-text-muted); }
+.ds-entity__meta { display: flex; align-items: center; gap: var(--ds-space-1-5); font-size: var(--ds-font-size-body); line-height: var(--ds-line-height-body); color: var(--ds-color-text-muted); }
 .ds-entity__meta svg { color: var(--ds-color-icon); }
 .ds-entity__footer { display: flex; justify-content: space-between; align-items: center; gap: var(--ds-space-3); flex-wrap: wrap; }
 .ds-entity__who { display: flex; align-items: center; gap: var(--ds-space-2-5); min-width: 0; }
-.ds-entity__who b { display: block; font-size: var(--ds-font-size-value); line-height: 22px; font-weight: 500; color: var(--ds-color-text-secondary); }
-.ds-entity__role { display: block; font-size: var(--ds-font-size-label); line-height: 16px; color: var(--ds-color-brand); margin-top: var(--ds-space-0-5); }
+.ds-entity__who b { display: block; font-size: var(--ds-font-size-value); line-height: var(--ds-line-height-value); font-weight: 500; color: var(--ds-color-text-secondary); }
+.ds-entity__role { display: block; font-size: var(--ds-font-size-label); line-height: var(--ds-line-height-label); color: var(--ds-color-brand); margin-top: var(--ds-space-0-5); }
 .ds-entity__footer .ds-btn { padding: 9px var(--ds-space-4) 9px var(--ds-space-3); }   /* 40 px with its border (DEOC) */
 .ds-entity-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(400px, 100%), 1fr)); gap: var(--ds-space-grid-lg); }
+.ds-entity__stats { display: grid; gap: var(--ds-space-3); margin-top: auto; }
+.ds-entity__stat, .ds-stat-tile { display: flex; flex-direction: column; justify-content: space-between; gap: var(--ds-space-1); min-width: 0; padding: var(--ds-space-4);
+  border-radius: var(--ds-radius-track); background: var(--ds-color-surface-nested); }
+@media (max-width: 639px) { .ds-entity__stat, .ds-stat-tile { padding: var(--ds-space-3); } }
+.ds-entity-grid--4 { grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 768px) { .ds-entity-grid--4 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1536px) { .ds-entity-grid--4 { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
 ```
+
+**Counts variant [EXTENSION]** (a record summarised by several counts, e.g. areas / lines / assets): in place of the well, a `<dl class="ds-entity__stats">` of separate KPI boxes (`ds-entity__stat`, each on `surface-nested`, radius `radius-track`, padding 16) in equal columns, 12 px apart. Each box is the `kpi-label` above the `kpi-value` (padding 12 below 640 px). Labels wrap at spaces, never mid-word, and are never truncated, and the value sits at the box's bottom so values stay level across a row. Up to four counts sit on one line; five or more split into two even rows. Below 640 px, one to three counts stay on one line and four or more go two per row. The same box is available outside entity cards as `.ds-stat-tile` (e.g. the headline numbers above a chart in a dashboard card). **Four-card grid** (`ds-entity-grid--4`): a fixed set of four cards is never split 3 + 1: one column, two from 768 px (2 × 2), all four on one line from 1536 px.
 
 ### 5.25 Dashboard card (chart / data container)
 
@@ -1904,9 +1989,10 @@ In DEOC the whole card opens the record on click (`brightness(1.1)` on hover); t
 .ds-dash-card--flush > .ds-dash-card__header { padding: 0 var(--ds-space-card-xl); }
 .ds-dash-card--flush > .ds-dash-card__body { border-top: 1px solid var(--ds-color-border-subtle); }
 .ds-dash-card__header { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: var(--ds-space-4); min-height: var(--ds-size-control); }
-.ds-dash-card__title { font-size: var(--ds-font-size-heading); line-height: 24px; font-weight: 600; letter-spacing: var(--ds-tracking-card-title); color: var(--ds-color-text-primary); overflow-wrap: anywhere; }
-.ds-dash-card__subtitle { font-size: var(--ds-font-size-body); line-height: 20px; color: var(--ds-color-text-chart-subtle); margin-top: 5px; }
+.ds-dash-card__title { font-size: var(--ds-font-size-heading); line-height: var(--ds-leading-24); font-weight: 600; letter-spacing: var(--ds-tracking-card-title); color: var(--ds-color-text-primary); overflow-wrap: anywhere; }
+.ds-dash-card__subtitle { font-size: var(--ds-font-size-body); line-height: var(--ds-line-height-body); color: var(--ds-color-text-chart-subtle); margin-top: 5px; }
 .ds-dash-card__right { display: flex; align-items: center; justify-content: flex-end; flex-wrap: wrap; gap: var(--ds-space-5); }
+.ds-dash-card__right > .ds-link-action { align-self: center; }   /* a header link sits on the same centre line as the controls beside it */
 .ds-dash-row { display: flex; gap: var(--ds-space-grid-lg); align-items: stretch; }
 .ds-dash-row > * { min-width: 0; }
 ```
@@ -1919,14 +2005,14 @@ In DEOC the whole card opens the record on click (`brightness(1.1)` on hover); t
 .ds-status-card { gap: var(--ds-space-card-gap); padding: var(--ds-space-card-entity); overflow: hidden; }
 .ds-status-card__well { flex: 1; min-height: 0; margin: 0 calc(-1 * var(--ds-space-card-entity)) calc(-1 * var(--ds-space-card-entity)); border-top: 1px solid var(--ds-color-border-subtle); }
 .ds-legend-counts { display: flex; flex-wrap: wrap; align-items: center; gap: var(--ds-space-4); }
-.ds-legend-counts span { display: inline-flex; align-items: center; gap: var(--ds-space-2); font-size: var(--ds-font-size-body); line-height: 22px; font-weight: 500; color: var(--ds-color-text-secondary); }
+.ds-legend-counts span { display: inline-flex; align-items: center; gap: var(--ds-space-2); font-size: var(--ds-font-size-body); line-height: var(--ds-leading-22); font-weight: 500; color: var(--ds-color-text-secondary); }
 .ds-legend-counts i { width: 24px; height: 16px; border-radius: var(--ds-radius-xs); }
 .ds-legend-counts b { font-weight: 500; color: var(--ds-color-text-muted); font-variant-numeric: tabular-nums; }
 ```
 
 ### 5.27 Badge (status pill)
 
-**Purpose** Show the state of a record. **DEOC** `Badge` with Active / Inactive / Stopped / Matched / Not Matched / Running labels. Pill radius, 4 px 12 px padding inside a 1 px border (30 px tall), 6 px dot, 6 px gap, `badge` 14/600/20. Badge dots do not glow, except the error dot of a glass badge (the bare status dot, §5.28, always glows).
+**Purpose** Show the state of a record. **DEOC** `Badge` with Active / Inactive / Stopped / Matched / Not Matched / Running labels. Pill radius, 4 px 12 px padding inside a 1 px transparent border (30 px tall). **[PRODUCT DECISION] Polaris Factory (2026-11-03):** badges and icon tiles draw no visible border; the fill alone carries the tone (departs from DEOC), 6 px dot, 6 px gap, `badge` 12/600/20. Badge dots do not glow, except the error dot of a glass badge (the bare status dot, §5.28, always glows).
 
 | Tone | Text | Dot / halo | Tinted fill / border | Labels in the screens |
 |---|---|---|---|---|
@@ -1936,26 +2022,26 @@ In DEOC the whole card opens the record on click (`brightness(1.1)` on hover); t
 | info [EXT] | `info-text` | `brand` | `info-bg` / `info-border` | — |
 | neutral [EXT] | `text-secondary` | `text-muted` | `surface-control` / `border-subtle` | — |
 
-**Appearances.** **tinted** (default; camera tiles, health rows, chart controls) and **glass** (`gradient-glass` fill, `border-glass`, `shadow-control`; inside entity cards and table cells, where a tint would compete with the row) — both OBSERVED; the tone and label never change between them. **Sizes** md (default), sm (12/600, 2 × 8 padding, dot without halo). **Live indicator**: a glass pill (padding 5 11, `border-track`) with a 10 px `live-halo` dot around a 4 px `live` core and a white 14/600/18 label; it does not pulse.
+**Appearances.** **tinted** (default; camera tiles, health rows, chart controls) and **glass** (`gradient-glass` fill, `shadow-control`; inside entity cards and table cells, where a tint would compete with the row) — both OBSERVED; the tone and label never change between them. **Sizes** md (default), sm (10/600, 2 × 8 padding, dot without halo). **Live indicator**: a glass pill (padding 5 11, `border-track`) with a 10 px `live-halo` dot around a 4 px `live` core and a white 12/600/18 label; it does not pulse.
 
 ```css
-.ds-badge { display: inline-flex; align-items: center; gap: var(--ds-space-1-5); padding: var(--ds-space-1) var(--ds-space-3); border: 1px solid; border-radius: var(--ds-radius-full);
-  font-size: var(--ds-font-size-body); line-height: 20px; font-weight: 600; white-space: nowrap; }
-.ds-badge--sm { padding: var(--ds-space-0-5) var(--ds-space-2); font-size: var(--ds-font-size-label); line-height: 16px; }
+.ds-badge { display: inline-flex; align-items: center; gap: var(--ds-space-1-5); padding: var(--ds-space-1) var(--ds-space-3); border: 1px solid transparent; border-radius: var(--ds-radius-full);
+  font-size: var(--ds-font-size-body); line-height: var(--ds-line-height-body); font-weight: 600; white-space: nowrap; }
+.ds-badge--sm { padding: var(--ds-space-0-5) var(--ds-space-2); font-size: var(--ds-font-size-label); line-height: var(--ds-line-height-label); }
 .ds-badge__dot { width: var(--ds-size-badge-dot); height: var(--ds-size-badge-dot); border-radius: var(--ds-radius-full); flex-shrink: 0; background: currentColor; }
-.ds-badge--success { background: var(--ds-color-success-bg); border-color: var(--ds-color-success-border); color: var(--ds-color-success-text); }
-.ds-badge--warning { background: var(--ds-color-warning-bg); border-color: var(--ds-color-warning-border); color: var(--ds-color-warning-text); }
-.ds-badge--error { background: var(--ds-color-danger-bg); border-color: var(--ds-color-danger-border); color: var(--ds-color-danger-text); }
+.ds-badge--success { background: var(--ds-color-success-bg); color: var(--ds-color-success-text); }
+.ds-badge--warning { background: var(--ds-color-warning-bg); color: var(--ds-color-warning-text); }
+.ds-badge--error { background: var(--ds-color-danger-bg); color: var(--ds-color-danger-text); }
 .ds-badge--glass.ds-badge--error .ds-badge__dot { background: var(--ds-color-danger); box-shadow: var(--ds-shadow-status-error); }
-.ds-badge--info { background: var(--ds-color-info-bg); border-color: var(--ds-color-info-border); color: var(--ds-color-info-text); }
+.ds-badge--info { background: var(--ds-color-info-bg); color: var(--ds-color-info-text); }
 .ds-badge--info .ds-badge__dot { background: var(--ds-color-brand); }
-.ds-badge--neutral { background: var(--ds-color-surface-control); border-color: var(--ds-color-border-subtle); color: var(--ds-color-text-secondary); }
+.ds-badge--neutral { background: var(--ds-color-surface-control); color: var(--ds-color-text-secondary); }
 .ds-badge--neutral .ds-badge__dot { background: var(--ds-color-text-muted); }
-.ds-badge--glass { background: var(--ds-gradient-glass); border-color: var(--ds-color-border-glass); box-shadow: var(--ds-shadow-control); }
+.ds-badge--glass { background: var(--ds-gradient-glass); box-shadow: var(--ds-shadow-control); }
 .ds-badge--sm .ds-badge__dot { box-shadow: none; }
 
 .ds-live { display: inline-flex; align-items: center; gap: var(--ds-space-1-5); padding: 5px 11px; border-radius: var(--ds-radius-full);
-  background: var(--ds-gradient-glass); border: 1px solid var(--ds-color-border-track); font-size: var(--ds-font-size-body); line-height: 18px; font-weight: 600; color: var(--ds-color-text-primary); }
+  background: var(--ds-gradient-glass); border: 1px solid var(--ds-color-border-track); font-size: var(--ds-font-size-body); line-height: var(--ds-leading-18); font-weight: 600; color: var(--ds-color-text-primary); }
 .ds-live__dot { position: relative; width: var(--ds-size-status-dot); height: var(--ds-size-status-dot); border-radius: var(--ds-radius-full); background: var(--ds-color-live-halo); flex-shrink: 0; }
 .ds-live__dot::after { content: ""; position: absolute; inset: 3px; border-radius: inherit; background: var(--ds-color-live); }
 ```
@@ -1971,7 +2057,8 @@ A bare glowing dot for dense contexts (10 / 8 px), always next to a text label (
 .ds-dot--warning { background: var(--ds-color-warning-text); box-shadow: var(--ds-shadow-status-warning); }
 .ds-dot--error   { background: var(--ds-color-danger); box-shadow: var(--ds-shadow-status-error); }
 .ds-dot--brand   { background: var(--ds-color-brand); }
-.ds-status { display: inline-flex; align-items: center; gap: var(--ds-space-2); font-size: var(--ds-font-size-body); line-height: 20px; color: var(--ds-color-text-secondary); }
+.ds-dot--neutral { background: var(--ds-color-text-muted); }   /* offline / stopped: no glow */
+.ds-status { display: inline-flex; align-items: center; gap: var(--ds-space-2); font-size: var(--ds-font-size-body); line-height: var(--ds-line-height-body); color: var(--ds-color-text-secondary); }
 ```
 
 ### 5.29 Tag (solid category)
@@ -1979,7 +2066,7 @@ A bare glowing dot for dense contexts (10 / 8 px), always next to a text label (
 **Purpose** A category with a fixed color (user roles). **Figma** "Overlay" in the Role column (frame 6): radius 4, padding 6 12, `tag` 14/500 white on a solid fill. Map categories to colors once per product, in a stable order (purple, blue, green, amber, rose).
 
 ```css
-.ds-tag { display: inline-block; padding: var(--ds-space-1-5) var(--ds-space-3); border-radius: var(--ds-radius-xs); font-size: var(--ds-font-size-body); line-height: 20px; font-weight: 500;
+.ds-tag { display: inline-block; padding: var(--ds-space-1-5) var(--ds-space-3); border-radius: var(--ds-radius-xs); font-size: var(--ds-font-size-body); line-height: var(--ds-line-height-body); font-weight: 500;
   color: var(--ds-color-text-primary); white-space: nowrap; }
 .ds-tag--purple { background: var(--ds-tag-purple); } .ds-tag--blue { background: var(--ds-tag-blue); }
 .ds-tag--green  { background: var(--ds-tag-green); }  .ds-tag--amber { background: var(--ds-tag-amber); }
@@ -1993,7 +2080,7 @@ A bare glowing dot for dense contexts (10 / 8 px), always next to a text label (
 
 ```css
 .ds-count { display: inline-block; padding: 3px 13px; border-radius: var(--ds-radius-full); background: var(--ds-color-surface-control);
-  border: 1px solid var(--ds-color-border-subtle); font-size: var(--ds-font-size-body); line-height: 18px; font-weight: 700; color: var(--ds-color-text-secondary); font-variant-numeric: tabular-nums; }
+  border: 1px solid var(--ds-color-border-subtle); font-size: var(--ds-font-size-body); line-height: var(--ds-leading-18); font-weight: 700; color: var(--ds-color-text-secondary); font-variant-numeric: tabular-nums; }
 .ds-count--sm { padding: var(--ds-space-0-5) var(--ds-space-3); font-size: var(--ds-font-size-label); }
 ```
 
@@ -2002,8 +2089,8 @@ A bare glowing dot for dense contexts (10 / 8 px), always next to a text label (
 **DEOC** employee ID in the user picker ("EMP-8841"): `brand-tint-10` fill, 1 px `brand-tint-20`, radius 4, padding 3 9, 10/15 `brand-text`.
 
 ```css
-.ds-chip { display: inline-block; padding: 3px 9px; border-radius: var(--ds-radius-xs); background: var(--ds-color-brand-tint-10); border: 1px solid var(--ds-color-brand-tint-20);
-  font-size: var(--ds-font-size-caption); line-height: 15px; color: var(--ds-color-brand-text); white-space: nowrap; }
+.ds-chip { display: inline-block; padding: 3px 9px; border-radius: var(--ds-radius-xs); background: var(--ds-color-brand-tint-10); border: 1px solid transparent;
+  font-size: var(--ds-font-size-caption); line-height: var(--ds-leading-15); color: var(--ds-color-brand-text); white-space: nowrap; }
 ```
 
 ### 5.32 Avatar
@@ -2019,12 +2106,12 @@ Decorative (`aria-hidden`) when the name is adjacent.
 
 ```css
 .ds-avatar { position: relative; width: var(--ds-size-avatar-lg); height: var(--ds-size-avatar-lg); flex-shrink: 0; display: inline-flex; align-items: center; justify-content: center; border-radius: var(--ds-radius-full);
-  background: var(--ds-gradient-brand-avatar); border: 1px solid var(--ds-color-brand-avatar-border); box-shadow: var(--ds-shadow-avatar); font-size: var(--ds-font-size-label); line-height: 16px; font-weight: 700; color: var(--ds-color-text-primary); }
+  background: var(--ds-gradient-brand-avatar); border: 1px solid var(--ds-color-brand-avatar-border); box-shadow: var(--ds-shadow-avatar); font-size: var(--ds-font-size-label); line-height: var(--ds-line-height-label); font-weight: 700; color: var(--ds-color-text-primary); }
 .ds-avatar--neutral { width: var(--ds-size-avatar-md); height: var(--ds-size-avatar-md); box-shadow: none; background: var(--ds-color-surface-avatar); border-color: var(--ds-color-border-avatar);
   font-size: var(--ds-font-size-body); font-weight: 500; color: var(--ds-color-text-secondary); }
 .ds-avatar--photo { width: var(--ds-size-avatar-sm); height: var(--ds-size-avatar-sm); padding: 1px; background: var(--ds-gradient-brand-ring); border: 0; box-shadow: none; }
 .ds-avatar--photo > span { width: 100%; height: 100%; border-radius: var(--ds-radius-full); background: var(--ds-color-avatar-inner);
-  display: flex; align-items: center; justify-content: center; overflow: hidden; font-size: var(--ds-font-size-label); line-height: 16px; }
+  display: flex; align-items: center; justify-content: center; overflow: hidden; font-size: var(--ds-font-size-label); line-height: var(--ds-line-height-label); }
 .ds-avatar--photo img { width: 100%; height: 100%; object-fit: cover; }
 .ds-avatar__presence { position: absolute; inset-inline-end: -1px; bottom: -1px; width: 12px; height: 12px; border-radius: var(--ds-radius-full);
   background: var(--ds-color-success-glow); border: var(--ds-border-width-emphasis) solid var(--ds-color-surface-sunken-button); }
@@ -2038,8 +2125,8 @@ A value with an optional denominator and label. **Figma** factory well: "6" (`me
 .ds-metric { display: flex; flex-direction: column; align-items: center; gap: var(--ds-space-1); text-align: center; }
 .ds-metric--inline { flex-direction: row; align-items: baseline; gap: var(--ds-space-1-5); text-align: start; }
 .ds-metric__value { display: flex; align-items: baseline; gap: var(--ds-space-1-5); }
-.ds-metric__value b { font-size: var(--ds-font-size-heading); line-height: 28px; font-weight: 700; letter-spacing: var(--ds-tracking-number); color: var(--ds-color-text-primary); font-variant-numeric: tabular-nums; }
-.ds-metric__value span { font-size: var(--ds-font-size-body); line-height: 20px; font-weight: 400; color: var(--ds-color-text-muted); }
+.ds-metric__value b { font-size: var(--ds-font-size-heading); line-height: var(--ds-line-height-heading); font-weight: 700; letter-spacing: var(--ds-tracking-number); color: var(--ds-color-text-primary); font-variant-numeric: tabular-nums; }
+.ds-metric__value span { font-size: var(--ds-font-size-body); line-height: var(--ds-line-height-body); font-weight: 400; color: var(--ds-color-text-muted); }
 ```
 
 ### 5.34 Progress & segmented status bar
@@ -2060,7 +2147,7 @@ A value with an optional denominator and label. **Figma** factory well: "6" (`me
 .ds-progress--error > span { background: var(--ds-color-danger); }
 .ds-progress-row { display: flex; align-items: center; gap: var(--ds-space-2); }
 .ds-progress-row .ds-progress { flex: 1; }
-.ds-progress-row b { font-size: var(--ds-font-size-label); line-height: 16px; font-weight: 600; color: var(--ds-color-text-secondary); font-variant-numeric: tabular-nums; }
+.ds-progress-row b { font-size: var(--ds-font-size-label); line-height: var(--ds-line-height-label); font-weight: 600; color: var(--ds-color-text-secondary); font-variant-numeric: tabular-nums; }
 .ds-segbar { display: flex; height: 20px; border-radius: var(--ds-radius-chip); overflow: hidden; }
 .ds-segbar__seg { flex-basis: 0; min-width: 28px; display: flex; align-items: center; justify-content: center; overflow: hidden;
   font-size: var(--ds-font-size-label); line-height: 1; font-weight: 600; color: var(--ds-color-text-on-bright); transition: flex-grow var(--ds-duration-chart); }
@@ -2078,22 +2165,22 @@ A value with an optional denominator and label. **Figma** factory well: "6" (`me
 .ds-strip--stacked { flex-direction: column; align-items: stretch; gap: var(--ds-space-3); }
 .ds-strip--stacked .ds-strip__lead { flex: none; min-width: 0; }
 .ds-strip__lead { display: flex; flex-direction: column; gap: var(--ds-space-3); flex: 1 1 180px; min-width: 180px; }
-.ds-strip__eyebrow { display: flex; align-items: center; gap: var(--ds-space-2); font-size: var(--ds-font-size-label); line-height: 18px; letter-spacing: var(--ds-tracking-identifier); color: var(--ds-color-link); }
-.ds-strip__title { font-size: var(--ds-font-size-heading); line-height: 28px; font-weight: 700; letter-spacing: var(--ds-tracking-heading); color: var(--ds-color-text-primary); }
+.ds-strip__eyebrow { display: flex; align-items: center; gap: var(--ds-space-2); font-size: var(--ds-font-size-label); line-height: var(--ds-leading-18); letter-spacing: var(--ds-tracking-identifier); color: var(--ds-color-link); }
+.ds-strip__title { font-size: var(--ds-font-size-heading); line-height: var(--ds-line-height-heading); font-weight: 700; letter-spacing: var(--ds-tracking-heading); color: var(--ds-color-text-primary); }
 .ds-strip__divider { align-self: stretch; width: 1px; background: var(--ds-color-border-faint); }
 .ds-strip__fields { display: flex; flex-wrap: wrap; gap: var(--ds-space-5); justify-content: space-between; flex: 999 1 480px; }
-.ds-strip__fields dt { font-size: var(--ds-font-size-label); line-height: 16px; font-weight: 500; color: var(--ds-color-text-tertiary); }
-.ds-strip__fields dd { margin-top: var(--ds-space-1); font-size: var(--ds-font-size-value); line-height: 22px; letter-spacing: var(--ds-tracking-field); color: var(--ds-color-text-primary); overflow-wrap: anywhere; }
+.ds-strip__fields dt { font-size: var(--ds-font-size-label); line-height: var(--ds-line-height-label); font-weight: 500; color: var(--ds-color-text-tertiary); }
+.ds-strip__fields dd { margin-top: var(--ds-space-1); font-size: var(--ds-font-size-value); line-height: var(--ds-line-height-value); letter-spacing: var(--ds-tracking-field); color: var(--ds-color-text-primary); overflow-wrap: anywhere; }
 .ds-panel-card { display: flex; flex-direction: column; gap: var(--ds-space-4); padding: var(--ds-space-card-lg); border-radius: var(--ds-radius-card);
   background: var(--ds-gradient-glass); box-shadow: var(--ds-shadow-surface); }
-.ds-panel-card__label { font-size: var(--ds-font-size-label); line-height: 16px; font-weight: 700; letter-spacing: var(--ds-tracking-upper); text-transform: uppercase; color: var(--ds-color-text-tertiary); }
+.ds-panel-card__label { font-size: var(--ds-font-size-label); line-height: var(--ds-line-height-label); font-weight: 700; letter-spacing: var(--ds-tracking-upper); text-transform: uppercase; color: var(--ds-color-text-tertiary); }
 .ds-fieldlist { display: flex; flex-direction: column; }
 .ds-fieldlist > div { display: flex; flex-direction: column; gap: var(--ds-space-1); padding: var(--ds-space-3) 0; border-bottom: 1px solid var(--ds-color-border-faint); }
 .ds-fieldlist > div:last-child { border-bottom: 0; padding-bottom: 0; }
-.ds-fieldlist dt { font-size: var(--ds-font-size-label); line-height: 16px; font-weight: 500; color: var(--ds-color-text-tertiary); }
-.ds-fieldlist dd { font-size: var(--ds-font-size-value); line-height: 22px; letter-spacing: var(--ds-tracking-field); color: var(--ds-color-text-primary); overflow-wrap: anywhere; }
+.ds-fieldlist dt { font-size: var(--ds-font-size-label); line-height: var(--ds-line-height-label); font-weight: 500; color: var(--ds-color-text-tertiary); }
+.ds-fieldlist dd { font-size: var(--ds-font-size-value); line-height: var(--ds-line-height-value); letter-spacing: var(--ds-tracking-field); color: var(--ds-color-text-primary); overflow-wrap: anywhere; }
 .ds-health-row { display: flex; align-items: center; justify-content: space-between; gap: var(--ds-space-3); }
-.ds-health-row__label { display: flex; align-items: center; gap: var(--ds-space-2); font-size: var(--ds-font-size-body); line-height: 20px; color: var(--ds-color-text-secondary); }
+.ds-health-row__label { display: flex; align-items: center; gap: var(--ds-space-2); font-size: var(--ds-font-size-body); line-height: var(--ds-line-height-body); color: var(--ds-color-text-secondary); }
 .ds-health-tile { width: 20px; height: 20px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; 
   color: var(--ds-color-text-muted); }  /* icon only, no tile (the grey tile read as an empty square) */
 ```
@@ -2108,7 +2195,7 @@ A value with an optional denominator and label. **Figma** factory well: "6" (`me
 | Media | flexible height, `surface-media`, image `object-fit: cover` at 50 % opacity |
 | Footer | padding 14 24; `media-detail` "Detected : " + italic 400 value; failed reads color the value `danger-text` |
 
-**Interactive variant** the tile is a single button that opens the viewer (its border turns `brand-border-hover`). The **viewer** (`CameraExpandedModal`): radius 32, `min(90vw, 900px)`, `surface-media`, `shadow-modal`; header padding 20 32 on `surface-raised` with a 2 px `border-subtle` divider, a 48 px icon tile (radius 20, 2 px `brand-tint-20` border), title 20/700 −0.5 + camera 16 px `text-muted`, status pill and a 36 px close button; a "Detected" row (padding 12 32, 14 px `text-muted`, value 500 primary); the frame at `object-fit: contain` (min 460 px) with a 2 px detection frame (radius 4, 20 px glow).
+**Interactive variant** the tile is a single button that opens the viewer (its border turns `brand-border-hover`). The **viewer** (`CameraExpandedModal`): radius 32, `min(90vw, 900px)`, `surface-media`, `shadow-modal`; header padding 20 32 on `surface-raised` with a 2 px `border-subtle` divider, a 48 px icon tile (radius 20, no visible border), title 18/700 −0.5 + camera 16 px `text-muted`, status pill and a 36 px close button; a "Detected" row (padding 12 32, 14 px `text-muted`, value 500 primary); the frame at `object-fit: contain` (min 460 px) with a 2 px detection frame (radius 4, 20 px glow).
 
 ```css
 .ds-media-card { position: relative; display: flex; flex-direction: column; min-height: 0; min-width: 0; overflow: hidden; text-align: start; color: inherit; container-type: inline-size;
@@ -2118,33 +2205,42 @@ button.ds-media-card:hover { border-color: var(--ds-color-brand-border-hover); }
 .ds-media-card__head, .ds-media-card__foot { position: relative; z-index: 1; display: flex; align-items: center; gap: var(--ds-space-3); padding: var(--ds-space-3-5) var(--ds-space-6); }
 .ds-media-card__head { flex-wrap: wrap; row-gap: var(--ds-space-2); padding-bottom: 15px; border-bottom: 1px solid var(--ds-color-border-track); }
 .ds-media-card__titles { display: flex; align-items: center; gap: var(--ds-space-3); flex-wrap: wrap; flex: 1; min-width: 0; }
-.ds-media-card__title { font-size: var(--ds-font-size-heading); line-height: 26px; font-weight: 600; letter-spacing: var(--ds-tracking-media-title); color: var(--ds-color-text-primary); }
+.ds-media-card__title { font-size: var(--ds-font-size-heading); line-height: var(--ds-leading-26); font-weight: 600; letter-spacing: var(--ds-tracking-media-title); color: var(--ds-color-text-primary); }
 @container (max-width: 419px) { .ds-media-card__title { font-size: var(--ds-font-size-value); } }
-.ds-media-card__sub { font-size: var(--ds-font-size-body); line-height: 16px; color: var(--ds-color-text-muted); }
+.ds-media-card__sub { font-size: var(--ds-font-size-body); line-height: var(--ds-leading-16); color: var(--ds-color-text-muted); }
 .ds-media-card__expand { display: inline-flex; padding: var(--ds-space-1); color: var(--ds-color-icon); flex-shrink: 0; border-radius: var(--ds-radius-xs); }
 .ds-media-card__expand:hover { color: var(--ds-color-text-primary); }
 .ds-media-card__media { position: relative; flex: 1; min-height: 160px; overflow: hidden; background: var(--ds-color-surface-media); }
 .ds-media-card__media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.5; }
-.ds-media-card__detail { min-width: 0; font-size: var(--ds-font-size-body); line-height: 16px; font-weight: 600; color: var(--ds-color-text-secondary); }
+.ds-media-card__detail { min-width: 0; font-size: var(--ds-font-size-body); line-height: var(--ds-leading-16); font-weight: 600; color: var(--ds-color-text-secondary); }
 .ds-media-card__detail em { font-style: italic; font-weight: 400; }
 .ds-media-card__detail--error em { color: var(--ds-color-danger-text); }
 .ds-detect { position: absolute; border: var(--ds-border-width-detect) solid var(--ds-color-danger); border-radius: var(--ds-radius-xs); pointer-events: none;
   box-shadow: 0 0 20px color-mix(in srgb, var(--ds-color-danger) 30%, transparent); }
 .ds-detect--positive { border-color: var(--ds-color-success-glow); box-shadow: 0 0 20px color-mix(in srgb, var(--ds-color-success-glow) 30%, transparent); }
+/* [EXTENSION] a warning frame, a dashed frame while it is being drawn, and the frame's label tab (inspection-zone editor). */
+.ds-detect--warning { border-color: var(--ds-color-warning-text); box-shadow: 0 0 20px color-mix(in srgb, var(--ds-color-warning-text) 30%, transparent); }
+.ds-detect--drawing { border-style: dashed; }
+.ds-detect__label { position: absolute; bottom: 100%; inset-inline-start: calc(-1 * var(--ds-border-width-detect)); margin-bottom: var(--ds-space-0-5); padding: 0 var(--ds-space-1);
+  border-radius: var(--ds-radius-xs); background: var(--ds-color-danger); white-space: nowrap;
+  font-size: var(--ds-font-size-label); line-height: var(--ds-line-height-label); font-weight: 700; color: var(--ds-color-text-on-bright); }
+.ds-detect--positive .ds-detect__label { background: var(--ds-color-success-glow); }
+.ds-detect--warning .ds-detect__label { background: var(--ds-color-warning-text); }
+.ds-detect__label--inside { bottom: auto; top: var(--ds-space-1); inset-inline-start: var(--ds-space-1); margin: 0; }
 .ds-icon-tile { width: 40px; height: 40px; flex-shrink: 0; border-radius: var(--ds-radius-track); background: var(--ds-color-brand-tint-10);
-  border: 1px solid var(--ds-color-brand-tint-20); display: flex; align-items: center; justify-content: center; color: var(--ds-color-link); }
+  border: 1px solid transparent; display: flex; align-items: center; justify-content: center; color: var(--ds-color-link); }
 .ds-icon-tile--sm { width: var(--ds-size-media-icon); height: var(--ds-size-media-icon); padding: 1px; border-radius: var(--ds-radius-track); }
 .ds-icon-tile--32 { width: 32px; height: 32px; border-radius: var(--ds-radius-sm); }
-.ds-icon-tile--success { background: var(--ds-color-success-bg); border-color: var(--ds-color-success-border); color: var(--ds-color-success-text); }
-.ds-icon-tile--warning { background: var(--ds-color-warning-bg); border-color: var(--ds-color-warning-border); color: var(--ds-color-warning-text); }
-.ds-icon-tile--error { background: var(--ds-color-danger-bg); border-color: var(--ds-color-danger-border); color: var(--ds-color-danger-text); }
+.ds-icon-tile--success { background: var(--ds-color-success-bg); color: var(--ds-color-success-text); }
+.ds-icon-tile--warning { background: var(--ds-color-warning-bg); color: var(--ds-color-warning-text); }
+.ds-icon-tile--error { background: var(--ds-color-danger-bg); color: var(--ds-color-danger-text); }
 .ds-media-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: minmax(300px, 1fr); gap: var(--ds-space-grid); }
 @media (max-width: 1023px) { .ds-media-grid { grid-template-columns: minmax(0, 1fr); } }
 .ds-viewer { position: relative; width: min(90vw, 900px); max-height: 90vh; max-width: calc(100% - 32px); display: flex; flex-direction: column; border-radius: var(--ds-radius-viewer); overflow: hidden;
   background: var(--ds-color-surface-media); box-shadow: var(--ds-shadow-modal); }
 .ds-viewer > .ds-media-card__head { padding: var(--ds-space-5) var(--ds-space-8); gap: var(--ds-space-4); background: var(--ds-color-surface-raised); border-bottom: var(--ds-border-width-emphasis) solid var(--ds-color-border-subtle); }
-.ds-viewer .ds-media-card__title { font-size: var(--ds-font-size-heading); line-height: 28px; font-weight: 700; letter-spacing: var(--ds-tracking-heading); }
-.ds-viewer .ds-media-card__sub { font-size: var(--ds-font-size-value); line-height: 22px; }
+.ds-viewer .ds-media-card__title { font-size: var(--ds-font-size-heading); line-height: var(--ds-line-height-heading); font-weight: 700; letter-spacing: var(--ds-tracking-heading); }
+.ds-viewer .ds-media-card__sub { font-size: var(--ds-font-size-value); line-height: var(--ds-line-height-value); }
 .ds-viewer .ds-media-card__expand { width: var(--ds-size-icon-button); height: var(--ds-size-icon-button); padding: 0; align-items: center; justify-content: center; border-radius: var(--ds-radius-control); color: var(--ds-color-text-muted); }
 .ds-viewer .ds-media-card__expand:hover { background: var(--ds-color-surface-hover); color: var(--ds-color-text-primary); }
 .ds-viewer > .ds-media-card__foot { padding: var(--ds-space-3) var(--ds-space-8); border-bottom: 1px solid var(--ds-color-border-subtle); order: 1; }
@@ -2185,15 +2281,15 @@ button.ds-media-card:hover { border-color: var(--ds-color-brand-border-hover); }
 .ds-sidebar__logo { width: 40px; height: 40px; flex-shrink: 0; border-radius: var(--ds-radius-sm); border: 1px solid var(--ds-color-border-logo);
   display: flex; align-items: center; justify-content: center; }
 .ds-sidebar__logo img { width: 23px; height: 24px; }
-.ds-sidebar__name { display: block; font-size: var(--ds-font-size-body); line-height: 20px; font-weight: 600; letter-spacing: var(--ds-tracking-title); color: var(--ds-color-text-primary); }
-.ds-sidebar__tagline { display: block; font-size: var(--ds-font-size-caption); line-height: 16.5px; color: var(--ds-color-text-muted); }
+.ds-sidebar__name { display: block; font-size: var(--ds-font-size-body); line-height: var(--ds-line-height-body); font-weight: 600; letter-spacing: var(--ds-tracking-title); color: var(--ds-color-text-primary); }
+.ds-sidebar__tagline { display: block; font-size: var(--ds-font-size-caption); line-height: var(--ds-leading-16-5); color: var(--ds-color-text-muted); }
 .ds-sidebar__toggle { margin-inline-start: auto; width: 24px; height: 24px; border-radius: var(--ds-radius-xs); display: inline-flex; align-items: center; justify-content: center; color: var(--ds-color-icon); flex-shrink: 0; }
 .ds-sidebar__toggle:hover { color: var(--ds-color-text-primary); background: var(--ds-color-surface-hover); }
 .ds-nav { margin-top: var(--ds-space-5); display: flex; flex-direction: column; gap: var(--ds-space-4); }
 .ds-nav__section { display: flex; flex-direction: column; gap: var(--ds-space-1); }
-.ds-nav__label { padding: 0 var(--ds-space-3-5); font-size: var(--ds-font-size-label); line-height: 16px; color: var(--ds-color-text-muted); }
+.ds-nav__label { padding: 0 var(--ds-space-3-5); font-size: var(--ds-font-size-label); line-height: var(--ds-line-height-label); color: var(--ds-color-text-muted); }
 .ds-nav__item { position: relative; display: flex; align-items: center; width: 100%; min-height: var(--ds-size-nav-item); padding: var(--ds-space-2-5) var(--ds-space-3-5); border-radius: var(--ds-radius-nested);
-  font-size: var(--ds-font-size-body); line-height: 20px; font-weight: 500; color: var(--ds-color-text-muted); text-align: start; text-decoration: none;
+  font-size: var(--ds-font-size-body); line-height: var(--ds-line-height-body); font-weight: 500; color: var(--ds-color-text-muted); text-align: start; text-decoration: none;
   transition: background-color var(--ds-duration-fast), color var(--ds-duration-fast); }
 .ds-nav__item:hover { color: var(--ds-color-text-primary); background: var(--ds-color-surface-hover); }
 .ds-nav__item:focus-visible { outline-offset: 0; }
@@ -2206,8 +2302,8 @@ button.ds-media-card:hover { border-color: var(--ds-color-brand-border-hover); }
   background: var(--ds-color-brand-tint-20); filter: blur(20px); pointer-events: none; }
 .ds-user-card__row { position: relative; display: flex; align-items: center; gap: var(--ds-space-2); width: 214px; }
 .ds-user-card__who { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: var(--ds-space-0-5); }
-.ds-user-card__name { font-size: var(--ds-font-size-body); line-height: 18px; font-weight: 600; letter-spacing: var(--ds-tracking-title); color: var(--ds-color-text-primary); }
-.ds-user-card__role { font-size: var(--ds-font-size-label); line-height: 16px; color: var(--ds-color-text-muted); }
+.ds-user-card__name { font-size: var(--ds-font-size-body); line-height: var(--ds-leading-18); font-weight: 600; letter-spacing: var(--ds-tracking-title); color: var(--ds-color-text-primary); }
+.ds-user-card__role { font-size: var(--ds-font-size-label); line-height: var(--ds-line-height-label); color: var(--ds-color-text-muted); }
 .ds-user-card__out { color: var(--ds-color-text-muted); opacity: 0.6; transition: opacity var(--ds-duration-fast), color var(--ds-duration-fast); }
 .ds-user-card__out:hover { color: var(--ds-color-text-primary); opacity: 1; background: transparent; }
 @media (prefers-reduced-motion: reduce) { .ds-sidebar, .ds-sidebar-slot { transition: none; } }
@@ -2217,7 +2313,7 @@ button.ds-media-card:hover { border-color: var(--ds-color-brand-border-hover); }
 
 **Purpose** Title the page and hold its global actions. **DEOC** `PageHeader`: height 76, padding 0 16 (`space-page-gutter`), no fill and no bottom divider (it sits flat on the page; `shadow-header-scrolled` appears only while content scrolls under it); title block = 36 px illustration + 10 px + `page-title` (24/600, D-9); an optional status pill 12 px after the title ("Live"); actions (search, filters, primary) at the end, 12 px apart.
 
-Variants: with breadcrumb / back button / description [PRESERVED]. On narrow screens actions wrap below the title.
+Variants: with breadcrumb / back button / description [PRESERVED]. **Sub-page [EXTENSION]:** a page opened from another page leads with the back button, then the parent page's name in `text-muted`, a `text-faint` "/" and the page's own title, all in the title style ("‹ Sources / Instruments"); the parent name is a link back to it. It replaces an in-page breadcrumb or back link, and applies to every non-modal view opened from another page (detail pages, drill-downs, category views); modals, slide panels and full-page forms keep their own controls. On phones (`xs`) the parent name and "/" are hidden: back button + own title only (§8.10). On narrow screens actions wrap below the title.
 
 ```css
 .ds-page-header { position: relative; z-index: var(--ds-z-header); flex-shrink: 0; min-height: var(--ds-size-page-header); padding: var(--ds-space-3) var(--ds-space-page-gutter);
@@ -2229,11 +2325,14 @@ Variants: with breadcrumb / back button / description [PRESERVED]. On narrow scr
 .ds-page-header__icon { position: relative; width: var(--ds-size-page-icon); height: var(--ds-size-page-icon); flex-shrink: 0; overflow: hidden; }
 .ds-page-header__titles { display: flex; flex-direction: column; gap: var(--ds-space-0-5); min-width: 0; }
 .ds-page-header__titles h1 { overflow-wrap: anywhere; }
+.ds-page-header__parent { color: var(--ds-color-text-muted); }
+.ds-page-header__parent:hover { color: var(--ds-color-text-secondary); }
+.ds-page-header__sep { margin: 0 var(--ds-space-2); color: var(--ds-color-text-faint); }
 .ds-page-header__actions { display: flex; align-items: center; gap: var(--ds-space-header-actions); flex-wrap: wrap; }
 /* Header filters and search wear the content-card surface (gradient-glass + shadow-surface) instead of the control stroke */
 .ds-page-header__actions .ds-select__trigger--filter, .ds-page-header__actions .ds-search__input { background: var(--ds-gradient-glass); border-color: transparent; box-shadow: var(--ds-shadow-surface); }
 .ds-page-header__actions .ds-select__trigger--filter::before { content: none; }
-.ds-breadcrumb ol { display: flex; flex-wrap: wrap; align-items: center; gap: var(--ds-space-1-5); font-size: var(--ds-font-size-label); line-height: 16px; }
+.ds-breadcrumb ol { display: flex; flex-wrap: wrap; align-items: center; gap: var(--ds-space-1-5); font-size: var(--ds-font-size-label); line-height: var(--ds-line-height-label); }
 .ds-breadcrumb a { color: var(--ds-color-text-muted); text-decoration: none; border-radius: var(--ds-radius-xs); transition: color var(--ds-duration-fast); }
 .ds-breadcrumb a:hover { color: var(--ds-color-text-primary); }
 .ds-breadcrumb li[aria-hidden] { color: var(--ds-color-text-faint); }
@@ -2241,23 +2340,24 @@ Variants: with breadcrumb / back button / description [PRESERVED]. On narrow scr
 
 ### 5.39 Segmented tabs
 
-**Purpose** Switch between views of the same content. **Figma** role tabs (frame 6) and chart view switches ("Time Series | Factory Wise", "Factory Wise | Product Wise | Line Wise", frame 7): a toggle track (`gradient-toggle`, 1 px `border-subtle`, radius 12, no shadow, 5 px padding inside the border, as DEOC); tabs radius 8, padding 10 20 (sm: 6 20), `tab` 14/400/20; selected: `gradient-toggle-active` pill + primary text (weight unchanged); hover: `surface-hover-subtle` + primary text; count `tab-count` 4 px after the label.
+**Purpose** Switch between views of the same content. **Figma** role tabs (frame 6) and chart view switches ("Time Series | Factory Wise", "Factory Wise | Product Wise | Line Wise", frame 7): a toggle track (`gradient-toggle`, 1 px `border-subtle`, radius 12, no shadow) **exactly `size-control` tall (40 px), the height of a field or filter select**, with 2 px inside the border (sm: `size-control-sm`); tabs fill it, radius 8, padding 0 20 (sm: 0 16), `tab` 12/400/20; selected: `gradient-toggle-active` pill + primary text (weight unchanged); hover: `surface-hover-subtle` + primary text; count `tab-count` 4 px after the label.
 
 **Variants** **raised** (default), **sm** (chart controls), **accent** (DEOC chart and table view switches: a 40 px track with equal-width 600-weight tabs, padding 0 12, tracking −0.4). **Behavior** `role="tablist"`, roving tabindex, arrows move and activate, Home/End [PRESERVED].
 
 ```css
-.ds-tabs { display: inline-flex; max-width: 100%; overflow-x: auto; padding: 5px; border-radius: var(--ds-radius-track);   /* 5 px: DEOC toggle track (§11) */
-  background: var(--ds-gradient-toggle); border: 1px solid var(--ds-color-border-subtle); }
+.ds-tabs { display: inline-flex; box-sizing: border-box; height: var(--ds-size-control); max-width: 100%; overflow-x: auto; padding: var(--ds-space-0-5); border-radius: var(--ds-radius-track);
+  background: var(--ds-gradient-toggle); border: 1px solid var(--ds-color-border-subtle); }   /* same height as a field or filter select, so a tab row lines up with the filters beside it */
 .ds-tab { display: flex; align-items: center; justify-content: center; gap: var(--ds-space-1); white-space: nowrap;
-  padding: var(--ds-space-2-5) var(--ds-space-5); border-radius: var(--ds-radius-sm); font-size: var(--ds-font-size-body); line-height: 20px; color: var(--ds-color-text-muted);
+  padding: 0 var(--ds-space-5); border-radius: var(--ds-radius-sm); font-size: var(--ds-font-size-body); line-height: var(--ds-line-height-body); color: var(--ds-color-text-muted);
   transition: background-color var(--ds-duration-fast), color var(--ds-duration-fast); }
 .ds-tab:hover { background: var(--ds-color-surface-hover-subtle); color: var(--ds-color-text-primary); }
 .ds-tab[aria-selected="true"] { background: var(--ds-gradient-toggle-active); color: var(--ds-color-text-primary); }
 .ds-tab:focus-visible { outline-width: var(--ds-focus-width-field); outline-offset: var(--ds-focus-offset-tight); }
 .ds-tab__label { display: inline-grid; }
-.ds-tab__count { font-size: var(--ds-font-size-label); line-height: 16px; color: var(--ds-color-text-tertiary); }
+.ds-tab__count { font-size: var(--ds-font-size-label); line-height: var(--ds-line-height-label); color: var(--ds-color-text-tertiary); }
 .ds-tab[aria-selected="true"] .ds-tab__count { color: var(--ds-color-text-muted); }
-.ds-tabs--sm .ds-tab { padding: var(--ds-space-1-5) var(--ds-space-5); }
+.ds-tabs--sm { height: var(--ds-size-control-sm); }
+.ds-tabs--sm .ds-tab { padding: 0 var(--ds-space-4); }
 .ds-tabs--accent { display: inline-grid; grid-auto-flow: column; grid-auto-columns: 1fr; height: var(--ds-size-control); }
 .ds-tabs--accent .ds-tab { padding: 0 var(--ds-space-3); font-weight: 600; letter-spacing: var(--ds-tracking-tight); }
 .ds-tabpanel:focus-visible { outline-offset: var(--ds-focus-offset); }
@@ -2273,18 +2373,18 @@ First, last, current ±1 and "…" when there are more than 7 pages; compact "Pa
 ```css
 .ds-pagination { display: flex; align-items: center; justify-content: space-between; gap: var(--ds-space-3); flex-wrap: wrap; padding: var(--ds-space-3) var(--ds-space-4);
   border-top: 1px solid var(--ds-color-border-subtle); background: var(--ds-gradient-glass-up); }
-.ds-pagination__summary { font-size: var(--ds-font-size-body); line-height: 20px; color: var(--ds-color-text-muted); }
+.ds-pagination__summary { font-size: var(--ds-font-size-body); line-height: var(--ds-line-height-body); color: var(--ds-color-text-muted); }
 .ds-pagination__summary strong { font-weight: 500; color: var(--ds-color-text-primary); }
 .ds-pagination__pages { display: flex; align-items: center; gap: var(--ds-space-1-5); }
 .ds-page-btn { width: var(--ds-size-pagination-button); height: var(--ds-size-pagination-button); padding: 0; display: flex; align-items: center; justify-content: center;
   border-radius: var(--ds-radius-chip); border: 1px solid var(--ds-color-border-faint); background: var(--ds-color-surface-control); color: var(--ds-color-text-muted);
-  font-size: var(--ds-font-size-label); line-height: 16px; font-weight: 500; transition: color var(--ds-duration-fast), border-color var(--ds-duration-fast); }
+  font-size: var(--ds-font-size-label); line-height: var(--ds-line-height-label); font-weight: 500; transition: color var(--ds-duration-fast), border-color var(--ds-duration-fast); }
 .ds-page-btn:hover { color: var(--ds-color-text-primary); border-color: var(--ds-color-border-control-hover); }
 .ds-page-btn:focus-visible { outline-offset: 0; }
 .ds-page-btn[aria-current="page"] { background: var(--ds-color-brand-strong); border-color: var(--ds-color-border-on-brand); color: var(--ds-color-text-primary); box-shadow: var(--ds-shadow-card); }
 .ds-page-btn:disabled { opacity: 0.4; pointer-events: none; }
 .ds-page-btn--ellipsis { cursor: default; border-color: transparent; background: transparent; }
-.ds-pagination__compact { display: none; font-size: var(--ds-font-size-label); line-height: 16px; color: var(--ds-color-text-muted); padding: 0 var(--ds-space-2); }
+.ds-pagination__compact { display: none; font-size: var(--ds-font-size-label); line-height: var(--ds-line-height-label); color: var(--ds-color-text-muted); padding: 0 var(--ds-space-2); }
 @media (max-width: 639px) {
   .ds-page-btn--num, .ds-page-btn--ellipsis { display: none; }
   .ds-pagination__compact { display: inline; }
@@ -2348,8 +2448,8 @@ Warning rows `row-warning`, stopped rows `row-critical` [EXTENSION]. Empty: one 
 .ds-table { width: 100%; min-width: var(--ds-table-min-width, 0); border-collapse: separate; border-spacing: 0; table-layout: auto; }
 .ds-table th, .ds-table td { padding: var(--ds-space-cell-y) var(--ds-space-cell-x); text-align: start; vertical-align: middle; }
 .ds-table thead th { height: var(--ds-size-table-header); background: var(--ds-color-surface-table-header); white-space: nowrap;
-  font-size: var(--ds-font-size-label); line-height: 16px; font-weight: 600; letter-spacing: var(--ds-tracking-table-header); text-transform: uppercase; color: var(--ds-color-text-muted); }
-.ds-table tbody td, .ds-table tbody th { height: var(--ds-size-table-row); font-size: var(--ds-font-size-body); line-height: 20px; font-weight: 400; }
+  font-size: var(--ds-font-size-label); line-height: var(--ds-line-height-label); font-weight: 600; letter-spacing: var(--ds-tracking-table-header); text-transform: uppercase; color: var(--ds-color-text-muted); }
+.ds-table tbody td, .ds-table tbody th { height: var(--ds-size-table-row); font-size: var(--ds-font-size-body); line-height: var(--ds-line-height-body); font-weight: 400; }
 .ds-table tbody th { font-weight: 500; }
 .ds-table tbody td { color: var(--ds-color-text-secondary); }
 .ds-table tbody td * { font-weight: 400; }   /* DEOC: everything in a secondary cell is regular weight, tags included */
@@ -2433,9 +2533,35 @@ Sections stack 12 px apart (`space-stack`). Header toggle is a `<button aria-exp
 .ds-section-card__body--flush { padding: 0; }
 ```
 
+#### Tree [EXTENSION]
+
+A deep hierarchy with selection (areas → lines → assets → resource groups → resources). Rows sit on the nested surface; each row is an expand toggle (or a spacer), a §5.12 checkbox, a 14 px type icon, the label (`body`, or `body-emphasis` for container rows) with a `small` sub-label, and trailing badges. Indentation is 20 px per level, set with `--ds-tree-depth` on the row. A clear button appears on hover and keyboard focus. The row named by the editor's focus is washed with `surface-selected`. Group headings use `section-label`.
+
+```css
+.ds-tree { display: flex; flex-direction: column; gap: var(--ds-space-0-5); }
+.ds-tree-row { display: flex; align-items: center; gap: var(--ds-space-2); min-height: var(--ds-size-control-sm); border-radius: var(--ds-radius-sm);
+  padding: var(--ds-space-1) var(--ds-space-2) var(--ds-space-1) calc(var(--ds-space-2) + var(--ds-tree-depth, 0) * var(--ds-space-5));
+  transition: background-color var(--ds-duration-fast); }
+.ds-tree-row:hover, .ds-tree-row.is-hover { background: var(--ds-color-surface-hover); }
+.ds-tree-row--focused { background: var(--ds-color-surface-selected); }
+.ds-tree-row__toggle, .ds-tree-row__spacer { width: var(--ds-size-ui-icon); height: var(--ds-size-ui-icon); flex-shrink: 0; display: inline-flex; align-items: center; justify-content: center;
+  color: var(--ds-color-icon-chevron); border-radius: var(--ds-radius-xs); }
+.ds-tree-row__toggle svg { transition: transform var(--ds-duration-fast); }
+.ds-tree-row__toggle[aria-expanded="true"] svg { transform: rotate(90deg); }
+.ds-tree-row__icon { flex-shrink: 0; color: var(--ds-color-icon); }
+.ds-tree-row--container .ds-tree-row__icon { color: var(--ds-color-link); }
+.ds-tree-row__label { flex: 1; min-width: 0; display: flex; align-items: baseline; gap: var(--ds-space-2); text-align: start; }
+.ds-tree-row__label > * { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ds-tree-row__end { display: flex; align-items: center; gap: var(--ds-space-1-5); flex-shrink: 0; }
+.ds-tree-row__clear { opacity: 0; }
+.ds-tree-row:hover .ds-tree-row__clear, .ds-tree-row:focus-within .ds-tree-row__clear { opacity: 1; }
+.ds-tree__heading { padding: var(--ds-space-2) var(--ds-space-2) var(--ds-space-0-5) calc(var(--ds-space-2) + var(--ds-tree-depth, 0) * var(--ds-space-5)); }
+@media (prefers-reduced-motion: reduce) { .ds-tree-row__toggle svg { transition: none; } }
+```
+
 ### 5.44 Overlay & modal
 
-**Purpose** A focused task over the page. **Figma** "Add Cameras" (frame 5): the scrim is black/50 % with a 4 px backdrop blur (same in every overlay frame); the modal is `gradient-dialog`, radius 12, padding 24, sections 28 px apart, no border; header: 32 px illustration + `modal-title`, 32 px close, 20 px bottom padding over a white/5 % divider; form rows 40 px apart, columns 20 px; actions end-aligned (secondary 120 px, primary 180 px, 16 px apart). Width `size-modal` (718 → 720).
+**Purpose** A focused task over the page. **Figma** "Add Cameras" (frame 5): the scrim is black/50 % with a 4 px backdrop blur (same in every overlay frame); the modal is `gradient-dialog`, radius 12, padding 24, sections 28 px apart, no border; header: 32 px illustration + `modal-title`, 32 px close, 20 px bottom padding over a white/5 % divider; form rows 40 px apart, columns 20 px; actions end-aligned (tertiary 120 px, primary 180 px, 16 px apart). Width `size-modal` (718 → 720).
 
 **Behavior** [PRESERVED]: `role="dialog" aria-modal="true" aria-labelledby`; focus moves to the first field (or the title); focus is trapped; Escape closes unless there are unsaved edits (then a §5.45 discard confirmation); **backdrop clicks never close**; focus returns to the opener. Overlays and their scrim cover the whole shell, sidebar included (R-12).
 
@@ -2451,15 +2577,15 @@ Sections stack 12 px apart (`space-stack`). Header toggle is a `<button aria-exp
 .ds-modal--sm { width: min(var(--ds-size-dialog), calc(100% - 32px)); }
 .ds-modal__header { display: flex; align-items: center; justify-content: space-between; gap: var(--ds-space-3); padding-bottom: var(--ds-space-5); border-bottom: 1px solid var(--ds-color-border-faint); }
 .ds-modal__titlegroup { display: flex; align-items: center; gap: var(--ds-space-3); min-width: 0; }
-.ds-modal__title { font-size: var(--ds-font-size-body); line-height: 18px; font-weight: 400; color: var(--ds-color-text-primary); }
+.ds-modal__title { font-size: var(--ds-font-size-body); line-height: var(--ds-leading-18); font-weight: 400; color: var(--ds-color-text-primary); }
 .ds-modal__body { display: flex; flex-direction: column; gap: var(--ds-space-form-row); }
 .ds-modal__footer { display: flex; justify-content: flex-end; gap: var(--ds-space-4); flex-wrap: wrap; }
-.ds-modal__footer > .ds-btn--secondary { min-width: 120px; }
+.ds-modal__footer > .ds-btn--tertiary { min-width: 120px; }
 ```
 
 ### 5.45 Confirmation dialog [PRESERVED]
 
-A small modal (`size-dialog`) for destructive or discarding actions (DEOC `ConfirmDialog`): `gradient-dialog`, radius 16, 1 px `border-subtle`, `shadow-modal` + `shadow-highlight`, padding 24, 24 px gap; `dialog-title`, a `body-muted` message 8 px below, Cancel (secondary) and the action (danger or primary) 12 px apart. `role="alertdialog"`; initial focus on Cancel; Escape = Cancel.
+A small modal (`size-dialog`) for destructive or discarding actions (DEOC `ConfirmDialog`): `gradient-dialog`, radius 16, 1 px `border-subtle`, `shadow-modal` + `shadow-highlight`, padding 24, 24 px gap; `dialog-title`, a `body-muted` message 8 px below, Cancel (tertiary) and the action (danger or primary) 12 px apart. `role="alertdialog"`; initial focus on Cancel; Escape = Cancel.
 
 ```css
 .ds-dialog { position: relative; width: min(var(--ds-size-dialog), calc(100% - 32px)); max-height: calc(100% - 48px); overflow-y: auto; display: flex; flex-direction: column; gap: var(--ds-space-6);
@@ -2476,7 +2602,7 @@ A small modal (`size-dialog`) for destructive or discarding actions (DEOC `Confi
 |---|---|
 | Header | `gradient-glass`, 1 px `border-subtle` divider, padding 20 24 (28 24 33 when a stepper follows); title row = optional back button (36) + illustration (24 px; 32–40 px for crops) + 12 px + `dialog-title` and a 36 px close button; optional stepper 48 px below |
 | Body | scrolls; padding 24; form sections 24 px apart; rows 40 px |
-| Footer | `gradient-glass-up`, 1 px `border-edge` divider, `shadow-footer-scrolled` while more content sits below the fold (D-9), padding 20 24; secondary "Back"/"Cancel" with a 20 px back arrow at the start; helper text (12 px `text-tertiary`, e.g. "Auto-saved draft 12s ago") and a 180 px primary with a trailing chevron at the end |
+| Footer | `gradient-glass-up`, 1 px `border-edge` divider, `shadow-footer-scrolled` while more content sits below the fold (D-9), padding 20 24; tertiary "Back"/"Cancel" with a 20 px back arrow at the start; helper text (12 px `text-tertiary`, e.g. "Auto-saved draft 12s ago") and a 180 px primary with a trailing chevron at the end |
 
 Sizes `sm` 480 · `md` 560 · `lg` 680 · `xl` 820 (maximum widths, `min(<size>, 100%)`). Behavior as §5.44; the header shadow appears while the body is scrolled, the footer shadow while more of the body sits below.
 
@@ -2499,7 +2625,7 @@ Sizes `sm` 480 · `md` 560 · `lg` 680 · `xl` 820 (maximum widths, `min(<size>,
   display: flex; align-items: center; justify-content: space-between; gap: var(--ds-space-3); flex-wrap: wrap; }
 .ds-panel__footer--more { box-shadow: var(--ds-shadow-footer-scrolled); }
 .ds-panel__footer-end { display: flex; align-items: center; gap: var(--ds-space-3); flex-wrap: wrap; justify-content: flex-end; }
-.ds-panel__note { font-size: var(--ds-font-size-label); line-height: 16px; color: var(--ds-color-text-tertiary); }
+.ds-panel__note { font-size: var(--ds-font-size-label); line-height: var(--ds-line-height-label); color: var(--ds-color-text-tertiary); }
 ```
 
 ### 5.47 Popover [PRESERVED · restyled]
@@ -2516,6 +2642,30 @@ An anchored floating panel (DEOC date-range popover): `surface-raised`, no borde
 .ds-popover--sm { width: min(280px, calc(100vw - 32px)); }
 ```
 
+#### Notification feed [EXTENSION]
+
+The page header's notifications panel: a popover whose head is a `body-emphasis` title with a `count-pill` and ghost actions, and whose body is a full-bleed list. Each row is a button: a 28 px status icon tile (§5.31), the title (`body-strong` when unread, `body-muted` when read), a `small` body and a `caption` time. Unread rows carry the `surface-selected` wash; hover is `surface-hover`. The dismiss icon button appears on row hover and keyboard focus. Empty: a `body-muted` sentence centred in the list.
+
+```css
+.ds-popover--feed { padding: 0; gap: 0; overflow: hidden; }
+.ds-feed__head { display: flex; align-items: center; justify-content: space-between; gap: var(--ds-space-3); padding: var(--ds-space-3) var(--ds-space-4);
+  border-bottom: 1px solid var(--ds-color-border-subtle); }
+.ds-feed__list { max-height: var(--ds-size-feed-max-height); overflow-y: auto; }
+.ds-feed__item { display: flex; gap: var(--ds-space-3); width: 100%; padding: var(--ds-space-3) var(--ds-space-4); text-align: start; cursor: pointer;
+  transition: background-color var(--ds-duration-fast); }
+.ds-feed__item:hover, .ds-feed__item.is-hover { background: var(--ds-color-surface-hover); }
+.ds-feed__item:focus-visible, .ds-feed__item.is-focus-visible { outline-offset: var(--ds-focus-offset-inset); }
+.ds-feed__item--unread { background: var(--ds-color-surface-selected); }
+.ds-feed__text { display: flex; flex-direction: column; gap: var(--ds-space-0-5); flex: 1; min-width: 0; }
+.ds-feed__dismiss { opacity: 0; }
+.ds-feed__item:hover .ds-feed__dismiss, .ds-feed__item:focus-within .ds-feed__dismiss { opacity: 1; }
+.ds-feed__empty { padding: var(--ds-space-10) var(--ds-space-4); text-align: center; }
+.ds-feed__foot { display: flex; justify-content: center; padding: var(--ds-space-2) var(--ds-space-4); border-top: 1px solid var(--ds-color-border-subtle); }
+.ds-badge-count { position: absolute; top: var(--ds-space-1); inset-inline-end: var(--ds-space-1); min-width: var(--ds-space-4); height: var(--ds-space-4); padding: 0 var(--ds-space-1);
+  display: flex; align-items: center; justify-content: center; border-radius: var(--ds-radius-full); background: var(--ds-color-live);  /* white on live is 4.9:1; on danger it fails AA */
+  font-size: var(--ds-font-size-caption); line-height: var(--ds-line-height-caption); font-weight: 600; color: var(--ds-color-text-on-brand); }
+```
+
 ### 5.48 Toast [PRESERVED · restyled]
 
 A short confirmation at the top centre of the main panel: `surface-raised`, 1 px `border-subtle`, radius 8, `shadow-elevated`, padding 10 16, `toast` 14 px; optional action and close; `role="status"` (errors: `alert`); 4 s, paused on hover and focus.
@@ -2525,7 +2675,7 @@ A short confirmation at the top centre of the main panel: `surface-raised`, 1 px
   display: flex; flex-direction: column; gap: var(--ds-space-2); align-items: center; }
 .ds-toast { display: flex; align-items: center; gap: var(--ds-space-2); max-width: min(480px, calc(100% - 32px)); pointer-events: auto;
   padding: var(--ds-space-2-5) var(--ds-space-4); border-radius: var(--ds-radius-sm); border: 1px solid var(--ds-color-border-subtle);
-  background: var(--ds-color-surface-raised); box-shadow: var(--ds-shadow-elevated); font-size: var(--ds-font-size-body); line-height: 20px; color: var(--ds-color-text-primary); }
+  background: var(--ds-color-surface-raised); box-shadow: var(--ds-shadow-elevated); font-size: var(--ds-font-size-body); line-height: var(--ds-line-height-body); color: var(--ds-color-text-primary); }
 .ds-toast--success svg { color: var(--ds-color-success-text); flex-shrink: 0; }
 .ds-toast--error svg { color: var(--ds-color-danger-text); flex-shrink: 0; }
 .ds-toast__action { margin-inline-start: var(--ds-space-2); }
@@ -2541,7 +2691,7 @@ A short confirmation at the top centre of the main panel: `surface-raised`, 1 px
 ```css
 .ds-tooltip { position: fixed; z-index: var(--ds-z-label-tooltip); max-width: 280px; padding: var(--ds-space-1-5) var(--ds-space-2-5); border-radius: var(--ds-radius-sm);
   background: var(--ds-gradient-tooltip); border: 1px solid var(--ds-color-border-glass); box-shadow: var(--ds-shadow-tooltip);
-  font-size: var(--ds-font-size-label); line-height: 16px; color: var(--ds-color-text-tooltip); pointer-events: auto; overflow-wrap: anywhere; }
+  font-size: var(--ds-font-size-label); line-height: var(--ds-line-height-label); color: var(--ds-color-text-tooltip); pointer-events: auto; overflow-wrap: anywhere; }
 .ds-tooltip[hidden] { display: none; }
 .ds-tooltip--static { position: relative; display: inline-block; }
 ```
@@ -2562,7 +2712,7 @@ Centered inside the container: optional 40 px icon tile or illustration, optiona
 
 ```css
 .ds-empty { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: var(--ds-space-3); padding: var(--ds-space-12) var(--ds-space-4);
-  text-align: center; font-size: var(--ds-font-size-body); line-height: 20px; color: var(--ds-color-text-muted); }
+  text-align: center; font-size: var(--ds-font-size-body); line-height: var(--ds-line-height-body); color: var(--ds-color-text-muted); }
 .ds-empty--first-use { padding: var(--ds-space-16) var(--ds-space-6); }
 .ds-empty--chart { padding: var(--ds-space-16) 0; }
 ```
@@ -2598,7 +2748,7 @@ All component CSS is inline in its own section above; there is no separate deriv
 
 | § | Component | Variants | Sizes | States beyond default |
 |---|---|---|---|---|
-| 5.1 | Button | primary, secondary, subtle, tonal, ghost, danger | sm, md, lg | hover, focus, disabled, loading |
+| 5.1 | Button | primary, secondary, tertiary, subtle, tonal, ghost, danger | sm, md, lg | hover, focus, disabled, loading |
 | 5.2 | Icon button | default, close, open | sm 28, compact 32, md 36 | hover, focus, disabled |
 | 5.5 | Text input | plain, suffix, trailing button | md | hover, focus, error, disabled, read-only |
 | 5.9 | Select | filter, field, rich | md | hover, open, focus, error, disabled |
@@ -2700,13 +2850,32 @@ Viewport → shell 16; sidebar → main 20; header → content 8; content gutter
   padding: var(--ds-space-page-top) var(--ds-space-page-gutter) var(--ds-space-page-gutter); }
 .ds-page-content > * { flex-shrink: 0; }
 .ds-topbar { display: none; }
+/* Shell parts: the sidebar rail, the header + content column, the skip link and the navigation drawer (§8.2). */
+.ds-shell__rail { display: flex; }
+.ds-shell__content { display: flex; flex-direction: column; flex: 1; min-height: 0; }
+.ds-shell__content > .ds-page-content:focus { outline: none; }
+.ds-page-header h1:focus { outline: none; }  /* the h1 is the overlay focus fallback (tabindex -1); only keyboard focus shows a ring */
+.ds-page-header h1:focus-visible { outline-offset: var(--ds-focus-offset); }
+.ds-skip-link { position: absolute; left: var(--ds-space-4); top: -100px; z-index: var(--ds-z-toast); }
+.ds-skip-link:focus { top: var(--ds-space-4); }
+.ds-skip-link:focus-visible { padding: var(--ds-space-2) var(--ds-space-3); border-radius: var(--ds-radius-sm); background: var(--ds-gradient-glass); color: var(--ds-color-text-primary); }
+.ds-overlay--nav-drawer { position: fixed; justify-content: flex-start; align-items: stretch; padding: 0; }
+.ds-overlay--nav-drawer .ds-overlay__backdrop { background: var(--ds-color-scrim); }
+.ds-nav-drawer { position: relative; display: flex; flex-direction: column; width: min(var(--ds-size-sidebar-expanded), 100%); height: 100%;
+  background: var(--ds-color-surface-base); box-shadow: var(--ds-shadow-drawer-mirrored); }
+.ds-nav-drawer .ds-sidebar-slot { width: 100%; flex: 1; }
+.ds-nav-drawer .ds-sidebar { position: static; height: 100%; border-radius: 0; box-shadow: none; }
+.ds-nav-drawer__close { display: flex; justify-content: flex-end; padding: var(--ds-space-2) var(--ds-space-2) 0; }
 @media (max-width: 1023px) {
   .ds-shell { padding: 0; gap: 0; flex-direction: column; }
+  .ds-shell__rail { display: none; }
   .ds-main { border-radius: 0; border: 0; box-shadow: none; }
   .ds-topbar { display: flex; align-items: center; justify-content: space-between; gap: var(--ds-space-3); min-height: 56px; padding: 0 var(--ds-space-4);
     background: var(--ds-color-surface-base); border-bottom: 1px solid var(--ds-color-border-faint); }
 }
 ```
+
+Markup: `.ds-shell#ds-overlay-host` > `.ds-skip-link`, `.ds-shell__rail[data-inert-scope]` > sidebar, `.ds-main#ds-main` > `.ds-topbar[data-inert-scope]` + `.ds-shell__content[data-inert-scope]` > page header + `main.ds-page-content`. Below 1024 px the rail hides and the top bar's menu button opens the sidebar in `.ds-overlay.ds-overlay--nav-drawer` > `.ds-nav-drawer`. Overlays portal to `#ds-overlay-host`; while one is open every `[data-inert-scope]` is inert.
 
 ### 6.2 Page header
 
@@ -2726,7 +2895,7 @@ Entity cards in a 3-column grid at desktop (20 px gaps), auto-fill (min 400 px) 
 
 ```css
 .ds-section-title { display: flex; align-items: center; gap: var(--ds-space-3); padding: 0 var(--ds-space-1); margin-bottom: var(--ds-space-4);
-  font-size: var(--ds-font-size-heading); line-height: 28px; font-weight: 500; letter-spacing: var(--ds-tracking-title); color: var(--ds-color-text-tertiary); }
+  font-size: var(--ds-font-size-heading); line-height: var(--ds-line-height-heading); font-weight: 500; letter-spacing: var(--ds-tracking-title); color: var(--ds-color-text-tertiary); }
 .ds-section-title__dot { width: var(--ds-size-badge-dot); height: var(--ds-size-badge-dot); border-radius: var(--ds-radius-full); background: var(--ds-color-text-faint); }
 @media (min-width: 1280px) { .ds-entity-grid--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
 ```
@@ -2750,6 +2919,28 @@ Header with page-wide filters → KPI row (12 px above the first card) → stack
 ### 6.10 Forms
 
 Forms live in slide panels (multi-field, multi-step: Add Factory, Add Product) or modals (one compact step: Add Cameras). Two or three equal columns, 20 px apart, rows 40 px apart; full-width rows for pickers, uploads and notes. Sections start with a `modal-title` header over a divider. Footer: Back / Cancel at the start; helper note + primary at the end.
+
+#### Full-page form [EXTENSION]
+
+For create flows that need the whole main panel (several steps with a setup guide beside them, wide builders): the sidebar and page header hide; a top bar holds Back and the stepper; a centred column (820 px, 980 px wide) scrolls; a footer bar holds the actions (tertiary on the start side, primary on the end); from 1024 px a setup-guide panel sits at the end on the nested surface. **[PRODUCT DECISION] Polaris Factory (2026-11-03):** every create and edit form uses this full-page, centred layout, not a slide panel. Other products: use a slide panel (§5.46) whenever the flow fits in one.
+
+```css
+.ds-form-page { display: flex; height: 100%; overflow: hidden; }
+.ds-form-page__main { position: relative; flex: 1; min-width: 0; display: flex; flex-direction: column; overflow: hidden; }
+.ds-form-page__bar { display: flex; align-items: center; gap: var(--ds-space-4); min-height: var(--ds-size-page-header); padding: var(--ds-space-4) var(--ds-space-6); flex-shrink: 0; }
+.ds-form-page__steps { flex: 1; min-width: 0; overflow-x: auto; display: flex; justify-content: center; }
+.ds-form-page__scroll { flex: 1; overflow-y: auto; display: flex; justify-content: center; padding: var(--ds-space-8) var(--ds-space-6); }
+.ds-form-page__column { width: 100%; max-width: var(--ds-size-form-column); display: flex; flex-direction: column; gap: var(--ds-space-6); }
+.ds-form-page--wide .ds-form-page__column, .ds-form-page--wide .ds-form-page__footer > * { max-width: var(--ds-size-form-column-wide); }
+.ds-form-page__footer { flex-shrink: 0; display: flex; justify-content: center; padding: var(--ds-space-5) var(--ds-space-6);
+  border-top: 1px solid var(--ds-color-border-subtle); background: var(--ds-gradient-glass-up); }
+.ds-form-page__footer > * { width: 100%; max-width: var(--ds-size-form-column); }
+.ds-form-page__guide { display: none; flex-direction: column; gap: var(--ds-space-6); width: 36%; max-width: var(--ds-size-form-guide); flex-shrink: 0; overflow-y: auto;
+  padding: var(--ds-space-8); background: var(--ds-color-surface-nested); border-inline-start: 1px solid var(--ds-color-border-subtle); }
+@media (min-width: 1024px) { .ds-form-page__guide { display: flex; } }
+.ds-step__btn { display: flex; align-items: center; border-radius: var(--ds-radius-sm); }
+.ds-step__btn:disabled { cursor: default; }
+```
 
 ### 6.11 Monitoring view
 
@@ -2780,7 +2971,7 @@ Forms live in slide panels (multi-field, multi-step: Add Factory, Add Product) o
 
 ### 7.1 General rules
 
-Charts live in dashboard cards (§5.25). Every chart has a title, a legend when it has more than one series, readable axes, a tooltip on hover **and** focus, and an accessible data table alternative. Colors encode meaning only: good = `chart-positive`, bad = `chart-negative`, running = `chart-running`, stopped = `chart-stopped`; categories use `chart-cat-1…4` in order. Never use a status color as a category color. Numbers use en-GB grouping in the system (the screens show Indian grouping "1,23,456" — a product locale decision).
+Charts live in dashboard cards (§5.25). Every chart has a title, a legend when it has more than one series, readable axes, a tooltip on hover **and** focus, and an accessible data table alternative. Colors encode meaning only: good = `chart-positive`, bad = `chart-negative`, running = `chart-running`, stopped = `chart-stopped`; categories use `chart-cat-1…10` in order. Never use a status color as a category color. Numbers use en-GB grouping in the system (the screens show Indian grouping "1,23,456" — a product locale decision).
 
 ### 7.2 Color palettes
 
@@ -2788,7 +2979,7 @@ Charts live in dashboard cards (§5.25). Every chart has a title, a legend when 
 |---|---|---|
 | Binary quality | `chart-positive` `#10b981` / `chart-negative` `#ff5825` | Good vs bad products |
 | Running / stopped | `chart-running` `#34d399` / `chart-stopped` `#ff5825` | Status bars and legends |
-| Categorical | `chart-cat-1…4` | Donut and category series (OBSERVED in the donut; R-13) |
+| Categorical | `chart-cat-1…10` | Donut and category series (OBSERVED in the donut; R-13) |
 | Heat scale | `heat-0 … heat-4` | Defect-rate heatmap and bubble colors (5 stops, interpolated in RGB) |
 | Trend | `chart-trend` (white) | Dashed trend line and its points |
 
@@ -2808,7 +2999,7 @@ Y axis: 28 px column, 7 ticks (0 → max rounded to a nice step, e.g. 10k), `axi
 
 ### 7.6 Donut / pie
 
-**DEOC** "Defect Distribution": 180 px donut, 32 px ring on a `chart-track` circle, segments in `chart-cat-1…4` clockwise from 12 o'clock; legend beside it (rows 20 px apart, 24 px to the values): 24 × 16 swatch (radius 4), label 14/500 `text-tertiary`, value "1,561 (29%)" 14/500 `text-muted` end-aligned. The card is 594 px wide; when the heatmap beside it is tall the legend stacks under the donut (rows 12 px apart). The legend **repeats every value** so the chart never relies on color alone. Hover / focus a segment or legend row to highlight it.
+**DEOC** "Defect Distribution": 180 px donut, 32 px ring on a `chart-track` circle, segments in `chart-cat-1…10` clockwise from 12 o'clock; legend beside it (rows 20 px apart, 24 px to the values): 24 × 16 swatch (radius 4), label 12/500 `text-tertiary`, value "1,561 (29%)" 12/500 `text-muted` end-aligned. The card is 594 px wide; when the heatmap beside it is tall the legend stacks under the donut (rows 12 px apart). The legend **repeats every value** so the chart never relies on color alone. Hover / focus a segment or legend row to highlight it.
 
 ### 7.7 Heatmap
 
@@ -2827,9 +3018,9 @@ Y axis: 28 px column, 7 ticks (0 → max rounded to a nice step, e.g. 10k), `axi
   display: flex; flex-direction: column; gap: var(--ds-space-2-5); padding: 13px; border-radius: 9px;   /* DEOC ChartTooltip (§11) */
   background: var(--ds-gradient-tooltip); border: 1px solid var(--ds-color-border-glass); box-shadow: var(--ds-shadow-tooltip); }
 .ds-chart-tip--wide { width: 342px; }
-.ds-chart-tip__head { display: flex; align-items: center; gap: var(--ds-space-2); font-size: var(--ds-font-size-micro); line-height: 13px; }
+.ds-chart-tip__head { display: flex; align-items: center; gap: var(--ds-space-2); font-size: var(--ds-font-size-micro); line-height: var(--ds-leading-13); }
 .ds-chart-tip__head b { font-weight: 700; color: var(--ds-color-text-tooltip); }
-.ds-chart-tip__rows { display: flex; flex-direction: column; gap: var(--ds-space-1-5); font-size: var(--ds-font-size-caption); line-height: 12px; }
+.ds-chart-tip__rows { display: flex; flex-direction: column; gap: var(--ds-space-1-5); font-size: var(--ds-font-size-caption); line-height: var(--ds-leading-12); }
 .ds-chart-tip__row { display: flex; justify-content: space-between; gap: var(--ds-space-3); color: var(--ds-color-text-tooltip-muted); }
 .ds-chart-tip__row > :last-child { color: var(--ds-color-text-tooltip); }
 .ds-chart-tip__divider { height: 1px; background: var(--ds-color-border-tooltip-divider); }
@@ -2855,7 +3046,7 @@ View switches are `accent` segmented tabs (40 px); scoped filters are filter sel
 .ds-chart { position: relative; width: 100%; min-width: 0; }
 .ds-chart__plotrow { display: flex; gap: var(--ds-space-2-5); }
 .ds-axis-y { position: relative; width: 28px; flex-shrink: 0; }
-.ds-axis-y span { position: absolute; inset-inline-end: var(--ds-space-2); transform: translateY(50%); font-size: var(--ds-font-size-label); line-height: 24px; letter-spacing: var(--ds-tracking-tight);
+.ds-axis-y span { position: absolute; inset-inline-end: var(--ds-space-2); transform: translateY(50%); font-size: var(--ds-font-size-label); line-height: var(--ds-leading-24); letter-spacing: var(--ds-tracking-tight);
   color: var(--ds-color-text-axis); font-variant-numeric: tabular-nums; }
 .ds-chart__plot { position: relative; flex: 1; min-width: 0; display: flex; align-items: flex-end; border-bottom: 1px solid var(--ds-color-border-subtle); }
 .ds-chart__band { flex: 1; min-width: 0; height: 100%; display: flex; align-items: flex-end; justify-content: center; }
@@ -2865,9 +3056,9 @@ View switches are `accent` segmented tabs (40 px); scoped filters are filter sel
 .ds-bands__track { position: relative; display: flex; }
 .ds-band { flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; }
 .ds-band__plot { position: relative; display: flex; align-items: flex-end; justify-content: center; border-bottom: 1px solid var(--ds-color-border-subtle); }
-.ds-band__value { position: absolute; left: 50%; transform: translateX(-50%); white-space: nowrap; font-size: var(--ds-font-size-label); line-height: 16px; letter-spacing: var(--ds-tracking-tight);
+.ds-band__value { position: absolute; left: 50%; transform: translateX(-50%); white-space: nowrap; font-size: var(--ds-font-size-label); line-height: var(--ds-line-height-label); letter-spacing: var(--ds-tracking-tight);
   color: var(--ds-color-text-primary); font-variant-numeric: tabular-nums; pointer-events: none; }
-.ds-band__label { margin-top: var(--ds-space-2-5); min-height: 24px; padding-inline: 2px; text-align: center; font-size: var(--ds-font-size-body); line-height: 20px; letter-spacing: var(--ds-tracking-tight);
+.ds-band__label { margin-top: var(--ds-space-2-5); min-height: 24px; padding-inline: var(--ds-space-0-5); text-align: center; font-size: var(--ds-font-size-body); line-height: var(--ds-line-height-body); letter-spacing: var(--ds-tracking-tight);
   color: var(--ds-color-text-primary); overflow-wrap: break-word; display: -webkit-box; flex-shrink: 0; align-self: center; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; }
 .ds-band__label--start { align-self: flex-start; text-align: start; }
 .ds-band__label--end { align-self: flex-end; text-align: end; }
@@ -2880,13 +3071,13 @@ View switches are `accent` segmented tabs (40 px); scoped filters are filter sel
 .ds-bar--single { width: 100%; max-width: none; min-width: 0; flex: 1; }
 .ds-bar-group { display: flex; align-items: flex-end; gap: var(--ds-space-1); width: 74%; max-width: 222px; min-width: 6px; height: 100%; }
 .ds-axis-x { display: flex; margin-top: var(--ds-space-2-5); margin-inline-start: calc(28px + var(--ds-space-2-5)); }
-.ds-axis-x span { flex: 1; min-width: 0; text-align: center; font-size: var(--ds-font-size-body); line-height: 24px; letter-spacing: var(--ds-tracking-tight); color: var(--ds-color-text-primary);
+.ds-axis-x span { flex: 1; min-width: 0; text-align: center; font-size: var(--ds-font-size-body); line-height: var(--ds-leading-24); letter-spacing: var(--ds-tracking-tight); color: var(--ds-color-text-primary);
   overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .ds-axis-x--line { position: relative; height: 24px; }
 .ds-axis-x--line span { position: absolute; transform: translateX(-50%); flex: none; }
 .ds-trend { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; overflow: visible; }
 .ds-trend__pt { position: absolute; width: 10px; height: 10px; margin-inline-start: -5px; margin-bottom: -5px; border-radius: var(--ds-radius-full); background: var(--ds-chart-trend); pointer-events: none; }
-.ds-trend__label { position: absolute; bottom: 14px; left: 50%; transform: translateX(-50%); white-space: nowrap; font-size: var(--ds-font-size-value); line-height: 22px;
+.ds-trend__label { position: absolute; bottom: 14px; left: 50%; transform: translateX(-50%); white-space: nowrap; font-size: var(--ds-font-size-value); line-height: var(--ds-line-height-value);
   letter-spacing: var(--ds-tracking-tight); color: var(--ds-color-text-primary); text-shadow: 0 1px 3px rgba(0,0,0,0.8); }
 .ds-chart__plot--svg { display: block; }
 .ds-chart__plot--svg svg { display: block; overflow: visible; }
@@ -2902,14 +3093,14 @@ View switches are `accent` segmented tabs (40 px); scoped filters are filter sel
 .ds-hbar__bar:hover { filter: brightness(1.1); }
 .ds-hbar--stacked .ds-hbar__row { grid-template-columns: minmax(0, 1fr); gap: var(--ds-space-2); }
 .ds-legend { display: flex; flex-wrap: wrap; align-items: center; gap: var(--ds-space-6); }
-.ds-legend li, .ds-legend__item { display: inline-flex; align-items: center; gap: var(--ds-space-3); font-size: var(--ds-font-size-body); line-height: 22px; font-weight: 500; color: var(--ds-color-text-tertiary); }
+.ds-legend li, .ds-legend__item { display: inline-flex; align-items: center; gap: var(--ds-space-3); font-size: var(--ds-font-size-body); line-height: var(--ds-leading-22); font-weight: 500; color: var(--ds-color-text-tertiary); }
 .ds-legend__mark { width: 24px; height: 16px; border-radius: var(--ds-radius-xs); flex-shrink: 0; }
 .ds-legend__value { margin-inline-start: var(--ds-space-3); color: var(--ds-color-text-muted); }
 .ds-legend--dot { gap: var(--ds-space-5); }
-.ds-legend--dot li { gap: var(--ds-space-2); font-size: var(--ds-font-size-label); line-height: 16px; }
+.ds-legend--dot li { gap: var(--ds-space-2); font-size: var(--ds-font-size-label); line-height: var(--ds-line-height-label); }
 .ds-legend--dot .ds-legend__mark { width: 12px; height: 12px; border-radius: var(--ds-radius-full); }
 .ds-legend-dots { display: flex; flex-wrap: wrap; gap: var(--ds-space-5); }
-.ds-legend-dot { display: inline-flex; align-items: center; gap: var(--ds-space-2); font-size: var(--ds-font-size-label); line-height: 16px; font-weight: 500; color: var(--ds-color-text-tertiary); }
+.ds-legend-dot { display: inline-flex; align-items: center; gap: var(--ds-space-2); font-size: var(--ds-font-size-label); line-height: var(--ds-line-height-label); font-weight: 500; color: var(--ds-color-text-tertiary); }
 .ds-legend-dot i { width: 12px; height: 12px; border-radius: var(--ds-radius-full); }
 .ds-donut { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--ds-space-6); }
 .ds-donut__ring { position: relative; width: 180px; height: 180px; flex-shrink: 0; max-width: 100%; }
@@ -2919,32 +3110,32 @@ View switches are `accent` segmented tabs (40 px); scoped filters are filter sel
 .ds-donut__center { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; }
 .ds-donut__legend { flex: 1 1 240px; max-width: 320px; display: flex; flex-direction: column; gap: var(--ds-space-5); min-width: 0; }
 .ds-donut__row { width: 100%; display: flex; justify-content: space-between; align-items: center; gap: var(--ds-space-6); padding: var(--ds-space-0-5) 0; border-radius: var(--ds-radius-xs);
-  font-size: var(--ds-font-size-body); line-height: 22px; font-weight: 500; color: var(--ds-color-text-tertiary); text-align: start; }
+  font-size: var(--ds-font-size-body); line-height: var(--ds-leading-22); font-weight: 500; color: var(--ds-color-text-tertiary); text-align: start; }
 .ds-donut__row > span:first-child { display: inline-flex; align-items: center; gap: var(--ds-space-3); white-space: nowrap; }
 .ds-donut__row > span:last-child { color: var(--ds-color-text-muted); font-variant-numeric: tabular-nums; white-space: nowrap; }
 .ds-heatmap-wrap { position: relative; overflow-x: auto; }
 .ds-heatmap { display: grid; min-width: 520px; }
 .ds-heatmap__row { display: contents; }
 .ds-heatmap__head { background: var(--ds-color-surface-table-header); padding: var(--ds-space-2) 0; text-align: center;
-  font-size: var(--ds-font-size-body); line-height: 24px; font-weight: 600; letter-spacing: var(--ds-tracking-tight); text-transform: uppercase; color: var(--ds-color-text-muted); }
+  font-size: var(--ds-font-size-body); line-height: var(--ds-leading-24); font-weight: 600; letter-spacing: var(--ds-tracking-tight); text-transform: uppercase; color: var(--ds-color-text-muted); }
 .ds-heatmap__head--first { text-align: start; padding-inline-start: 28px; border-inline-end: 1px solid var(--ds-color-border-divider); }
 .ds-heatmap__label { display: flex; align-items: center; min-height: var(--ds-size-heat-row); padding-inline: 28px var(--ds-space-3); border-inline-end: 1px solid var(--ds-color-border-divider);
-  font-size: var(--ds-font-size-body); line-height: 20px; font-weight: 600; letter-spacing: var(--ds-tracking-tight); color: var(--ds-color-text-primary); }
+  font-size: var(--ds-font-size-body); line-height: var(--ds-line-height-body); font-weight: 600; letter-spacing: var(--ds-tracking-tight); color: var(--ds-color-text-primary); }
 .ds-heatmap__cellwrap { display: flex; min-height: var(--ds-size-heat-row); }
-.ds-heat-cell { flex: 1; border: 0; padding: 0 var(--ds-space-1); font-size: var(--ds-font-size-body); line-height: 20px; font-weight: 600; letter-spacing: var(--ds-tracking-tight);
+.ds-heat-cell { flex: 1; border: 0; padding: 0 var(--ds-space-1); font-size: var(--ds-font-size-body); line-height: var(--ds-line-height-body); font-weight: 600; letter-spacing: var(--ds-tracking-tight);
   color: var(--ds-color-text-primary); cursor: pointer; font-variant-numeric: tabular-nums; transition: filter var(--ds-duration-fast); }
 .ds-heat-cell:hover { filter: brightness(1.25); }
 .ds-heat-cell:focus-visible { outline: var(--ds-focus-width) solid var(--ds-color-focus-ring-on-color); outline-offset: var(--ds-focus-offset-inset); }
 .ds-bubble { position: relative; padding: var(--ds-space-3) var(--ds-space-4) var(--ds-space-2); overflow-x: auto; }
 .ds-bubble__row { display: grid; align-items: center; column-gap: var(--ds-space-4); min-width: 480px; }
 .ds-bubble__label { display: flex; flex-direction: column; min-width: 0; }
-.ds-bubble__label span:first-child { font-size: var(--ds-font-size-body); line-height: 20px; font-weight: 600; color: var(--ds-color-text-chart-strong); }
-.ds-bubble__label span:last-child { font-size: var(--ds-font-size-label); line-height: 16px; color: var(--ds-color-text-chart-subtle); }
+.ds-bubble__label span:first-child { font-size: var(--ds-font-size-body); line-height: var(--ds-line-height-body); font-weight: 600; color: var(--ds-color-text-chart-strong); }
+.ds-bubble__label span:last-child { font-size: var(--ds-font-size-label); line-height: var(--ds-line-height-label); color: var(--ds-color-text-chart-subtle); }
 .ds-bubble__cell { display: flex; align-items: center; justify-content: center; }
 .ds-bubble__dot { border: 0; padding: 0; border-radius: var(--ds-radius-full); cursor: pointer; transition: transform var(--ds-duration-fast) var(--ds-ease-standard); }
 .ds-bubble__dot:hover { transform: scale(1.1); }
 .ds-bubble__axis { height: auto; padding-top: var(--ds-space-1); }
-.ds-bubble__axis span { text-align: center; padding: 0 var(--ds-space-1); font-size: var(--ds-font-size-micro); line-height: 14px; color: var(--ds-color-text-chart-subtle); }
+.ds-bubble__axis span { text-align: center; padding: 0 var(--ds-space-1); font-size: var(--ds-font-size-micro); line-height: var(--ds-line-height-micro); color: var(--ds-color-text-chart-subtle); }
 .ds-chart-data { display: flex; flex-direction: column; align-items: flex-start; gap: var(--ds-space-3); }
 .ds-chart-data > div { width: 100%; }
 @media (prefers-reduced-motion: reduce) { .ds-bar, .ds-hbar__bar, .ds-donut__seg, .ds-segbar__seg, .ds-progress > span, .ds-live__dot { transition: none; animation: none; } }
@@ -2977,8 +3168,8 @@ The chart library (64 chart types, `src/charts/library`) draws SVG with these cl
 .cl-region:hover, .cl-region:focus-visible { stroke: var(--ds-color-text-primary); }
 .cl-map { display: flex; flex-direction: column; align-items: center; gap: var(--ds-space-4); }
 .cl-map__svg { width: 100%; max-width: 300px; height: auto; display: block; }
-.cl-seq-legend { display: flex; align-items: center; gap: var(--ds-space-2); font-size: var(--ds-font-size-label); line-height: 16px; color: var(--ds-color-text-muted); flex-wrap: wrap; }
-.cl-seq-legend__ramp { display: inline-flex; gap: 2px; }
+.cl-seq-legend { display: flex; align-items: center; gap: var(--ds-space-2); font-size: var(--ds-font-size-label); line-height: var(--ds-line-height-label); color: var(--ds-color-text-muted); flex-wrap: wrap; }
+.cl-seq-legend__ramp { display: inline-flex; gap: var(--ds-space-0-5); }
 .cl-seq-legend i { display: inline-block; width: 20px; height: 12px; border-radius: 2px; }
 .cl-seq-legend__nd { display: inline-flex; align-items: center; gap: var(--ds-space-2); margin-inline-start: var(--ds-space-3); }
 .cl-seq-legend__nd i { width: 12px; background: var(--ds-chart-track); }
@@ -2990,9 +3181,9 @@ The chart library (64 chart types, `src/charts/library`) draws SVG with these cl
 .cl-card-wrap { display: flex; flex-direction: column; gap: var(--ds-space-2); min-width: 0; }
 .cl-card-meta { display: flex; flex-wrap: wrap; align-items: center; gap: var(--ds-space-2); }
 .cl-stub { display: flex; flex-direction: column; gap: var(--ds-space-2); align-items: flex-start; }
-.cl-inlabel { font-size: var(--ds-font-size-label); font-weight: 500; letter-spacing: -0.2px; fill: var(--ds-color-text-primary); pointer-events: none; }
+.cl-inlabel { font-size: var(--ds-font-size-label); font-weight: 500; letter-spacing: var(--ds-tracking-chart-label); fill: var(--ds-color-text-primary); pointer-events: none; }
 .cl-center-value { font-size: var(--ds-font-size-heading); font-weight: 600; letter-spacing: var(--ds-tracking-tight); fill: var(--ds-color-text-primary); font-variant-numeric: tabular-nums; }
-.cl-center-value--lg { font-size: 32px; }
+.cl-center-value--lg { font-size: var(--ds-font-size-title); }
 ```
 
 ---
@@ -3015,7 +3206,7 @@ At ≥ 1024 the sidebar is visible (expanded by default, collapsible). Below 102
 
 ### 8.3 Page header
 
-Actions wrap below the title when they no longer fit; the search shrinks before wrapping; the primary action stays last.
+Actions wrap below the title when they no longer fit; the search shrinks before wrapping; the primary action stays last. At `xs` a sub-page shows only its own title after the back button: the parent name and "/" are hidden (the back button already leads there), and the title steps down to `heading` size (20/28) (§8.10).
 
 ### 8.4 Grids
 
@@ -3040,6 +3231,46 @@ Every target is ≥ 24 × 24 px (SC 2.5.8); at `xs` and `sm`, icon buttons grow 
 ### 8.9 Internationalization & right-to-left
 
 Layout uses logical properties (`inline-start/end`), directional icons flip, numbers stay LTR, tooltips and drawers mirror.
+
+### 8.10 Mobile spacing (`xs`) [EXTENSION]
+
+The default spacing is drawn for 1920 px screens; on a phone it wastes a quarter of the width on padding. At `xs` (< 640) the semantic spacing tokens step down, so every component and layout that uses them tightens with no per-screen code. The base 4 px scale (`--ds-space-1…16`) never changes; only the semantic names below do. Layouts must use the semantic tokens (not fixed Tailwind gaps or paddings) for page gutters, section gaps and grid gaps, or they won't follow.
+
+| Token | Default | `xs` |
+|---|---|---|
+| `--ds-space-section` | 20 | 16 |
+| `--ds-space-grid` / `-grid-lg` | 16 / 20 | 10 / 12 |
+| `--ds-space-stack` | 12 | 8 |
+| `--ds-space-card` / `-lg` / `-xl` / `-entity` | 16 / 20 / 24 / 25 | 12 / 14 / 16 / 17 |
+| `--ds-space-card-gap` / `--ds-space-chart-gap` | 20 | 12 |
+| `--ds-space-header-actions` | 12 | 8 |
+| `--ds-space-form-col` / `-row` / `-section` | 20 / 40 / 24 | 12 / 20 / 16 |
+| `--ds-space-cell-x` / `-y` | 16 / 12 | 12 / 10 |
+| `--ds-size-page-header` / `--ds-size-kpi-card` | 76 / 76 | 56 / 64 |
+
+The page gutter stays 16 px (12 px felt cramped on a phone). The page header (and the shell top bar) is 56 px tall with 8 px block padding, and always carries `shadow-glass-soft`, the same soft shadow as the section cards, so it reads as a bar above the content without a heavy edge (on desktop the header has no shadow until content scrolls under it). Sub-page headers drop the "Parent /" prefix and the page title steps down to `heading` size (§8.3).
+
+Full-height app frames use `min-height: 100dvh`, never `100vh` / `min-h-screen`: on mobile browsers `100vh` is the height with the address bar hidden, so anything pinned to the page bottom (a Log out button, a form footer) lands behind a fixed bottom bar. Content above a fixed bottom bar gets bottom padding at least the bar's height.
+
+```css
+@media (max-width: 639px) {
+  :root {
+    --ds-space-section: 16px;
+    --ds-space-grid: 10px;  --ds-space-grid-lg: 12px;
+    --ds-space-stack: 8px;
+    --ds-space-card: 12px;  --ds-space-card-lg: 14px;  --ds-space-card-xl: 16px;  --ds-space-card-entity: 17px;
+    --ds-space-card-gap: 12px;  --ds-space-chart-gap: 12px;
+    --ds-space-header-actions: 8px;
+    --ds-space-form-col: 12px;  --ds-space-form-row: 20px;  --ds-space-form-section: 16px;
+    --ds-space-cell-x: 12px;  --ds-space-cell-y: 10px;
+    --ds-size-page-header: 56px;  --ds-size-kpi-card: 64px;
+  }
+  .ds-page-header { padding-block: var(--ds-space-2); box-shadow: var(--ds-shadow-glass-soft); }
+  .ds-topbar { min-height: var(--ds-size-page-header); }
+  .ds-page-header__parent, .ds-page-header__sep { display: none; }
+  .ds-page-header .ds-ts-page-title { font-size: var(--ds-font-size-heading); line-height: var(--ds-line-height-heading); }
+}
+```
 
 ---
 
@@ -3071,7 +3302,7 @@ Focus ring ≥ 4.05:1 everywhere. Status dots carry a label. Glass control edges
 
 ### 9.3 Increased-contrast mode
 
-`prefers-contrast: more` or `data-contrast="more"` adds a 1 px `border-control-strong` (3:1) edge to fields, triggers, tabs, toggles, radio cards, secondary/subtle/ghost buttons, dropzones and the current nav item.
+`prefers-contrast: more` or `data-contrast="more"` adds a 1 px `border-control-strong` (3:1) edge to fields, triggers, tabs, toggles, radio cards, tertiary/subtle/ghost buttons, dropzones and the current nav item.
 
 ### 9.4 Status, color and meaning
 
@@ -3146,14 +3377,14 @@ Use the defaults in §6. Deviate only when content length, data volume or a work
 | R-10 | Upcoming steps at 40 % and 50 % opacity (inconsistent, and fails AA) | Index at 50 %, text at full opacity in muted colors |
 | R-11 | Nested line groups at radius 24 inside 16 px sections | 16 (`radius-nested`) |
 | R-12 | Overlays cover the sidebar in the screens; the previous system contained them in the main panel | Follow the screens: the scrim covers the shell |
-| R-13 | Donut segments use `#016ffe / #8b34fd / #fbb645 / #00bac9` but the legend swatches use `#3b82f6 / #4d3f9d / #9d6f3f / #3f779d`; two legend rows say "Primary - Front"; percentages total 147 % | Segments and swatches both use `chart-cat-1…4`; demo data uses distinct labels and percentages that sum to 100 % |
+| R-13 | Donut segments use `#016ffe / #8b34fd / #fbb645 / #00bac9` but the legend swatches use `#3b82f6 / #4d3f9d / #9d6f3f / #3f779d`; two legend rows say "Primary - Front"; percentages total 147 % | Segments and swatches both use `chart-cat-1…10`; demo data uses distinct labels and percentages that sum to 100 % |
 | R-14 | Status pills appear tinted (component default) and glass (instance override) | Both kept as documented appearances; tone and label never change |
 | R-15 | Product Master list (frame 8 background) and the Add Factory step-2 drawer header (frame 5) still use the previous style (`#1d2328` cards, sunken `#161a1e` inputs, `#15191c` header) | Treated as not yet migrated; rendered with the new tokens |
 | R-16 | Camera tile 4 has a 1 px white/6 % border and a different shadow; tiles 1–3 have none | All tiles use the entity-card surface: `shadow-glass` + `shadow-edge` (revised 2026-10-21, R-28) |
 | R-17 | Collapsible headers padded 32 px (Factory 1) and 24 px (Factories 2–4) | 24 |
 | R-18 | Table cards: `shadow-float` (frame 6) vs `shadow-glass-soft` (frame 4 sections) | Table card = float; collapsible section = glass-soft |
 | R-19 | Status-option labels `#8e9296` and dropzone hints `#8e9296` (a neutral grey outside the slate ramp) | `text-muted` |
-| R-20 | Secondary button label `#d1d5db` (subtle) vs `#e2e8f0` (secondary) | Both `text-emphasis` |
+| R-20 | Tertiary button label `#d1d5db` (subtle) vs `#e2e8f0` (tertiary) | Both `text-emphasis` |
 | R-21 | Heat cells: white text on orange (2.9–3.9:1) | White up to 0.55, `text-on-bright` from 0.59, fills between snap to the nearer edge (§7.7) |
 | R-22 | Sidebar nav lists "Lines" in frames 5 and 8 only | Product decision: rendered as in each frame |
 | R-23 | Stepper completed subtitle in `#10b981` vs success text `#34d399` elsewhere | `success-text` |
@@ -3216,6 +3447,41 @@ Product Master list under the scrim → xl slide panel: section "User Details", 
 
 ## 14. Changelog
 
+### Revision 8 — 2026-11-05
+
+**[PRODUCT DECISION] Mobile spacing** (§8.10). At `xs` the semantic spacing tokens (section, grid, card padding, form, table cell) step down and the page header and shell top bar shrink to 56 px and always show a subtle shadow; the page gutter stays 16 px. Sub-page headers on phones show only the page title after the back button, no "Parent /" prefix; the title steps down to 20/28.
+
+### Revision 7 — 2026-11-04
+
+**[PRODUCT DECISION] Type scale restored.** Revision 6's −2 px step is reverted: the scale is DEOC's 10/11/12/14/16/20/24 px again, with every named text style and size/weight shorthand back at its Revision 5 value.
+
+**[PRODUCT DECISION] Chart palette from Figma** (Redesign CM Saarthi, "Colours"). `chart-cat-1…10` are Sky `#60a5fa`, Royal blue `#2563eb`, Indigo `#6366f1`, Purple `#4b10a3`, Pink `#f383a3`, Teal `#23b9ac`, Mauve `#ad77c2`, Green `#6aa760`, Terracotta `#da825d`, Ocean blue `#1397bb` (Figma `chart/line-1…10`; replaces the four DEOC donut colours and the 5–8 extension). New `chart-status-red` `#e5575f` and `chart-status-yellow` `#e8b94a`; `chart-stopped` and `chart-negative` now point at `chart-status-red`. Shift A/B/C use categories 1/2/3.
+
+**[PRODUCT DECISION] Status colours from Figma** (2026-11-04). Status tokens now use the Figma palette: danger and danger-text `#e5575f` (= `chart-status-red`), warning `#e8b94a` (= `chart-status-yellow`), success text and glow `#6aa760` (= `chart-cat-8`). Tints and halos follow. `heat-4` is unchanged. This replaces the R-04 split between `#ff5825` and `#ff7043`.
+
+**[PRODUCT DECISION] Floating add button** `.ds-fab` (§5.1).
+
+### Revision 6 — 2026-11-04
+
+**[PRODUCT DECISION] Type scale −2 px.** Every font-size step is 2 px smaller: caption 8, micro 9, label 10, body 12, value 14, heading 18, title 22 (was 10/11/12/14/16/20/24). Line heights, weights and tracking are unchanged. Named text styles and size/weight shorthands in component specs were shifted to match. Departs from DEOC, so `check:deoc` flags `fontSize` on every text pair (expected).
+
+### Revision 5 — 2026-11-03
+
+Token hygiene. No computed value changes except the gauge value below.
+
+- **Type is token-only.** 92 `line-height` literals now read the step's own `--ds-line-height-*`; the 24 DEOC alternates (e.g. body 14 on an 18 px line) read the new `--ds-leading-{12,13,15,16,18,22,24,26,28}` tokens. 5 spacing literals now read `--ds-space-*`.
+- **Gauge value** `.cl-center-value--lg` was 32 px, off the scale; it is now `font-size-title` (24 px).
+- **Guard:** `npm run check:tokens` fails on any px `font-size` or `line-height` in spec CSS outside token definitions.
+- **Adoption guide:** `DESIGN.md` explains how to put this system into another application (it must replace, not merge with, an existing system).
+- **Shell parts moved into the spec (§6.1):** `.ds-shell__rail`, `.ds-shell__content`, `.ds-skip-link`, `.ds-overlay--nav-drawer`, `.ds-nav-drawer`, and the page-header `h1` focus rule. They lived only in the showcase stylesheet, so an adopting app had no mobile drawer.
+- **Extensions found while adopting the system in Polaris Factory:** notification feed and `.ds-badge-count` (§5.47), grouped menu results and two-line options (§5.10), command menu `.ds-menu--end` and danger option (§5.10), chips field (§5.11), `.ds-entity-link` and `.ds-spin` (§5.3), full-page form `.ds-form-page` (§6.10).
+- **No visible borders on badges, icon tiles and chip tags [PRODUCT DECISION, Polaris Factory]:** the fill alone carries the tone. The 1 px border stays, transparent, so sizes don't change. Toggle chips keep theirs (they are controls). This departs from DEOC, so `check:deoc` reports `border-color` on badges and icon tiles.
+- **Segmented tabs are control height (§5.39):** the track is `size-control` (40 px) tall, like a field or filter select, so tabs and filters in one row line up. Was 52 px (5 px track padding around 40 px tabs); departs from DEOC.
+- **`.ds-dot--neutral`** (offline / stopped, `text-muted`, no glow), and a link action in a dash-card header is centred on the controls beside it.
+- **Sub-page header (§5.38):** back button + muted parent name + "/" + title, in place of an in-page breadcrumb (`PageHeader` `parent` prop, `.ds-page-header__parent`, `.ds-page-header__sep`).
+- **Entity card counts (§5.24):** each count is its own box (`.ds-entity__stats` / `.ds-entity__stat`; `.ds-stat-tile` is the same box for use outside an entity card), and `ds-entity-grid--4` lays out a fixed set of four cards as 1, 2 × 2 or 4 across, never 3 + 1.
+- **Tokens added:** `--ds-leading-16-5`, `--ds-tracking-step`, `--ds-tracking-chart-label`, `--ds-size-feed-max-height`, `--ds-size-form-column`, `--ds-size-form-column-wide`, `--ds-size-form-guide`. `check:tokens` now also catches decimal and letter-spacing literals.
+
 ### Revision 4 — 2026-10-24
 
 Matched to the DEOC app's default Design System 02, which is final (D-10). Colours, gradients and shadows were already shared tokens; this revision aligns everything else.
@@ -3264,7 +3530,7 @@ Initial specification of the Vision Automation system: visual foundations recons
 | D-3 | Separate `danger-text` `#ff7043` for status text | Adopt in Figma | R-04 |
 | D-4 | Darker green / amber role tags | Adopt in Figma | R-06 |
 | D-5 | No backdrop blur on glass panels | Remove from Figma layers too | R-09 |
-| D-6 | Donut palette and legend mismatch | Use `chart-cat-1…4` for both | R-13 |
+| D-6 | Donut palette and legend mismatch | Use `chart-cat-1…10` for both | R-13 |
 | D-7 | Hover / focus / error / selected states are not drawn in the screens | Approve the INFERRED states (§15.2) | §5 |
 | D-8 | One hairline border colour, `border-edge` = white/2 % (the KPI card), instead of Figma's white/2–7 % | Approved by the product owner (2026-10-21) | §2.2, §2.7 |
 | D-9 | The DEOC app is final: gradient toggle track and selected option, tinted pinned table header, panel footer shadow, 24 px page title, entity icon without a tile | Approved by the product owner (2026-10-21) | §2.1, §2.3, §5.14, §5.24, §5.38, §5.39, §5.41, §5.46 |

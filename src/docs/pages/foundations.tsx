@@ -245,7 +245,7 @@ export function MotionPage() {
     <div className="doc-page">
       <p className="ds-text-body doc-lead">Transitions are short and limited to color, background, border, opacity, box-shadow, filter, transform and chart sizes. Overlays appear instantly (a 150ms backdrop fade is optional); the "Live" indicator pulses. <code>prefers-reduced-motion: reduce</code> disables every transition and animation.</p>
       {reduced && <p className="doc-callout-note" role="status">Your system requests reduced motion, so the demos below jump instead of animating — that is the documented behavior.</p>}
-      <Button variant="secondary" onClick={() => setRun(r => !r)}>{run ? 'Reset' : 'Play transitions'}</Button>
+      <Button variant="tertiary" onClick={() => setRun(r => !r)}>{run ? 'Reset' : 'Play transitions'}</Button>
       <DocSection id="durations" title="Durations (standard easing)">
         <div className="doc-motion">{durations.map(n => (
           <div key={n} className="doc-motion__row"><code>{n}</code><span className="ds-text-small">{spec.declared[n]}</span>
@@ -356,7 +356,7 @@ export function DensityPage() {
         <Preview>
           <div className="doc-stack doc-full">
             <div className="ds-kpi-row"><KpiCard label="Total Factories" value={FACTORIES.length} icon={<Illustration name="illus.facility-set" crop="factory" size={52} />} /><KpiCard label="Active Factories" value={FACTORIES.filter(f => f.status.tone === 'success').length} icon={<Illustration name="illus.facility-set" crop="factory-active" size={52} />} /></div>
-            <div className="ds-cluster"><Button leading={FI.Plus}>Add factory</Button><Button variant="secondary" size="sm">Export</Button><TextInput aria-label="Factory name" placeholder="Enter factory name" /></div>
+            <div className="ds-cluster"><Button leading={FI.Plus}>Add factory</Button><Button variant="tertiary" size="sm">Export</Button><TextInput aria-label="Factory name" placeholder="Enter factory name" /></div>
             <section className="ds-table-card"><DataTable caption="Density demo" rowHeader="name" rowKey={u => u.id} rows={USERS.slice(0, 3)} columns={USER_COLS} /></section>
           </div>
         </Preview>

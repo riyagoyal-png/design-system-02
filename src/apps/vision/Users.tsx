@@ -72,7 +72,7 @@ export function UsersApp() {
       <div className="ds-cluster app-between">
         <Tabs label="Roles" idBase="roles" value={tab} onChange={reset(setTab)} controls="users-table"
           tabs={[{ value: 'all' as TabValue, label: 'All Users', count: users.length }, ...ROLES.map(r => ({ value: r as TabValue, label: TAB_LABEL[r], count: users.filter(u => u.role === r).length }))]} />
-        <Button variant="secondary" leading={Export} onClick={() => toast(`${filtered.length} users exported`)}>Export</Button>
+        <Button variant="tertiary" leading={Export} onClick={() => toast(`${filtered.length} users exported`)}>Export</Button>
       </div>
       <div id="users-table">
         <TableCard>
@@ -102,7 +102,7 @@ function UserPanel({ user, onClose, onSave }: { user: User | 'new' | null; onClo
     <SlidePanel open={!!user} onClose={onClose} size="md" title={base ? 'Edit User' : 'Add User'} icon={<Illustration name="illus.user-group" size={36} fit="cover" />}
       dirty={!!(f.name || f.email) && !base}
       footer={<>
-        <Button variant="secondary" leading={ArrowBack} onClick={onClose}>Cancel</Button>
+        <Button variant="tertiary" leading={ArrowBack} onClick={onClose}>Cancel</Button>
         <Button minWidth onClick={save}>{base ? 'Save changes' : 'Add user'}</Button>
       </>}>
       <div className="ds-form-grid ds-form-grid--1">

@@ -757,7 +757,7 @@ function AttachDemo() {
 }
 export const attachDoc: ComponentDoc = {
   path: '/components/field-with-attach', title: 'Field with Attach Button', refs: ['5.18'], provenance: 'OBSERVED', previewSurface: 'card',
-  summary: 'A §5.5 field holding a thumbnail and the value, followed by a secondary-style attach button; the wrapper draws the focus ring with :focus-within. The value can be typed or read from a photo; the extraction here is simulated locally (it fills a sample barcode after "Scanning…").',
+  summary: 'A §5.5 field holding a thumbnail and the value, followed by a tertiary-style attach button; the wrapper draws the focus ring with :focus-within. The value can be typed or read from a photo; the extraction here is simulated locally (it fills a sample barcode after "Scanning…").',
   preview: () => <AttachDemo />,
   states: () => (
     <Grid min={320}>

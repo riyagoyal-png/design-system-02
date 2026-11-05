@@ -4,7 +4,7 @@ import { Icon } from './Icon';
 import { Close } from './figmaIcons';
 import { Tooltip } from './Tooltip';
 
-export type ButtonVariant = 'primary' | 'secondary' | 'subtle' | 'tonal' | 'ghost' | 'danger';
+export type ButtonVariant = 'primary' | 'secondary' | 'tertiary' | 'subtle' | 'tonal' | 'ghost' | 'danger';
 export type ButtonSize = 'sm' | 'md' | 'lg';
 
 /** §5.1 spinner: 16px, 3px stroke, currentColor, 1s linear. */

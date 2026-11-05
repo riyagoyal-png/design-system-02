@@ -116,7 +116,7 @@ export function QaPage() {
             {rep?.tokens && <li><Mark ok={!rep.tokens.undefinedRefs.length && !rep.tokens.hexLiterals.length} /> Static scan of {rep.tokens.checkedFiles} source files: {rep.tokens.undefinedRefs.length} undefined refs, {rep.tokens.hexLiterals.length} hex literals outside allowed files</li>}
           </ul>
         )}
-        <Button variant="secondary" size="sm" onClick={runTokens}>Re-run token check</Button>
+        <Button variant="tertiary" size="sm" onClick={runTokens}>Re-run token check</Button>
       </DocSection>
 
       <DocSection id="contrast" title="Live contrast spot-check" description="Computed from the resolved token values with the WCAG formula.">

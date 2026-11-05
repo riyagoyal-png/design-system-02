@@ -76,7 +76,7 @@ export function ProductMasterApp({ adding }: { adding?: boolean }) {
           <SearchInput width="full" value={q} onValueChange={v => { setQ(v); setPage(1); }} label="Search products" placeholder="Search by product name, barcode, CLD code or CBU code" />
           <Select variant="filter" className="ds-select--180" label="Status" value={status} onChange={v => { setStatus(v); setPage(1); }} options={opts(['All Status', 'Active', 'Inactive'])} searchable={false} />
           <Select variant="filter" className="ds-select--180" label="CBU code" value={cbu} onChange={v => { setCbu(v); setPage(1); }} options={opts(['All CBU Codes', ...products.map(p => p.cbu)])} />
-          <Button variant="secondary" leading={Export} onClick={() => toast(`${filtered.length} products exported`)}>Export</Button>
+          <Button variant="tertiary" leading={Export} onClick={() => toast(`${filtered.length} products exported`)}>Export</Button>
         </div>
         <DataTable caption="Products" labelledBy="pl-title" columns={cols} rows={filtered.slice((current - 1) * PAGE, current * PAGE)} rowKey={p => p.id} rowHeader="name"
           sort={sort} onSort={setSort} minWidth={1300} empty="No products match your filters." />
@@ -109,7 +109,7 @@ function AddProductPanel({ open, onClose, onSave }: { open: boolean; onClose: ()
     <SlidePanel open={open} onClose={onClose} size="xl" title="Add Product" icon={<Illustration name="illus.catalog-item" size={36} />}
       dirty={f.notes !== '' || f.name !== init.name}
       footer={<>
-        <Button variant="secondary" leading={ArrowBack} onClick={onClose}>Cancel</Button>
+        <Button variant="tertiary" leading={ArrowBack} onClick={onClose}>Cancel</Button>
         <Button trailing={ChevronRight} minWidth onClick={save}>Save product</Button>
       </>}>
       <section className="ds-form-section" aria-labelledby="ap-section">

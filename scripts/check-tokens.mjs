@@ -6,7 +6,7 @@ import path from 'node:path';
 const root = path.resolve(import.meta.dirname, '..');
 const spec = JSON.parse(fs.readFileSync(path.join(root, 'src/generated/spec.json'), 'utf8'));
 const declared = new Set(Object.keys(spec.declared));
-const KNOBS = new Set(['--ds-table-max-height', '--ds-table-min-width', '--ds-cell-max']);
+const KNOBS = new Set(['--ds-table-max-height', '--ds-table-min-width', '--ds-cell-max', '--ds-tree-depth']);
 // Files allowed to contain color literals, and why.
 const ALLOW = {
   'src/generated/ds.css': 'verbatim spec CSS',
@@ -35,13 +35,19 @@ for (const f of files) {
     hexLiterals.push(`${rel}:${line}: ${m[0]}`);
   }
 }
-const out = { undefinedRefs: [...new Set(undefinedRefs)], hexLiterals, checkedFiles: files.length, allowedLiteralFiles: ALLOW };
-console.log(`check-tokens: ${files.length} files · ${out.undefinedRefs.length} undefined var() refs · ${hexLiterals.length} color literals outside allowed files`);
+// Type is token-only: no px font-size or line-height in spec CSS outside the token definitions.
+const typeLiterals = [];
+fs.readFileSync(path.join(root, 'src/generated/ds.css'), 'utf8').split('\n').forEach((l, i) => {
+  if (!/^\s*--ds-/.test(l)) for (const m of l.matchAll(/(?:font-size|line-height|letter-spacing):\s*-?(?:\d*\.)?\d+(?:px|em|rem)/g)) if (!/:\s*-?0(?:px|em|rem)$/.test(m[0])) typeLiterals.push(`src/generated/ds.css:${i + 1}: ${m[0]}`);
+});
+const out = { undefinedRefs: [...new Set(undefinedRefs)], hexLiterals, typeLiterals, checkedFiles: files.length, allowedLiteralFiles: ALLOW };
+console.log(`check-tokens: ${files.length} files · ${out.undefinedRefs.length} undefined var() refs · ${hexLiterals.length} color literals outside allowed files · ${typeLiterals.length} type literals`);
 out.undefinedRefs.forEach(r => console.log('  undefined', r));
 hexLiterals.forEach(r => console.log('  literal  ', r));
+typeLiterals.forEach(r => console.log('  type     ', r));
 const reportPath = path.join(root, 'public/qa-report.json');
 const report = fs.existsSync(reportPath) ? JSON.parse(fs.readFileSync(reportPath, 'utf8')) : {};
 report.tokens = out;
 fs.writeFileSync(reportPath, JSON.stringify(report, null, 1));
 if (fs.existsSync(path.join(root, 'dist'))) fs.writeFileSync(path.join(root, 'dist/qa-report.json'), JSON.stringify(report, null, 1));
-process.exitCode = out.undefinedRefs.length || hexLiterals.length ? 1 : 0;
+process.exitCode = out.undefinedRefs.length || hexLiterals.length || typeLiterals.length ? 1 : 0;

@@ -92,7 +92,7 @@ function AddFactoryPanel({ open, onClose, start, cameraModal, pickerOpen, onAdd 
         icon={<Illustration name="illus.facility-set" crop="factory" size={40} />}
         subheader={<Stepper steps={STEPS} current={step} />}
         footer={<>
-          <Button variant="secondary" leading={ArrowBack} onClick={() => (step === 0 ? close() : setStep(step - 1))}>Back</Button>
+          <Button variant="tertiary" leading={ArrowBack} onClick={() => (step === 0 ? close() : setStep(step - 1))}>Back</Button>
           <div className="ds-panel__footer-end">
             <p className="ds-panel__note" role="status">Auto-saved draft 12s ago</p>
             <Button trailing={ChevronRight} minWidth onClick={next}>{step === 0 ? 'Next: Configuration' : step === 1 ? 'Review & Add' : 'Add factory'}</Button>
@@ -123,7 +123,7 @@ function AddFactoryPanel({ open, onClose, start, cameraModal, pickerOpen, onAdd 
             <div className="ds-cluster app-between">
               <p className="ds-text-body-muted">Lines and their cameras for this factory.</p>
               <span className="ds-cluster">
-                <Button variant="secondary" leading={Upload} onClick={() => toast('CSV import opens here')}>Import (CSV)</Button>
+                <Button variant="tertiary" leading={Upload} onClick={() => toast('CSV import opens here')}>Import (CSV)</Button>
                 {tab === 'lines'
                   ? <Button leading={Plus} onClick={() => setLines(ls => [...ls, { id: `l${ls.length + 1}`, name: `Bottle Line - ${ls.length + 1}`, code: `L0${ls.length + 1}`, cameras: 0 }])}>Add Line</Button>
                   : <Button leading={Plus} onClick={() => setModal(true)}>Add Camera</Button>}
@@ -159,7 +159,7 @@ function AddCamerasModal({ open, onClose, onAdd, lines }: { open: boolean; onClo
   return (
     <Modal open={open} onClose={onClose} title="Add Cameras" icon={<Illustration name="illus.camera" size={32} />} dirty={!!(v.id || v.ip || v.brand)}
       footer={<>
-        <Button variant="secondary" onClick={onClose}>Skip</Button>
+        <Button variant="tertiary" onClick={onClose}>Skip</Button>
         <Button minWidth onClick={submit}>Add Camera</Button>
       </>}>
       <div className="ds-form-grid">

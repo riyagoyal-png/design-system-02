@@ -1,10 +1,9 @@
 // Chart Library color scales. Literals here are spec-stated §7.2 values that have no CSS token
 // (allow-listed in scripts/check-tokens.mjs). They match the Figma aliases one-for-one.
 
-/** §7.2 categorical, then the categorical extension (categories 5–8) and "Other". Figma: chart/cat-1…8, chart/other. */
+/** §7.2 categorical, then the categorical extension and "Other". Figma: chart/line-1…10, chart/other. */
 export const CATEGORICAL = [
-  'var(--ds-chart-cat-1)', 'var(--ds-chart-cat-2)', 'var(--ds-chart-cat-3)', 'var(--ds-chart-cat-4)',
-  '#34d399', '#fb7185', '#93c5fd', '#f59e0b',
+  ...Array.from({ length: 10 }, (_, i) => `var(--ds-chart-cat-${i + 1})`),
 ];
 export const OTHER = '#64748b';
 

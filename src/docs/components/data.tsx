@@ -48,12 +48,12 @@ function TableDemo() {
   const sorted = useMemo(() => sortRows(rows, sort, userColumns()), [rows, sort]);
   const pageRows = sorted.slice((page - 1) * size, page * size);
   return (
-    <TableCard title="Users" titleId="tbl-demo-title" count={rows.length} actions={<Button variant="secondary" leading={Export} onClick={() => toast(`${rows.length} users exported`)}>Export</Button>}
+    <TableCard title="Users" titleId="tbl-demo-title" count={rows.length} actions={<Button variant="tertiary" leading={Export} onClick={() => toast(`${rows.length} users exported`)}>Export</Button>}
       bulk={sel.size ? (
         <div className="ds-bulkbar">
           <span className="ds-text-body-strong" role="status">{sel.size} selected</span>
           <div className="ds-bulkbar__actions">
-            <Button size="sm" variant="secondary" onClick={() => { setRows(r => r.filter(x => !sel.has(x.id))); toast(`${sel.size} users removed`); setSel(new Set()); }}>Remove</Button>
+            <Button size="sm" variant="tertiary" onClick={() => { setRows(r => r.filter(x => !sel.has(x.id))); toast(`${sel.size} users removed`); setSel(new Set()); }}>Remove</Button>
             <Button size="sm" variant="ghost" onClick={() => setSel(new Set())}>Clear selection</Button>
           </div>
         </div>
@@ -121,7 +121,7 @@ export const tableDoc: ComponentDoc = {
 export const tableCardDoc: ComponentDoc = {
   path: '/components/table-card', title: 'Table Card', refs: ['5.42'], provenance: 'OBSERVED',
   summary: 'A table never sits directly on the page: it lives in a glass card (radius 16, shadow-float) with an optional section header (group-title + count pill + actions) and pagination.',
-  preview: () => <div className="doc-full"><TableCard title="Users" titleId="tc-title" count={USERS.length} actions={<Button variant="secondary" size="sm" leading={Export}>Export</Button>}><DataTable caption="Users" labelledBy="tc-title" rowHeader="name" rowKey={u => u.id} rows={someUsers.slice(0, 3)} columns={userColumns().slice(0, 4)} /></TableCard></div>,
+  preview: () => <div className="doc-full"><TableCard title="Users" titleId="tc-title" count={USERS.length} actions={<Button variant="tertiary" size="sm" leading={Export}>Export</Button>}><DataTable caption="Users" labelledBy="tc-title" rowHeader="name" rowKey={u => u.id} rows={someUsers.slice(0, 3)} columns={userColumns().slice(0, 4)} /></TableCard></div>,
   spec: [{ property: 'Radius', token: '--ds-radius-card' }, { property: 'Shadow / edge', token: '--ds-shadow-float-drop + --ds-shadow-edge', note: ' (R-18, R-28)' }, { property: 'Header padding', token: '--ds-space-4' }, { property: 'Header divider', token: '--ds-color-border-faint' }, { property: 'Title → count', token: '--ds-space-3-5' }],
   usage: `<TableCard title="Users" titleId="users-title" count={24} actions={…}>\n  <DataTable labelledBy="users-title" … />\n  <Pagination … />\n</TableCard>`,
 };

@@ -159,8 +159,8 @@ export function ChartPlaygroundPage() {
       <div className="cl-controls" role="group" aria-label="Data controls">
         {(categorical || chart === 'scatter') && <>
           <span className="ds-text-small" role="status" aria-live="polite">{order.length} {chart === 'scatter' ? `categories → ${Math.max(3, order.length * 2)} points` : 'categories'}</span>
-          <Button size="sm" variant="secondary" onClick={add} disabled={order.length >= 24}>Add category</Button>
-          <Button size="sm" variant="secondary" onClick={remove} disabled={order.length <= 1}>Remove category</Button>
+          <Button size="sm" variant="tertiary" onClick={add} disabled={order.length >= 24}>Add category</Button>
+          <Button size="sm" variant="tertiary" onClick={remove} disabled={order.length <= 1}>Remove category</Button>
           {categorical && <Button size="sm" variant="ghost" onClick={swap} disabled={order.length < 2}>Swap first two</Button>}
         </>}
         {(chart === 'grouped' || chart === 'stacked' || chart === 'line') &&
@@ -177,7 +177,7 @@ export function ChartPlaygroundPage() {
           <textarea id="pg-data" className="pg-data" data-testid="pg-data" spellCheck={false} value={draft} onChange={e => setDraft(e.target.value)} rows={10} />
           {dataError && <p className="ds-text-small pg-data-error" role="alert">{dataError}</p>}
           <div className="cl-controls">
-            <Button size="sm" variant="secondary" onClick={applyData} data-testid="pg-apply">Apply data</Button>
+            <Button size="sm" variant="tertiary" onClick={applyData} data-testid="pg-apply">Apply data</Button>
             <Button size="sm" variant="ghost" onClick={resetData} disabled={dataset === null}>Reset to fixture</Button>
             <Button size="sm" variant="ghost" onClick={download}>Download SVG for Figma</Button>
             <span className="ds-text-small" role="status">{dataset === null ? 'Showing the fixture' : 'Showing your data'}</span>

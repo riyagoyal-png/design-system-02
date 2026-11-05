@@ -104,7 +104,7 @@ export default function App() {
 
   return (
     <div className="ds-shell docs-shell" id="ds-overlay-host">
-      <a className="app-skip" href="#docs-content" onClick={e => { e.preventDefault(); document.getElementById('docs-content')?.focus(); }}>Skip to content</a>
+      <a className="ds-skip-link" href="#docs-content" onClick={e => { e.preventDefault(); document.getElementById('docs-content')?.focus(); }}>Skip to content</a>
       <aside className="docs-rail" data-inert-scope><DocsNav path={path} /></aside>
       <div className="ds-main" id="ds-main">
         <div className="ds-topbar" data-inert-scope>
@@ -127,10 +127,10 @@ export default function App() {
         </div>
         <ToastRegion />
         {drawer && (
-          <div className="ds-overlay app-drawer-overlay" role="dialog" aria-modal="true" aria-label="Navigation" id="docs-drawer" onKeyDown={e => { if (e.key === 'Escape') setDrawer(false); }}>
+          <div className="ds-overlay ds-overlay--nav-drawer" role="dialog" aria-modal="true" aria-label="Navigation" id="docs-drawer" onKeyDown={e => { if (e.key === 'Escape') setDrawer(false); }}>
             <div className="ds-overlay__backdrop" aria-hidden="true" />
-            <div className="app-drawer docs-drawer">
-              <div className="app-drawer__close"><IconButton icon={X} label="Close navigation" onClick={() => setDrawer(false)} tooltip={false} /></div>
+            <div className="ds-nav-drawer docs-drawer">
+              <div className="ds-nav-drawer__close"><IconButton icon={X} label="Close navigation" onClick={() => setDrawer(false)} tooltip={false} /></div>
               <DocsNav path={path} onNavigate={() => setDrawer(false)} />
             </div>
           </div>

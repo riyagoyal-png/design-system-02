@@ -26,9 +26,9 @@ function ModalDemo() {
   const idErr = tried && !id.trim() ? 'Enter the camera ID.' : undefined;
   return (
     <>
-      <Button variant="secondary" onClick={() => setOpen(true)}>Add Cameras</Button>
+      <Button variant="tertiary" onClick={() => setOpen(true)}>Add Cameras</Button>
       <Modal open={open} onClose={close} title="Add Cameras" icon={<Illustration name="illus.camera" size={32} />} dirty={!!(id || ip)}
-        footer={<><Button variant="secondary" onClick={close}>Skip</Button><Button minWidth onClick={() => { setTried(true); if (id.trim() && /^\d{1,3}(\.\d{1,3}){3}$/.test(ip.trim())) { close(); toast('Camera added'); } }}>Add Camera</Button></>}>
+        footer={<><Button variant="tertiary" onClick={close}>Skip</Button><Button minWidth onClick={() => { setTried(true); if (id.trim() && /^\d{1,3}(\.\d{1,3}){3}$/.test(ip.trim())) { close(); toast('Camera added'); } }}>Add Camera</Button></>}>
         <div className="ds-form-grid">
           <Field caps label="Camera ID" required error={idErr}><TextInput placeholder="e.g. - CAM01 - L01" value={id} onChange={e => setId(e.target.value)} /></Field>
           <Field caps label="Camera IP" required error={ipErr}><TextInput placeholder="e.g. - 192.168.1.101" inputMode="decimal" value={ip} onChange={e => setIp(e.target.value)} /></Field>
@@ -51,7 +51,7 @@ export const StaticModal = () => (
   <div className="ds-modal doc-static-dialog" data-part="container">
     <div className="ds-modal__header" data-part="header"><div className="ds-modal__titlegroup"><Illustration name="illus.camera" size={32} /><p className="ds-modal__title">Add Cameras</p></div><span className="ds-icon-btn ds-icon-btn--close ds-icon-btn--compact" aria-hidden="true">×</span></div>
     <div className="ds-modal__body" data-part="body"><div className="ds-form-grid"><div className="ds-field ds-field--caps"><span className="ds-field__label">Camera ID</span><span className="ds-input doc-static-input" /></div><div className="ds-field ds-field--caps"><span className="ds-field__label">Camera IP</span><span className="ds-input doc-static-input" /></div></div></div>
-    <div className="ds-modal__footer" data-part="footer"><span className="ds-btn ds-btn--secondary">Skip</span><span className="ds-btn ds-btn--primary ds-btn--minw">Add Camera</span></div>
+    <div className="ds-modal__footer" data-part="footer"><span className="ds-btn ds-btn--tertiary">Skip</span><span className="ds-btn ds-btn--primary ds-btn--minw">Add Camera</span></div>
   </div>
 );
 export const modalDoc: ComponentDoc = {
@@ -64,7 +64,7 @@ export const modalDoc: ComponentDoc = {
       <Cell label="confirmation dialog · 440 [PRESERVED] (static render)">
         <div className="ds-dialog doc-static-dialog" role="presentation">
           <div className="ds-dialog__text"><p className="ds-text-dialog-title">Delete Anita Sharma?</p><p className="ds-text-body-muted">Anita Sharma will lose access to every factory immediately. This can't be undone.</p></div>
-          <div className="ds-dialog__actions"><span className="ds-btn ds-btn--secondary">Cancel</span><span className="ds-btn ds-btn--danger">Delete user</span></div>
+          <div className="ds-dialog__actions"><span className="ds-btn ds-btn--tertiary">Cancel</span><span className="ds-btn ds-btn--danger">Delete user</span></div>
         </div>
       </Cell>
     </Grid>
@@ -79,12 +79,12 @@ export const modalDoc: ComponentDoc = {
     { property: 'Title', token: '--ds-color-text-primary', note: ' modal-title 14/18 400; 32px illustration, 12px gap' },
     { property: 'Close button', token: '--ds-size-icon-button-compact + --ds-shadow-close' },
     { property: 'Form rows / columns', token: '--ds-space-form-row + --ds-space-form-col' },
-    { property: 'Footer gap / primary min width', token: '--ds-space-4 + --ds-size-header-button', note: ' secondary min 120px' },
+    { property: 'Footer gap / primary min width', token: '--ds-space-4 + --ds-size-header-button', note: ' tertiary min 120px' },
     { property: 'Confirm dialog padding / gap', token: '--ds-space-6' }, { property: 'Confirm dialog shadow', token: '--ds-shadow-modal + --ds-shadow-highlight' },
     { property: 'Z-index', token: '--ds-z-overlay' },
   ],
   behavior: <ul className="doc-list"><li>Overlays portal into <code>#ds-overlay-host</code> on the shell, so the scrim covers the sidebar too (R-12); below 1024px they are fixed to the viewport.</li><li><code>role="dialog" aria-modal="true" aria-labelledby</code> the title; everything outside is made <code>inert</code>. Initial focus goes to the first form field (or the first focusable element); Tab and Shift+Tab cycle inside.</li><li>Backdrop clicks never close. Escape closes when clean; when dirty it opens "Discard changes?" with Keep Editing focused.</li><li>Close returns focus to the opener, or to the page <code>h1</code> when the opener is gone.</li><li>Confirmation dialogs are <code>role="alertdialog"</code> with Cancel focused; Escape = Cancel.</li><li>Try it: open "Add Cameras", type an ID, press Escape.</li></ul>,
-  usage: `<Modal open={open} onClose={close} title="Add Cameras" icon={<Illustration name="illus.camera" size={32} />} dirty={changed}\n  footer={<><Button variant="secondary" onClick={close}>Skip</Button><Button minWidth onClick={submit}>Add Camera</Button></>}>\n  <div className="ds-form-grid"><Field caps label="Camera ID" required>…</Field>…</div>\n</Modal>\n<ConfirmDialog open={open} title="Delete Anita Sharma?" message="…" confirmLabel="Delete user" onCancel={close} onConfirm={remove} />`,
+  usage: `<Modal open={open} onClose={close} title="Add Cameras" icon={<Illustration name="illus.camera" size={32} />} dirty={changed}\n  footer={<><Button variant="tertiary" onClick={close}>Skip</Button><Button minWidth onClick={submit}>Add Camera</Button></>}>\n  <div className="ds-form-grid"><Field caps label="Camera ID" required>…</Field>…</div>\n</Modal>\n<ConfirmDialog open={open} title="Delete Anita Sharma?" message="…" confirmLabel="Delete user" onCancel={close} onConfirm={remove} />`,
 };
 
 /* Frame 3 · "Add New Factory" drawer: stepper, validation, auto-save note. */
@@ -112,7 +112,7 @@ function PanelDemo() {
         subtitle={step > 0 ? 'Provision and integrate a new operational manufacturing unit.' : undefined}
         icon={<Illustration name="illus.facility-set" crop="factory" size={40} />} subheader={<Stepper current={step} steps={STEPS} />}
         footer={<>
-          <Button variant="secondary" leading={ArrowBack} onClick={() => (step ? setStep(step - 1) : close())}>Back</Button>
+          <Button variant="tertiary" leading={ArrowBack} onClick={() => (step ? setStep(step - 1) : close())}>Back</Button>
           <div className="ds-panel__footer-end"><p className="ds-panel__note" role="status">Auto-saved draft 12s ago</p><Button trailing={ChevronRight} minWidth onClick={next}>{step === 0 ? 'Next: Configuration' : step === 1 ? 'Review & Add' : 'Add factory'}</Button></div>
         </>}>
         {step === 0 ? (
@@ -152,15 +152,15 @@ export const drawerDoc: ComponentDoc = {
     { property: 'Form grid', token: '--ds-space-form-col + --ds-space-form-row' },
   ],
   behavior: <ul className="doc-list"><li>Same overlay contract as §5.44: scrim over the whole shell, inert background, focus on the first form field, Tab trapped, backdrop clicks do nothing, Escape closes or asks to discard when dirty, focus returns to the opener.</li><li>On Next with empty required fields, errors appear and focus moves to the first invalid field.</li><li>The auto-save note is a polite <code>role="status"</code>.</li><li>Try it: open the panel, press "Next: Configuration" with empty fields, type a name, then press Escape.</li></ul>,
-  usage: `<SlidePanel open={open} onClose={close} size="xl" title="Add New Factory" dirty={dirty}\n  icon={<Illustration name="illus.facility-set" crop="factory" size={40} />} subheader={<Stepper steps={steps} current={step} />}\n  footer={<><Button variant="secondary" leading={ArrowBack}>Back</Button><div className="ds-panel__footer-end"><p className="ds-panel__note">Auto-saved draft 12s ago</p><Button trailing={ChevronRight} minWidth>Next: Configuration</Button></div></>}>\n  <div className="ds-form-grid">…</div>\n</SlidePanel>`,
+  usage: `<SlidePanel open={open} onClose={close} size="xl" title="Add New Factory" dirty={dirty}\n  icon={<Illustration name="illus.facility-set" crop="factory" size={40} />} subheader={<Stepper steps={steps} current={step} />}\n  footer={<><Button variant="tertiary" leading={ArrowBack}>Back</Button><div className="ds-panel__footer-end"><p className="ds-panel__note">Auto-saved draft 12s ago</p><Button trailing={ChevronRight} minWidth>Next: Configuration</Button></div></>}>\n  <div className="ds-form-grid">…</div>\n</SlidePanel>`,
 };
 function PanelSize({ size }: { size: 'sm' | 'md' | 'lg' | 'xl' }) {
   const [open, setOpen] = useState(false);
   return (
     <>
-      <Button variant="secondary" size="sm" onClick={() => setOpen(true)}>Open {size}</Button>
+      <Button variant="tertiary" size="sm" onClick={() => setOpen(true)}>Open {size}</Button>
       <SlidePanel open={open} onClose={() => setOpen(false)} title="Add Product" icon={<Illustration name="illus.catalog-item" size={36} />} size={size}
-        footer={<><Button variant="secondary" leading={ArrowBack} onClick={() => setOpen(false)}>Cancel</Button><Button trailing={ChevronRight} minWidth onClick={() => setOpen(false)}>Save product</Button></>}>
+        footer={<><Button variant="tertiary" leading={ArrowBack} onClick={() => setOpen(false)}>Cancel</Button><Button trailing={ChevronRight} minWidth onClick={() => setOpen(false)}>Save product</Button></>}>
         <p className="ds-text-body-muted">This panel is <code>min(var(--ds-size-panel-{size}), 100%)</code> wide.</p>
       </SlidePanel>
     </>
@@ -173,7 +173,7 @@ function PopoverDemo() {
   const [factory, setFactory] = useState<string | null>(null);
   return (
     <div className="ds-select">
-      <Button ref={ref} variant="secondary" leading={SlidersHorizontal} aria-haspopup="dialog" aria-expanded={open} onClick={() => setOpen(o => !o)}>Filters</Button>
+      <Button ref={ref} variant="tertiary" leading={SlidersHorizontal} aria-haspopup="dialog" aria-expanded={open} onClick={() => setOpen(o => !o)}>Filters</Button>
       <Popover open={open} onClose={() => setOpen(false)} label="Filters" anchorRef={ref} align="start" width="sm"
         footer={<><Button variant="ghost" size="sm" onClick={() => { setFactory(null); setOpen(false); ref.current?.focus(); }}>Clear</Button><Button size="sm" onClick={() => { setOpen(false); ref.current?.focus(); toast('Filters applied'); }}>Apply</Button></>}>
         <Field label="Factory"><Select options={opts(FACTORIES.map(f => f.name))} value={factory} onChange={setFactory} placeholder="All factories" /></Field>
@@ -222,9 +222,9 @@ export const toastDoc: ComponentDoc = {
   summary: 'A short confirmation at the top centre of the main panel (bottom at xs): surface-raised, 1px border-subtle, radius 8, shadow-elevated, padding 10 16, toast 14/20 text-primary, max 480px; optional action and close. Announced politely in a persistent role="status" region; one at a time, a new toast replaces the current one; paused on hover and focus. §5.48 sets a 4s timeout.',
   preview: () => (
     <div className="ds-cluster">
-      <Button variant="secondary" onClick={() => toast('Factory 7 added')}>Neutral toast</Button>
-      <Button variant="secondary" onClick={() => toast("Couldn't export users: network error", { tone: 'error' })}>Error toast</Button>
-      <Button variant="secondary" onClick={() => toast('Anita Sharma deleted', { action: { label: 'Undo', onAction: () => toast('Anita Sharma restored') } })}>Toast with Undo</Button>
+      <Button variant="tertiary" onClick={() => toast('Factory 7 added')}>Neutral toast</Button>
+      <Button variant="tertiary" onClick={() => toast("Couldn't export users: network error", { tone: 'error' })}>Error toast</Button>
+      <Button variant="tertiary" onClick={() => toast('Anita Sharma deleted', { action: { label: 'Undo', onAction: () => toast('Anita Sharma restored') } })}>Toast with Undo</Button>
     </div>
   ),
   variants: () => (

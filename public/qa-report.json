@@ -1089,6 +1089,7 @@
  "tokens": {
   "undefinedRefs": [],
   "hexLiterals": [],
+  "typeLiterals": [],
   "checkedFiles": 64,
   "allowedLiteralFiles": {
    "src/generated/ds.css": "verbatim spec CSS",

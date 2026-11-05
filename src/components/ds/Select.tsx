@@ -207,7 +207,7 @@ function MultiValue({ labels }: { labels: string[] }) {
 }
 
 export function Select({ value, onChange, variant = 'field', ...rest }: Common & { value: string | null; onChange: (v: string) => void; variant?: 'filter' | 'field' }) {
-  return <SelectBase {...rest} variant={variant} multiple={false} selected={value ? [value] : []} onPick={onChange} />;
+  return <SelectBase {...rest} variant={variant} multiple={false} selected={value === null || value === undefined ? [] : [value]} onPick={onChange} />;
 }
 
 export function MultiSelect({ value, onChange, ...rest }: Common & { value: string[]; onChange: (v: string[]) => void }) {

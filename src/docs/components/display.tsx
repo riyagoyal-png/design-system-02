@@ -145,7 +145,7 @@ function ProgressDemo() {
   return (
     <div className="doc-stack doc-narrow-xl">
       <Progress value={v} tone={v >= 75 ? 'success' : 'brand'} label="Line utilisation" />
-      <div className="ds-cluster"><Button size="sm" variant="secondary" onClick={() => setV(x => Math.max(0, x - 10))}>−10%</Button><Button size="sm" variant="secondary" onClick={() => setV(x => Math.min(100, x + 10))}>+10%</Button></div>
+      <div className="ds-cluster"><Button size="sm" variant="tertiary" onClick={() => setV(x => Math.max(0, x - 10))}>−10%</Button><Button size="sm" variant="tertiary" onClick={() => setV(x => Math.min(100, x + 10))}>+10%</Button></div>
       <SegBar size="lg" segments={[{ value: Math.round(v / 4), color: 'var(--ds-chart-running)', label: 'running' }, { value: 25 - Math.round(v / 4), color: 'var(--ds-chart-stopped)', label: 'stopped' }]} />
     </div>
   );
@@ -177,7 +177,7 @@ export const alertDoc: ComponentDoc = {
 function AlertDemo() {
   const [shown, setShown] = useState(true);
   return shown ? <div className="doc-narrow-xl"><InlineAlert tone="warning" title="Camera drifting" onDismiss={() => setShown(false)}>Camera 3 on Bottle Line - 2 has not matched the reference for 10 minutes.</InlineAlert></div>
-    : <Button variant="secondary" onClick={() => setShown(true)}>Show alert again</Button>;
+    : <Button variant="tertiary" onClick={() => setShown(true)}>Show alert again</Button>;
 }
 
 const STEPS = [{ title: 'Factory Details', sub: 'Name, location, admin' }, { title: 'Configuration', sub: 'Lines and cameras' }, { title: 'Review & Add', sub: 'Summary' }];
@@ -194,7 +194,7 @@ function StepDemo() {
   return (
     <div className="doc-stack">
       <Stepper current={c} steps={STEPS} />
-      <div className="ds-cluster"><Button variant="secondary" size="sm" disabled={c === 0} onClick={() => setC(c - 1)}>Back</Button><Button size="sm" disabled={c === 2} onClick={() => setC(c + 1)}>Next</Button></div>
+      <div className="ds-cluster"><Button variant="tertiary" size="sm" disabled={c === 0} onClick={() => setC(c - 1)}>Back</Button><Button size="sm" disabled={c === 2} onClick={() => setC(c + 1)}>Next</Button></div>
     </div>
   );
 }
@@ -218,7 +218,7 @@ function LoadingDemo() {
   const [loading, setLoading] = useState(true);
   return (
     <div className="doc-stack doc-full">
-      <Button variant="secondary" size="sm" onClick={() => { setLoading(true); window.setTimeout(() => setLoading(false), 1500); }}>Reload table</Button>
+      <Button variant="tertiary" size="sm" onClick={() => { setLoading(true); window.setTimeout(() => setLoading(false), 1500); }}>Reload table</Button>
       <section className="ds-table-card"><DataTable caption="Factories" rowHeader="name" loading={loading} rowKey={r => r.name} rows={[{ name: 'Factory 1 - Haridwar', admin: 'Anita Sharma', cameras: 12 }, { name: 'Factory 2 - Pune', admin: 'Rohan Kumar', cameras: 6 }]}
         columns={[{ key: 'name', header: 'Factory' }, { key: 'admin', header: 'Admin' }, { key: 'cameras', header: 'Cameras', align: 'num', shrink: true }]} /></section>
     </div>

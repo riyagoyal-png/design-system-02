@@ -101,7 +101,7 @@ export const pageHeaderDoc: ComponentDoc = {
   variants: () => (
     <div className="doc-stack">
       <Cell label="with status pill (Live View)"><div className="doc-header-frame"><PageHeader title={LIVE.sku} icon={<Illustration name="illus.camera" size={36} />} status={<LiveBadge />} actions={<Button leading={Changeover} minWidth>Line Changeover</Button>} /></div></Cell>
-      <Cell label="with back button [PRESERVED]"><div className="doc-header-frame"><PageHeader title="Factory 1" back={{ label: 'Factories', onBack: () => {} }} actions={<Button variant="secondary">Edit factory</Button>} /></div></Cell>
+      <Cell label="with back button [PRESERVED]"><div className="doc-header-frame"><PageHeader title="Factory 1" back={{ label: 'Factories', onBack: () => {} }} actions={<Button variant="tertiary">Edit factory</Button>} /></div></Cell>
       <Cell label="with breadcrumb [PRESERVED]"><div className="doc-header-frame"><PageHeader title="Line 1" breadcrumb={[{ label: 'Factories', href: '#/components/page-headers' }, { label: 'Factory 1', href: '#/components/page-headers/f1' }]} /></div></Cell>
       <Cell label="with description [PRESERVED]"><div className="doc-header-frame"><PageHeader title="User Management" icon={<Illustration name="illus.user-group" size={36} fit="cover" />} description="Roles and factory access for every user." /></div></Cell>
       <Cell label="scrolled state"><div className="doc-header-frame"><PageHeader title="Analytics" icon={<Illustration name="illus.analytics-board" size={36} />} scrolled /></div></Cell>
