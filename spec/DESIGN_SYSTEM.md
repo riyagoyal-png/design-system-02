@@ -509,7 +509,7 @@ Base unit **4 px**, with 2 px half-steps (2, 6, 10, 14) inside components. [PRES
 | `--ds-space-page-top` | 8px | Header → first content row (tight: the header has no fill or divider) | padding |
 | `--ds-space-shell-padding` | 16px | Viewport → shell panels [PRESERVED] | padding |
 | `--ds-space-shell-gap` | 20px | Sidebar → main panel | gap |
-| `--ds-space-section` | 20px | Between vertically stacked page sections | gap |
+| `--ds-space-section` | 28px | Between vertically stacked page sections | gap |
 | `--ds-space-grid` | 16px | Between KPI cards, camera tiles and side-panel cards | gap |
 | `--ds-space-grid-lg` | 20px | Between entity and dashboard cards; monitor grid → side panel | gap |
 | `--ds-space-stack` | 12px | Between collapsible sections, and between nested groups inside one | gap |
@@ -1058,7 +1058,7 @@ Copy this verbatim into the global stylesheet. **Every value used by a component
   --ds-space-page-top: 8px;
   --ds-space-shell-padding: 16px;
   --ds-space-shell-gap: 20px;
-  --ds-space-section: 20px;
+  --ds-space-section: 28px;   /* +8 (user, 2026-11-09): sections read apart */
   --ds-space-grid: 16px;
   --ds-space-grid-lg: 20px;
   --ds-space-stack: 12px;
@@ -1452,6 +1452,7 @@ Row actions are `sm` buttons in a `ds-row-actions` cluster with `space-3` gaps. 
   font-size: var(--ds-font-size-body); line-height: var(--ds-line-height-body); font-weight: 600; color: var(--ds-color-brand); border-radius: var(--ds-radius-xs);
   transition: color var(--ds-duration-fast) var(--ds-ease-standard); }
 .ds-link-action:hover { color: var(--ds-color-link); }
+.ds-link-action--sm { gap: var(--ds-space-1); font-size: var(--ds-font-size-label); line-height: var(--ds-line-height-label); }   /* [EXTENSION] secondary in-row link (e.g. "View photo" in an entry list) */
 /* [EXTENSION] a related record named inside text or a table cell: link colour, medium weight, underline on hover (R-08 link colour). */
 .ds-entity-link { color: var(--ds-color-link); font-weight: 500; text-decoration: none; border-radius: var(--ds-radius-xs); transition: color var(--ds-duration-fast); }
 .ds-entity-link:hover, .ds-entity-link.is-hover { color: var(--ds-color-link-hover); text-decoration: underline; text-underline-offset: 3px; }
@@ -2374,9 +2375,9 @@ Variants: with breadcrumb / back button / description [PRESERVED]. **Sub-page [E
 **Purpose** Pick one status slice of a list inside a card (Home "Production & line status": Stopped / Behind pace / On track / No plan). **Figma** `HUL - App` node `267:6759` "Status tabs": 28 px pills (radius full), 12/500 label **in the status colour** (`success-text`, `warning-text`, `danger-text`; `text-muted` for neutral), no dot. Unselected `surface-nested`, no border; selected = the status tint (`*-bg`) with a 1 px `*-border`. One is always selected. **Behavior** same as segmented tabs: `role="tablist"`, roving tabindex, arrows move and activate, Home/End.
 
 ```css
-.ds-status-tabs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--ds-space-1-5); }   /* even 2 × 2 on phones, one row of 4 from sm */
-@media (min-width: 640px) { .ds-status-tabs { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
-.ds-status-tab { display: inline-flex; align-items: center; justify-content: center; height: var(--ds-size-control-sm); padding: 0 var(--ds-space-3);
+.ds-status-tabs { display: flex; gap: var(--ds-space-1); overflow-x: auto; scrollbar-width: none; }   /* always one row; tabs size to their label, scroll sideways on very narrow screens */
+.ds-status-tabs::-webkit-scrollbar { display: none; }
+.ds-status-tab { flex: 1 0 auto; display: inline-flex; align-items: center; justify-content: center; height: var(--ds-size-control-sm); padding: 0 var(--ds-space-2);
   border-radius: var(--ds-radius-full); border: 1px solid transparent; background: var(--ds-color-surface-nested);
   font-size: var(--ds-font-size-label); line-height: var(--ds-line-height-label); font-weight: 500; white-space: nowrap;
   transition: background-color var(--ds-duration-fast), border-color var(--ds-duration-fast); }
@@ -2390,6 +2391,21 @@ Variants: with breadcrumb / back button / description [PRESERVED]. **Sub-page [E
 .ds-status-tab--warning[aria-selected="true"] { background: var(--ds-color-warning-bg); border-color: var(--ds-color-warning-border); }
 .ds-status-tab--error[aria-selected="true"] { background: var(--ds-color-danger-bg); border-color: var(--ds-color-danger-border); }
 .ds-status-tab--neutral[aria-selected="true"] { background: var(--ds-color-surface-control-hover); border-color: var(--ds-color-border-strong); }
+```
+
+#### Day tabs [EXTENSION]
+
+**Purpose** Pick one day of a week (line detail: Mon 9 … Sun 15). **Figma** `Redesign CM Saarthi` day picker: seven separate tiles 6 px apart (not one track), radius 16, `surface-nested` fill, no border or shadow; day name `caption`, date `body-strong`; selected = `gradient-toggle-active` with a 1 px `brand-tint-30` border. Today is marked with a 5 px `brand` dot in the bottom padding (absolutely placed, so every tile keeps equal top and bottom space). **Behavior** `role="tablist"`, tiles are `role="tab"`.
+
+```css
+.ds-day-tabs { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: var(--ds-space-1-5); }
+.ds-day-tab { position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: var(--ds-space-0-5); min-width: 0; padding: var(--ds-space-3) 0;
+  border-radius: var(--ds-radius-nested); border: 1px solid transparent; background: var(--ds-color-surface-nested); color: var(--ds-color-text-primary);
+  transition: background-color var(--ds-duration-fast), border-color var(--ds-duration-fast); }
+.ds-day-tab:hover { background: var(--ds-color-surface-nested-hover); }
+.ds-day-tab[aria-selected="true"] { background: var(--ds-gradient-toggle-active); border-color: var(--ds-color-brand-tint-30); }
+.ds-day-tab:focus-visible { outline-width: var(--ds-focus-width-field); outline-offset: var(--ds-focus-offset-tight); }
+.ds-day-tab__today { position: absolute; left: 50%; bottom: 4px; width: 5px; height: 5px; margin-left: -2.5px; border-radius: var(--ds-radius-full); background: var(--ds-color-brand); }
 ```
 
 ### 5.40 Pagination
@@ -2600,12 +2616,12 @@ A deep hierarchy with selection (areas → lines → assets → resource groups 
 .ds-overlay--panel { justify-content: flex-end; align-items: stretch; }
 .ds-overlay--fixed { position: fixed; }
 @media (max-width: 1023px) { .ds-overlay { position: fixed; } }
-.ds-modal { position: relative; width: min(var(--ds-size-modal), calc(100% - 32px)); max-height: calc(100% - 48px); display: flex; flex-direction: column; gap: 28px;
+.ds-modal { position: relative; width: min(var(--ds-size-modal), calc(100% - 32px)); max-height: calc(100% - 48px); display: flex; flex-direction: column; gap: var(--ds-space-5);
   padding: var(--ds-space-card-xl); border-radius: var(--ds-radius-control); background: var(--ds-gradient-dialog); box-shadow: var(--ds-shadow-modal); overflow-y: auto; }
 .ds-modal--sm { width: min(var(--ds-size-dialog), calc(100% - 32px)); }
-.ds-modal__header { display: flex; align-items: center; justify-content: space-between; gap: var(--ds-space-3); padding-bottom: var(--ds-space-5); border-bottom: 1px solid var(--ds-color-border-faint); }
+.ds-modal__header { display: flex; align-items: center; justify-content: space-between; gap: var(--ds-space-3); }   /* no divider: the near-invisible hairline + 20px padding read as an empty gap (user, 2026-11-09) */
 .ds-modal__titlegroup { display: flex; align-items: center; gap: var(--ds-space-3); min-width: 0; }
-.ds-modal__title { font-size: var(--ds-font-size-body); line-height: var(--ds-leading-18); font-weight: 400; color: var(--ds-color-text-primary); }
+.ds-modal__title { font-size: var(--ds-font-size-heading); line-height: var(--ds-line-height-heading); font-weight: 700; letter-spacing: var(--ds-tracking-heading); color: var(--ds-color-text-primary); }   /* dialog-title size (was 14/400, too small) */
 .ds-modal__body { display: flex; flex-direction: column; gap: var(--ds-space-form-row); }
 .ds-modal__footer { display: flex; justify-content: flex-end; gap: var(--ds-space-4); flex-wrap: wrap; }
 .ds-modal__footer > .ds-btn--tertiary { min-width: 120px; }
@@ -3282,7 +3298,7 @@ A card's top and bottom padding must match: rows inside a card don't carry their
 | Token | Default | `xs` |
 |---|---|---|
 | `--ds-space-page-top` | 8 | 16 (on a phone the header is a visible bar with a shadow, so content starts a full section gap below its edge) |
-| `--ds-space-section` | 20 | 16 |
+| `--ds-space-section` | 28 | 24 |
 | `--ds-space-grid` / `-grid-lg` | 16 / 20 | 12 / 12 |
 | `--ds-space-stack` | 12 | 12 |
 | `--ds-space-card` / `-lg` / `-xl` / `-entity` | 16 / 20 / 24 / 25 | 16 / 16 / 16 / 17 |
@@ -3300,7 +3316,7 @@ Full-height app frames use `min-height: 100dvh`, never `100vh` / `min-h-screen`:
 @media (max-width: 639px) {
   :root {
     --ds-space-page-top: 16px;
-    --ds-space-section: 16px;
+    --ds-space-section: 24px;
     --ds-space-grid: 12px;  --ds-space-grid-lg: 12px;
     --ds-space-stack: 12px;
     --ds-space-card: 16px;  --ds-space-card-lg: 16px;  --ds-space-card-xl: 16px;  --ds-space-card-entity: 17px;
