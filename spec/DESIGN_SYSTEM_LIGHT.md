@@ -1,6 +1,6 @@
 # DESIGN_SYSTEM_LIGHT.md — Vision Automation, light theme
 
-> The light version of the Vision Automation design system. **Source:** the DEOC light Live View frame in Figma (file `F3mlhgMw589Hs49rxXSFXR`, node `614:11997`, "Figma Make App", 1920 × 911).
+> The light version of the Vision Automation design system. **Source:** Figma file `FlxQTwrs46BclhsiZsRDHj` ("HUL - App"), variable collection `DS / Colors`, mode **Light** (synced 2026-11-09); §2/§3 below describe the earlier DEOC frame (`F3mlhgMw589Hs49rxXSFXR`, node `614:11997`) and §4 is the source of truth.
 > **Scope:** colour only — every colour, gradient, border, shadow, glow and chart token gets a light value here. Type, spacing, sizes, radii, motion and component anatomy are unchanged and stay defined in `spec/DESIGN_SYSTEM.md` (the dark, default theme).
 > **How it is built:** `scripts/extract-spec.mjs` appends every CSS block of this file after the dark system in `src/generated/ds.css`. Light mode is on when `<html data-theme="light">` is set; nothing else changes in markup.
 
@@ -182,6 +182,7 @@ Categorical (`chart-cat-1…10`), heat (`heat-0…4`), tag and status-chart colo
 |---|---|---|
 | `--ds-chart-trend` | `#ffffff` | `#111827` |
 | `--ds-chart-baseline` | white/6 % | `rgba(15,23,42,0.08)` |
+| `--ds-chart-marker` | `#cbd5e1` | `#94a3b8` |
 | `--ds-chart-axis` | `#292e33` | `#e5eaf1` |
 | `--ds-chart-bubble-stroke` | `#151c22` | `#ffffff` |
 | `--ds-chart-track` | → `color-track` | → `color-track` (`#e6ebf2`) |
@@ -223,29 +224,30 @@ Every colour, gradient and shadow token of `spec/DESIGN_SYSTEM.md` §3 is redecl
   color-scheme: light;
 
   /* ── Surfaces ─────────────────────────────────────────── */
-  --ds-color-bg-app: #f4f8ff;
-  --ds-gradient-app: linear-gradient(90deg, #f4f8ff 0%, #f4f8ff 100%);
+  --ds-color-bg-app: #eef2fa;
+  --ds-gradient-app: linear-gradient(90deg, #f1f5fc 0%, #eef2fa 55%, #eaeff8 100%);
   --ds-color-glow-brand: transparent;
   --ds-color-glow-success: transparent;
-  --ds-gradient-glass: linear-gradient(180deg, #fefefe 0%, #fefefe 100%);
-  --ds-gradient-glass-strong: linear-gradient(180deg, #fcfcfe 0%, #fcfcfe 100%);
-  --ds-gradient-glass-up: linear-gradient(0deg, #f9fbfe 0%, #fefefe 100%);
+  --ds-color-glow-accent: transparent;
+  --ds-gradient-glass: linear-gradient(180deg, #ffffff 0%, #fbfcff 100%);
+  --ds-gradient-glass-strong: linear-gradient(180deg, #ffffff 0%, #f7f9ff 100%);
+  --ds-gradient-glass-up: linear-gradient(0deg, #ffffff 0%, #fbfcff 100%);
   --ds-gradient-glass-kpi: linear-gradient(180deg, #ffffff 0%, #fbfcff 100%);
   --ds-gradient-edge-control: linear-gradient(var(--ds-color-border-control), var(--ds-color-border-control));
-  --ds-gradient-toggle: linear-gradient(180deg, #f1f5fb 0%, #ebf0f8 100%);
+  --ds-gradient-toggle: linear-gradient(180deg, #ffffff 0%, #ffffff 100%);  /* white track (user, 2026-11-09; Figma toggle stops #e4e9f2); selected stays the faded-blue toggle-active */
   --ds-gradient-toggle-active: linear-gradient(180deg, rgba(59,130,246,0.16) 0%, rgba(37,99,235,0.08) 100%);
   --ds-gradient-table-header-pinned: linear-gradient(rgba(37,99,235,0.03) 0 0), #fefefe;
   --ds-color-surface-base: #ffffff;
   --ds-color-surface-raised: #ffffff;
   --ds-color-surface-field: #fdfdff;
-  --ds-gradient-dialog: linear-gradient(180deg, #ffffff 0%, #f8fafd 100%);
+  --ds-gradient-dialog: linear-gradient(180deg, #ffffff 0%, #f8faff 100%);
   --ds-gradient-tooltip: linear-gradient(180deg, #ffffff 0%, #f6f8fc 100%);
-  --ds-color-surface-nested: #f4f7fc;
+  --ds-color-surface-nested: #f3f6fc;
   --ds-color-surface-nested-hover: #ebf1fa;
   --ds-color-surface-control: #f7f8fa;
   --ds-color-surface-control-hover: #eef1f5;
   --ds-color-surface-hover: rgba(15,23,42,0.04);
-  --ds-color-surface-hover-subtle: rgba(15,23,42,0.025);
+  --ds-color-surface-hover-subtle: rgba(15,23,42,0.02);
   --ds-color-surface-row-hover: rgba(15,23,42,0.02);
   --ds-color-surface-selected: rgba(59,130,246,0.08);
   --ds-color-surface-table-header: #f7f9fc;
@@ -256,18 +258,18 @@ Every colour, gradient and shadow token of `spec/DESIGN_SYSTEM.md` §3 is redecl
   --ds-color-surface-icon-tile: #eef2f7;
   --ds-color-surface-avatar: #eef2f7;
   --ds-color-avatar-inner: #121622;
-  --ds-color-track: #e6ebf2;
+  --ds-color-track: #eaeef4;
   --ds-color-user-card: #ffffff;
 
   /* ── Text ─────────────────────────────────────────────── */
-  --ds-color-text-primary: #111827;
+  --ds-color-text-primary: #0f172a;
   --ds-color-text-strong: #1f2636;
   --ds-color-text-emphasis: #475569;
-  --ds-color-text-secondary: #475569;
-  --ds-color-text-muted: #77879d;
-  --ds-color-text-tertiary: #8a99ae;
+  --ds-color-text-secondary: #344054;
+  --ds-color-text-muted: #5b6b82;
+  --ds-color-text-tertiary: #64748b;
   --ds-color-text-placeholder: #94a3b8;
-  --ds-color-text-faint: #cbd5e1;
+  --ds-color-text-faint: #8592a6;
   --ds-color-text-on-brand: #ffffff;
   --ds-color-text-on-bright: #0b0f14;
   --ds-color-text-chart-subtle: #64748b;
@@ -281,19 +283,19 @@ Every colour, gradient and shadow token of `spec/DESIGN_SYSTEM.md` §3 is redecl
   /* ── Borders ──────────────────────────────────────────── */
   --ds-color-border-edge: #edf2f8;
   --ds-color-border-hairline: var(--ds-color-border-edge);
-  --ds-color-border-glass: var(--ds-color-border-edge);
+  --ds-color-border-glass: transparent;
   --ds-color-border-track: #e8eff5;
   --ds-color-border-faint: var(--ds-color-border-edge);
-  --ds-color-border-subtle: var(--ds-color-border-edge);
+  --ds-color-border-subtle: transparent;
   --ds-color-border-control: rgba(107,114,128,0.08);
   --ds-color-border-strong: #dfe5ee;
   --ds-color-border-control-hover: #cbd5e1;
   --ds-color-border-control-strong: #6b7280;
-  --ds-color-border-on-brand: rgba(255,255,255,0.30);
+  --ds-color-border-on-brand: rgba(255,255,255,0.3);
   --ds-color-border-divider: #e5eaf1;
   --ds-color-border-tooltip-divider: #e5eaf1;
   --ds-color-border-avatar: #cbd5e1;
-  --ds-color-border-logo: rgba(147,197,253,0.30);
+  --ds-color-border-logo: rgba(147,197,253,0.3);
   --ds-color-border-user-card: rgba(148,163,184,0.20);
   --ds-color-nav-active-border: rgba(59,130,246,0.10);
   --ds-color-scrollbar: rgba(15,23,42,0.15);
@@ -301,60 +303,60 @@ Every colour, gradient and shadow token of `spec/DESIGN_SYSTEM.md` §3 is redecl
   --ds-color-skeleton: rgba(15,23,42,0.06);
 
   /* ── Brand ────────────────────────────────────────────── */
-  --ds-color-brand: #3b82f6;
+  --ds-color-brand: #3d5afe;
   --ds-color-brand-strong: #2563eb;
   --ds-color-brand-stronger: #1d4ed8;
   --ds-gradient-button-primary: linear-gradient(180deg, #2563eb 0%, #1d4ed8 100%);
   --ds-gradient-button-primary-hover: linear-gradient(180deg, #3b82f6 0%, #2563eb 100%);
   --ds-gradient-nav-active: linear-gradient(84deg, rgba(33,88,225,0.09) 15%, rgba(33,88,225,0.05) 95%, rgba(33,88,225,0) 132%);
   --ds-gradient-sheen: linear-gradient(90deg, rgba(96,165,250,0) 0%, rgba(96,165,250,0.30) 50%, rgba(96,165,250,0) 100%);
-  --ds-color-brand-text: #1d4ed8;
-  --ds-color-link: #2563eb;
+  --ds-color-brand-text: #1f36c7;
+  --ds-color-link: #3d5afe;
   --ds-color-link-hover: #1d4ed8;
-  --ds-color-brand-tint-10: rgba(59,130,246,0.10);
-  --ds-color-brand-tint-20: rgba(59,130,246,0.20);
-  --ds-color-brand-tint-30: rgba(59,130,246,0.30);
-  --ds-color-brand-border-hover: rgba(59,130,246,0.40);
-  --ds-color-brand-avatar-border: rgba(147,197,253,0.30);
+  --ds-color-brand-tint-10: rgba(59,130,246,0.1);
+  --ds-color-brand-tint-20: rgba(59,130,246,0.2);
+  --ds-color-brand-tint-30: rgba(59,130,246,0.3);
+  --ds-color-brand-border-hover: rgba(59,130,246,0.4);
+  --ds-color-brand-avatar-border: rgba(147,197,253,0.3);
   --ds-gradient-brand-ring: linear-gradient(45deg, #3b82f6 0%, #818cf8 100%);
   --ds-gradient-brand-avatar: linear-gradient(45deg, #1d4ed8 0%, #6366f1 100%);
   --ds-color-stepper-track: #e2e8f0;
-  --ds-color-stepper-active-border: rgba(37,99,235,0.40);
+  --ds-color-stepper-active-border: rgba(37,99,235,0.4);
   --ds-gradient-stepper-active: linear-gradient(90deg, rgba(59,130,246,0.60) 0%, #e2e8f0 100%);
   --ds-color-focus-ring: #3b82f6;
   --ds-color-focus-ring-on-color: #ffffff;
 
   /* ── Status ───────────────────────────────────────────── */
-  --ds-color-success-text: #6aa760;
-  --ds-color-success-glow: #6aa760;
-  --ds-color-success-bg: rgba(106,167,96,0.10);
-  --ds-color-success-border: rgba(106,167,96,0.20);
-  --ds-gradient-progress-success: linear-gradient(90deg, #6aa760 0%, #6aa760 100%);
-  --ds-color-warning-text: #e8b94a;
-  --ds-color-warning-bg: rgba(232,185,74,0.10);
-  --ds-color-warning-border: rgba(232,185,74,0.20);
-  --ds-color-danger: #e5575f;
-  --ds-color-danger-text: #e5575f;
-  --ds-color-danger-bg: rgba(229,87,95,0.10);
-  --ds-color-danger-bg-hover: rgba(229,87,95,0.20);
-  --ds-color-danger-border: rgba(229,87,95,0.20);
+  --ds-color-success-text: #16a34a;
+  --ds-color-success-glow: #10b981;
+  --ds-color-success-bg: #ecfdf3;
+  --ds-color-success-border: rgba(16,185,129,0.2);
+  --ds-gradient-progress-success: linear-gradient(90deg, #16a34a 0%, #16a34a 100%);
+  --ds-color-warning-text: #c96a06;
+  --ds-color-warning-bg: #fffaeb;
+  --ds-color-warning-border: rgba(251,191,36,0.2);
+  --ds-color-danger: #f04438;
+  --ds-color-danger-text: #e5372b;
+  --ds-color-danger-bg: #fef3f2;
+  --ds-color-danger-bg-hover: rgba(255,88,37,0.2);
+  --ds-color-danger-border: rgba(255,88,37,0.2);
   --ds-color-error: #fb7185;
   --ds-color-error-text: #fb7185;
   --ds-color-live: #d33434;
-  --ds-color-live-halo: rgba(211,52,52,0.40);
+  --ds-color-live-halo: rgba(211,52,52,0.4);
   --ds-color-info-text: #1d4ed8;
-  --ds-color-info-bg: rgba(59,130,246,0.10);
-  --ds-color-info-border: rgba(59,130,246,0.20);
-  --ds-color-row-warning: rgba(232,185,74,0.03);
-  --ds-color-row-critical: rgba(229,87,95,0.03);
+  --ds-color-info-bg: rgba(59,130,246,0.1);
+  --ds-color-info-border: rgba(59,130,246,0.2);
+  --ds-color-row-warning: rgba(251,191,36,0.03);
+  --ds-color-row-critical: rgba(255,88,37,0.03);
   --ds-color-alert-count: #fb7185;
 
   /* ── Overlays ─────────────────────────────────────────── */
-  --ds-color-scrim: rgba(15,23,42,0.30);
+  --ds-color-scrim: rgba(15,23,42,0.3);
   --ds-overlay-blur: 4px;
 
   /* ── Data visualization ───────────────────────────────── */
-  --ds-chart-cat-1: #60a5fa;
+  --ds-chart-cat-1: #3d5afe;
   --ds-chart-cat-2: #2563eb;
   --ds-chart-cat-3: #6366f1;
   --ds-chart-cat-4: #4b10a3;
@@ -365,14 +367,15 @@ Every colour, gradient and shadow token of `spec/DESIGN_SYSTEM.md` §3 is redecl
   --ds-chart-cat-9: #da825d;
   --ds-chart-cat-10: #1397bb;
   --ds-chart-status-red: #e5575f;
-  --ds-chart-status-yellow: #e8b94a;
+  --ds-chart-status-yellow: #f59e0b;
   --ds-chart-positive: var(--ds-color-success-glow);
   --ds-chart-negative: var(--ds-chart-status-red);
-  --ds-chart-running: var(--ds-color-success-text);
+  --ds-chart-running: #34d399;
   --ds-chart-stopped: var(--ds-chart-status-red);
   --ds-chart-trend: #111827;
   --ds-chart-track: var(--ds-color-track);
   --ds-chart-baseline: rgba(15,23,42,0.08);
+  --ds-chart-marker: #94a3b8;
   --ds-chart-axis: #e5eaf1;
   --ds-chart-bubble-stroke: #ffffff;
   --ds-heat-0: #003e3a;
@@ -387,38 +390,38 @@ Every colour, gradient and shadow token of `spec/DESIGN_SYSTEM.md` §3 is redecl
   --ds-tag-rose: #9d3f5a;
 
   /* ── Shadows & effects ────────────────────────────────── */
-  --ds-shadow-glass: 0 4px 12px 0 rgba(0,0,0,0.06);
-  --ds-shadow-glass-soft: 0 4px 12px -4px rgba(0,0,0,0.06);
-  --ds-shadow-control: 0 2px 5px 0 rgba(0,0,0,0.08);
-  --ds-shadow-field: 0 1px 2px 0 rgba(15,23,42,0.04);
-  --ds-shadow-xs: 0 1px 2px 0 rgba(15,23,42,0.05);
+  --ds-shadow-glass: 0 0 0 0 transparent;  /* light theme is flat: no drop shadows or glows anywhere; floating panels keep a 1px edge */
+  --ds-shadow-glass-soft: 0 0 0 0 transparent;
+  --ds-shadow-control: 0 0 0 0 transparent;
+  --ds-shadow-field: 0 0 0 0 transparent;
+  --ds-shadow-xs: 0 0 0 0 transparent;
   --ds-shadow-highlight: inset 0 1px 0 0 rgba(255,255,255,0.60);
-  --ds-shadow-card: 0 2px 12px 0 rgba(15,23,42,0.06), 0 1px 3px 0 rgba(15,23,42,0.04);
-  --ds-shadow-float-drop: 0 12px 28px -8px rgba(15,23,42,0.12), 0 4px 10px -2px rgba(15,23,42,0.06);
+  --ds-shadow-card: 0 0 0 0 transparent;
+  --ds-shadow-float-drop: 0 0 0 0 transparent;
   --ds-shadow-float: var(--ds-shadow-float-drop), var(--ds-shadow-edge);
-  --ds-shadow-kpi-lift: 0 1px 2px 0 rgba(15,23,42,0.03);
+  --ds-shadow-kpi-lift: 0 0 0 0 transparent;
   --ds-shadow-edge: inset 0 0 0 1px var(--ds-color-border-edge);
   --ds-shadow-edge-bottom: inset 0 -1px 0 0 var(--ds-color-border-edge);
   --ds-shadow-surface: var(--ds-shadow-glass), var(--ds-shadow-edge);
-  --ds-shadow-sidebar: 0 4px 12px 0 rgba(0,0,0,0.06);
-  --ds-shadow-shell: 0 4px 12px 0 rgba(0,0,0,0.06);
-  --ds-shadow-drawer: -12px 0 32px 0 rgba(15,23,42,0.12), -1px 0 0 0 #edf2f8;
-  --ds-shadow-drawer-mirrored: 12px 0 32px 0 rgba(15,23,42,0.12), 1px 0 0 0 #edf2f8;
-  --ds-shadow-modal: 0 24px 48px -12px rgba(15,23,42,0.18);
-  --ds-shadow-elevated: 0 4px 24px rgba(15,23,42,0.12);
-  --ds-shadow-tooltip: 0 8px 24px 0 rgba(15,23,42,0.12);
-  --ds-shadow-button-primary: 0 4px 7px 0 rgba(37,99,235,0.35), inset 0 1px 0 0 rgba(255,255,255,0.28);
+  --ds-shadow-sidebar: 0 0 0 0 transparent;
+  --ds-shadow-shell: 0 0 0 0 transparent;
+  --ds-shadow-drawer: -1px 0 0 0 var(--ds-color-border-edge);
+  --ds-shadow-drawer-mirrored: 1px 0 0 0 var(--ds-color-border-edge);
+  --ds-shadow-modal: var(--ds-shadow-edge);
+  --ds-shadow-elevated: var(--ds-shadow-edge);
+  --ds-shadow-tooltip: var(--ds-shadow-edge);
+  --ds-shadow-button-primary: inset 0 1px 0 0 rgba(255,255,255,0.28);
   --ds-shadow-close: inset 0 1px 2px 0 rgba(15,23,42,0.08);
-  --ds-shadow-stepper-active: 0 0 0 2px rgba(59,130,246,0.20), 0 0 20px -2px rgba(37,99,235,0.45), inset 0 1px 1px 1px rgba(255,255,255,0.35);
+  --ds-shadow-stepper-active: 0 0 0 2px rgba(59,130,246,0.20), inset 0 1px 1px 1px rgba(255,255,255,0.35);
   --ds-shadow-stepper-idle: inset 0 1px 2px 0 rgba(15,23,42,0.08);
-  --ds-shadow-avatar: 0 4px 6px -1px rgba(0,0,0,0.10), 0 2px 4px -2px rgba(0,0,0,0.10);
-  --ds-shadow-avatar-orb: 0 7px 10px -2px rgba(59,130,246,0.30), 0 3px 4px -3px rgba(59,130,246,0.30);
-  --ds-shadow-header-scrolled: 0 8px 16px -8px rgba(15,23,42,0.12);
-  --ds-shadow-footer-scrolled: 0 -8px 16px -8px rgba(15,23,42,0.12);
-  --ds-shadow-status-success: 0 0 10px 0 #6aa760, 0 0 2px 0 #6aa760;
-  --ds-shadow-status-warning: 0 0 10px 0 #e8b94a, 0 0 2px 0 #e8b94a;
-  --ds-shadow-status-error: 0 0 10px 0 #e5575f, 0 0 2px 0 #e5575f;
-  --ds-shadow-user-card: 2px 2px 24px 0 rgba(0,0,0,0.12);
+  --ds-shadow-avatar: 0 0 0 0 transparent;
+  --ds-shadow-avatar-orb: 0 0 0 0 transparent;
+  --ds-shadow-header-scrolled: 0 0 0 0 transparent;
+  --ds-shadow-footer-scrolled: 0 0 0 0 transparent;
+  --ds-shadow-status-success: 0 0 0 0 transparent;
+  --ds-shadow-status-warning: 0 0 0 0 transparent;
+  --ds-shadow-status-error: 0 0 0 0 transparent;
+  --ds-shadow-user-card: 0 0 0 0 transparent;
   --ds-error-ring: 0 0 0 1px var(--ds-color-error);
 }
 ```
@@ -452,6 +455,7 @@ Most components need nothing beyond the tokens. These rules cover what the light
 [data-theme="light"] .ds-media-card__head { border-bottom-color: var(--ds-color-border-edge); }
 [data-theme="light"] .ds-sidebar__logo img[src$="logo-unilever.svg"] { content: url("/assets/logo-unilever-light.svg"); }
 [data-theme="light"] .ds-trend__label { text-shadow: 0 1px 3px rgba(255,255,255,0.9); }
+[data-theme="light"] .ds-tabs { border-color: var(--ds-color-border-edge); }   /* white track needs its hairline on the light page */
 ```
 
 ## 6. Component-by-component colour map

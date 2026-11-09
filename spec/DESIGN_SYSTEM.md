@@ -234,6 +234,7 @@ Primitive names are **reference labels** for traceability; they are not emitted 
 | `--ds-gradient-app` | `linear-gradient(90deg, #0b1020 0%, #0f172a 55%, #020617 100%)` | The viewport behind the shell; slide-panel body |
 | `--ds-color-glow-brand` | `rgba(59,130,246,0.10)` | Ambient glow, top-left of the viewport (420 px) |
 | `--ds-color-glow-success` | `rgba(106,167,96,0.08)` | Ambient glow, bottom-right of the viewport (360 px) |
+| `--ds-color-glow-accent` | `rgba(99,102,241,0.12)` | Ambient glow, right edge at 35 % height (520 px) [EXTENSION]: lifts the cards on the right so sections read apart on phones |
 | `--ds-gradient-glass` | `linear-gradient(180deg, brand-strong/2.5% 0%, brand-strong/1% 100%)` (CTA blue `#2563eb`; white glass greyed the navy) | **Every glass surface**: sidebar, cards, fields, select triggers, tertiary buttons, tab tracks, glass badges, table section bodies |
 | `--ds-gradient-glass-strong` | `linear-gradient(180deg, brand-strong/5% 0%, brand-strong/1% 100%)` | Main content panel; media-card header and footer bars |
 | `--ds-gradient-glass-up` | `linear-gradient(0deg, brand-strong/2.5% 0%, brand-strong/1% 100%)` | Footers that sit at the bottom edge (slide-panel footer, pagination) |
@@ -877,12 +878,15 @@ Copy this verbatim into the global stylesheet. **Every value used by a component
   --ds-gradient-app: linear-gradient(90deg, #0b1020 0%, #0f172a 55%, #020617 100%);
   --ds-color-glow-brand: rgba(59,130,246,0.10);
   --ds-color-glow-success: rgba(106,167,96,0.08);
-  --ds-gradient-glass: linear-gradient(180deg, rgba(37,99,235,0.025) 0%, rgba(37,99,235,0.01) 100%);   /* CTA-blue glass (brand-strong #2563eb): white glass greyed the navy */
-  --ds-gradient-glass-strong: linear-gradient(180deg, rgba(37,99,235,0.05) 0%, rgba(37,99,235,0.01) 100%);
-  --ds-gradient-glass-up: linear-gradient(0deg, rgba(37,99,235,0.025) 0%, rgba(37,99,235,0.01) 100%);
-  --ds-gradient-glass-kpi: linear-gradient(180deg, rgba(37,99,235,0.025) 0%, rgba(37,99,235,0.01) 100%);
+  --ds-color-glow-accent: rgba(99,102,241,0.12);
+  --ds-gradient-glow-accent: radial-gradient(closest-side, var(--ds-color-glow-accent), transparent) right -220px top 35% / 520px 520px no-repeat;   /* third ambient glow, a `background` layer */
+  /* Every glass surface (sections, cards, KPIs, filter selects, tab tracks) carries a flat 4 % #2563eb layer so it reads against the navy page (user, 2026-11-09). */
+  --ds-gradient-glass: linear-gradient(rgba(37,99,235,0.04) 0 0), linear-gradient(180deg, rgba(37,99,235,0.025) 0%, rgba(37,99,235,0.01) 100%);   /* CTA-blue glass (brand-strong #2563eb): white glass greyed the navy */
+  --ds-gradient-glass-strong: linear-gradient(rgba(37,99,235,0.04) 0 0), linear-gradient(180deg, rgba(37,99,235,0.05) 0%, rgba(37,99,235,0.01) 100%);
+  --ds-gradient-glass-up: linear-gradient(rgba(37,99,235,0.04) 0 0), linear-gradient(0deg, rgba(37,99,235,0.025) 0%, rgba(37,99,235,0.01) 100%);
+  --ds-gradient-glass-kpi: linear-gradient(rgba(37,99,235,0.04) 0 0), linear-gradient(180deg, rgba(37,99,235,0.025) 0%, rgba(37,99,235,0.01) 100%);
   --ds-gradient-edge-control: linear-gradient(var(--ds-color-border-edge), var(--ds-color-border-edge));   /* 1 px stroke in the one border colour (D-8) */
-  --ds-gradient-toggle: linear-gradient(180deg, rgba(37,99,235,0.06) 0%, rgba(37,99,235,0.02) 100%);   /* every toggle track (D-9) */
+  --ds-gradient-toggle: linear-gradient(rgba(37,99,235,0.04) 0 0), linear-gradient(180deg, rgba(37,99,235,0.06) 0%, rgba(37,99,235,0.02) 100%);   /* every toggle track (D-9) */
   --ds-gradient-toggle-active: linear-gradient(180deg, rgba(59,130,246,0.42) 0%, rgba(37,99,235,0.18) 100%);   /* selected toggle option (D-9) */
   --ds-gradient-table-header-pinned: linear-gradient(rgba(37,99,235,0.07) 0 0), var(--ds-gradient-app) fixed, var(--ds-color-bg-app);   /* opaque sticky header (D-9); a `background` value */
   --ds-color-surface-base: #0f172a;
@@ -1018,6 +1022,7 @@ Copy this verbatim into the global stylesheet. **Every value used by a component
   --ds-chart-trend: #ffffff;
   --ds-chart-track: var(--ds-color-track);
   --ds-chart-baseline: rgba(255,255,255,0.06);
+  --ds-chart-marker: #cbd5e1;   /* bullet-bar reference lines (§7.10): "should be here now" solid, target dashed */
   --ds-chart-axis: var(--ds-color-border-divider);
   --ds-chart-bubble-stroke: #151c22;
   --ds-heat-0: #003e3a;
@@ -2133,7 +2138,7 @@ A value with an optional denominator and label. **Figma** factory well: "6" (`me
 
 | Component | Spec | Figma |
 |---|---|---|
-| **Progress bar** | 4 px track `color-track`, pill radius; fill: success → `gradient-progress-success`, error → `danger`, warning → `warning-text`, brand → `brand` | factory well |
+| **Progress bar** | 4 px track `color-track`, pill radius; fill: success → `gradient-progress-success`, error → `danger`, warning → `chart-status-yellow` (Figma bar fill), brand → `brand` | factory well |
 | **Segmented bar (md)** | 20 px, radius 6, no gaps, non-empty segments min 28 px with `bar-segment` numbers | status cards (DEOC) |
 | **Segmented bar (lg)** | 40 px, radius 12 at the ends, no gaps, no numbers (the legend carries the counts) | [EXTENSION] |
 
@@ -2143,7 +2148,7 @@ A value with an optional denominator and label. **Figma** factory well: "6" (`me
 .ds-progress { height: 4px; border-radius: var(--ds-radius-full); background: var(--ds-color-track); overflow: hidden; }
 .ds-progress > span { display: block; height: 100%; background: var(--ds-color-brand); border-radius: inherit; transition: width var(--ds-duration-chart) var(--ds-ease-standard); }
 .ds-progress--success > span { background: var(--ds-gradient-progress-success); }
-.ds-progress--warning > span { background: var(--ds-color-warning-text); }
+.ds-progress--warning > span { background: var(--ds-chart-status-yellow); }
 .ds-progress--error > span { background: var(--ds-color-danger); }
 .ds-progress-row { display: flex; align-items: center; gap: var(--ds-space-2); }
 .ds-progress-row .ds-progress { flex: 1; }
@@ -2362,6 +2367,29 @@ Variants: with breadcrumb / back button / description [PRESERVED]. **Sub-page [E
 .ds-tabs--accent .ds-tab { padding: 0 var(--ds-space-3); font-weight: 600; letter-spacing: var(--ds-tracking-tight); }
 .ds-tabpanel:focus-visible { outline-offset: var(--ds-focus-offset); }
 .ds-cluster > .ds-tabs, .ds-page-header__actions > .ds-tabs { flex-shrink: 0; }
+```
+
+#### Status tabs [EXTENSION]
+
+**Purpose** Pick one status slice of a list inside a card (Home "Production & line status": Stopped / Behind pace / On track / No plan). **Figma** `HUL - App` node `267:6759` "Status tabs": 28 px pills (radius full), 12/500 label **in the status colour** (`success-text`, `warning-text`, `danger-text`; `text-muted` for neutral), no dot. Unselected `surface-nested`, no border; selected = the status tint (`*-bg`) with a 1 px `*-border`. One is always selected. **Behavior** same as segmented tabs: `role="tablist"`, roving tabindex, arrows move and activate, Home/End.
+
+```css
+.ds-status-tabs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--ds-space-1-5); }   /* even 2 × 2 on phones, one row of 4 from sm */
+@media (min-width: 640px) { .ds-status-tabs { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+.ds-status-tab { display: inline-flex; align-items: center; justify-content: center; height: var(--ds-size-control-sm); padding: 0 var(--ds-space-3);
+  border-radius: var(--ds-radius-full); border: 1px solid transparent; background: var(--ds-color-surface-nested);
+  font-size: var(--ds-font-size-label); line-height: var(--ds-line-height-label); font-weight: 500; white-space: nowrap;
+  transition: background-color var(--ds-duration-fast), border-color var(--ds-duration-fast); }
+.ds-status-tab:hover { background: var(--ds-color-surface-nested-hover); }
+.ds-status-tab:focus-visible { outline-width: var(--ds-focus-width-field); outline-offset: var(--ds-focus-offset-tight); }
+.ds-status-tab--success { color: var(--ds-color-success-text); }
+.ds-status-tab--warning { color: var(--ds-color-warning-text); }
+.ds-status-tab--error { color: var(--ds-color-danger-text); }
+.ds-status-tab--neutral { color: var(--ds-color-text-muted); }
+.ds-status-tab--success[aria-selected="true"] { background: var(--ds-color-success-bg); border-color: var(--ds-color-success-border); }
+.ds-status-tab--warning[aria-selected="true"] { background: var(--ds-color-warning-bg); border-color: var(--ds-color-warning-border); }
+.ds-status-tab--error[aria-selected="true"] { background: var(--ds-color-danger-bg); border-color: var(--ds-color-danger-border); }
+.ds-status-tab--neutral[aria-selected="true"] { background: var(--ds-color-surface-control-hover); border-color: var(--ds-color-border-strong); }
 ```
 
 ### 5.40 Pagination
@@ -2840,7 +2868,7 @@ Viewport → shell 16; sidebar → main 20; header → content 8; content gutter
 
 ```css
 .ds-shell { position: relative; display: flex; gap: var(--ds-space-shell-gap); width: 100%; height: 100dvh; padding: var(--ds-space-shell-padding);
-  background: var(--ds-color-bg-app) var(--ds-gradient-app); overflow: hidden; isolation: isolate; }
+  background: var(--ds-gradient-glow-accent), var(--ds-color-bg-app) var(--ds-gradient-app); overflow: hidden; isolation: isolate; }
 .ds-shell::before, .ds-shell::after { content: ""; position: absolute; z-index: -1; border-radius: var(--ds-radius-full); filter: blur(var(--ds-blur-ambient)); pointer-events: none; }
 .ds-shell::before { width: 420px; height: 420px; left: -120px; top: -120px; background: var(--ds-color-glow-brand); }
 .ds-shell::after { width: 360px; height: 360px; right: -40px; bottom: -40px; background: var(--ds-color-glow-success); }
@@ -3034,6 +3062,8 @@ Y axis: 28 px column, 7 ticks (0 → max rounded to a nice step, e.g. 10k), `axi
 
 **Swatch** (default): 24 × 16 swatch radius 4, 12 px to a 14/500/22 `text-tertiary` label, items 24 px apart. **Swatch with count**: label `text-tertiary`, count `text-muted`. **Dot** (compact, status cards): 12 px dot, 8 px to a 12/500 `text-tertiary` label, items 20 px apart. Legends sit in the card header at the inline-end (OBSERVED) or beside the chart (donut).
 
+**Reference markers** [EXTENSION] (bullet bars, e.g. Home line status): 2 px vertical lines in `chart-marker` (light grey in both themes) over the track and fill. **Now** (where the line should be by this point of the shift) is solid `.ds-marker`; **target** is the same colour, dashed (`.ds-marker--target`, 3 px dash / 2 px gap). The legend shows each as a 2 × 12 px mark (`<i class="ds-marker">` inside `.ds-legend-dot`).
+
 ### 7.11 Data labels
 
 `data-label` (16/400 white with `0 1px 3px rgba(0,0,0,0.8)`) on trend points; `bar-segment` numbers inside md segmented bars. Never label every bar when a tooltip carries the value.
@@ -3102,6 +3132,9 @@ View switches are `accent` segmented tabs (40 px); scoped filters are filter sel
 .ds-legend-dots { display: flex; flex-wrap: wrap; gap: var(--ds-space-5); }
 .ds-legend-dot { display: inline-flex; align-items: center; gap: var(--ds-space-2); font-size: var(--ds-font-size-label); line-height: var(--ds-line-height-label); font-weight: 500; color: var(--ds-color-text-tertiary); }
 .ds-legend-dot i { width: 12px; height: 12px; border-radius: var(--ds-radius-full); }
+.ds-marker { position: absolute; top: 0; bottom: 0; width: 2px; border-radius: 1px; background: var(--ds-chart-marker); pointer-events: none; }
+.ds-marker--target { background: repeating-linear-gradient(to bottom, var(--ds-chart-marker) 0 3px, transparent 3px 5px); }
+.ds-legend-dot i.ds-marker { position: static; width: 2px; height: 12px; border-radius: 1px; }
 .ds-donut { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--ds-space-6); }
 .ds-donut__ring { position: relative; width: 180px; height: 180px; flex-shrink: 0; max-width: 100%; }
 .ds-donut__ring svg { position: absolute; inset: 0; width: 100%; height: 100%; }
@@ -3236,12 +3269,23 @@ Layout uses logical properties (`inline-start/end`), directional icons flip, num
 
 The default spacing is drawn for 1920 px screens; on a phone it wastes a quarter of the width on padding. At `xs` (< 640) the semantic spacing tokens step down, so every component and layout that uses them tightens with no per-screen code. The base 4 px scale (`--ds-space-1…16`) never changes; only the semantic names below do. Layouts must use the semantic tokens (not fixed Tailwind gaps or paddings) for page gutters, section gaps and grid gaps, or they won't follow.
 
+**The phone rhythm** (one scale, applied the same way everywhere):
+
+| Step | Used for |
+|---|---|
+| 16 | page gutter, padding inside every card (all card sizes are equal on a phone), gap between page sections, header bar edge → first content |
+| 12 | gap between sibling cards or controls (KPI pair, card lists, tile grids, filter rows) and between items inside a card (title → rows, row → row) |
+| 8 | inline items: icon → label, badge → text, header actions |
+
+A card's top and bottom padding must match: rows inside a card don't carry their own vertical padding; the card's `gap` spaces them.
+
 | Token | Default | `xs` |
 |---|---|---|
+| `--ds-space-page-top` | 8 | 16 (on a phone the header is a visible bar with a shadow, so content starts a full section gap below its edge) |
 | `--ds-space-section` | 20 | 16 |
-| `--ds-space-grid` / `-grid-lg` | 16 / 20 | 10 / 12 |
-| `--ds-space-stack` | 12 | 8 |
-| `--ds-space-card` / `-lg` / `-xl` / `-entity` | 16 / 20 / 24 / 25 | 12 / 14 / 16 / 17 |
+| `--ds-space-grid` / `-grid-lg` | 16 / 20 | 12 / 12 |
+| `--ds-space-stack` | 12 | 12 |
+| `--ds-space-card` / `-lg` / `-xl` / `-entity` | 16 / 20 / 24 / 25 | 16 / 16 / 16 / 17 |
 | `--ds-space-card-gap` / `--ds-space-chart-gap` | 20 | 12 |
 | `--ds-space-header-actions` | 12 | 8 |
 | `--ds-space-form-col` / `-row` / `-section` | 20 / 40 / 24 | 12 / 20 / 16 |
@@ -3255,10 +3299,11 @@ Full-height app frames use `min-height: 100dvh`, never `100vh` / `min-h-screen`:
 ```css
 @media (max-width: 639px) {
   :root {
+    --ds-space-page-top: 16px;
     --ds-space-section: 16px;
-    --ds-space-grid: 10px;  --ds-space-grid-lg: 12px;
-    --ds-space-stack: 8px;
-    --ds-space-card: 12px;  --ds-space-card-lg: 14px;  --ds-space-card-xl: 16px;  --ds-space-card-entity: 17px;
+    --ds-space-grid: 12px;  --ds-space-grid-lg: 12px;
+    --ds-space-stack: 12px;
+    --ds-space-card: 16px;  --ds-space-card-lg: 16px;  --ds-space-card-xl: 16px;  --ds-space-card-entity: 17px;
     --ds-space-card-gap: 12px;  --ds-space-chart-gap: 12px;
     --ds-space-header-actions: 8px;
     --ds-space-form-col: 12px;  --ds-space-form-row: 20px;  --ds-space-form-section: 16px;
