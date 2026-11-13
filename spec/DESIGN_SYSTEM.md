@@ -270,12 +270,14 @@ Primitive names are **reference labels** for traceability; they are not emitted 
 
 | Token | Value | Use exactly for |
 |---|---|---|
-| `--ds-color-text-primary` | `#ffffff` | Titles, numbers, active labels, first table column |
-| `--ds-color-text-emphasis` | `#e2e8f0` | Select-trigger values, tertiary and subtle button labels |
-| `--ds-color-text-secondary` | `#cbd5e1` | Table values, form labels, field values, detected values, body copy |
-| `--ds-color-text-muted` | `#94a3b8` | KPI labels, table headers, meta, inactive nav and tabs, descriptions |
-| `--ds-color-text-tertiary` | `#8a99ae` | **[STANDARDIZED]** Quietest readable text: counts in tabs, section labels, barcode labels, step subtitles, helper notes (≥ 4.72:1) |
-| `--ds-color-text-placeholder` | `rgba(203,213,225,0.60)` | Placeholders (Figma used 50 %; raised to 60 % for 4.57:1, R-07) |
+| `--ds-color-text-primary` | `#ffffff` | **L1 · 100 %** H1 page title, numbers, active labels |
+| `--ds-color-text-h2` | `rgba(255,255,255,0.90)` | **L2 · 90 %** H2: card, dialog, group, entity, media and summary titles |
+| `--ds-color-text-h3` | `rgba(255,255,255,0.80)` | **L3 · 80 %** H3: subgroup and modal titles, step titles |
+| `--ds-color-text-emphasis` | `rgba(255,255,255,0.80)` | **L3 · 80 %** Select-trigger values, tertiary and subtle button labels |
+| `--ds-color-text-secondary` | `rgba(255,255,255,0.70)` | **L4 · 70 %** B1 — all body text incl. strong/emphasis, first table column, identifiers, typed values, tags; table values, form labels, field values, detected values, body copy |
+| `--ds-color-text-muted` | `rgba(255,255,255,0.60)` | **L5 · 60 %** B2 — KPI labels, table headers, meta, inactive nav and tabs, descriptions |
+| `--ds-color-text-tertiary` | `rgba(255,255,255,0.50)` | **L6 · 50 %** B3 — quietest readable text: counts in tabs, section labels, barcode labels, step subtitles, helper notes (≥ 4.72:1) |
+| `--ds-color-text-placeholder` | `rgba(255,255,255,0.40)` | **L7 · 40 %** Placeholders |
 | `--ds-color-text-faint` | `#475569` | Decorative separators only (`aria-hidden`) |
 | `--ds-color-text-on-brand` | `#ffffff` | Text on blue fills |
 | `--ds-color-text-on-bright` | `#0b0f14` | Text on bright chart fills (heat cells ≥ 0.59, bar segments) |
@@ -286,6 +288,8 @@ Primitive names are **reference labels** for traceability; they are not emitted 
 | `--ds-color-text-axis` | `rgba(255,255,255,0.60)` | Y-axis tick labels |
 | `--ds-color-icon` | `#64748b` | Outline action icons (3.1–3.8:1, meets the 3:1 non-text minimum) |
 | `--ds-color-icon-chevron` | `#6b7280` | Chevrons |
+
+**Text opacity ladder (rule, dark theme).** All white text is pure white at a stepped opacity: each level down the hierarchy is **10 % less opaque** than the one above. L1 H1 100 % → L2 H2 90 % → L3 H3 80 % → L4 B1 70 % → L5 B2 60 % → L6 B3 50 % → L7 placeholder 40 %. Never write a text colour outside this ladder; pick the level by role from the §2.3 table. Coloured text (brand, status, chart) is not on the ladder. The light theme keeps its own greys (`text-h2`/`text-h3` = `text-primary` there).
 
 #### Borders & dividers
 
@@ -406,14 +410,14 @@ Every text element uses one of these styles. `.ds-ts-<name>` utility classes are
 | Style token | Family | Size | Weight | Line height | Letter spacing | Transform | Color token | Usage |
 |---|---|---|---|---|---|---|---|---|
 | `page-title` | Inter | 24px | 600 | 32px | -0.35px | — | text-primary | The page `<h1>` in the header |
-| `dialog-title` | Inter | 20px | 700 | 28px | -0.5px | — | text-primary | Slide-panel and confirm-dialog titles |
-| `modal-title` | Inter | 14px | 400 | 18px | 0 | — | text-primary | Compact modal title and form-section headers ("Add Cameras", "User Details") |
-| `card-title` | Inter | 20px | 600 | 24px | -0.4px | — | text-primary | Dashboard and status-card titles |
-| `entity-title` | Inter | 20px | 600 | 28px | -0.4px | — | text-primary | Entity-card names (factory cards) |
-| `media-title` | Inter | 20px | 600 | 26px | -0.25px | — | text-primary | Camera tile titles (16 px on tiles narrower than 420 px) |
-| `group-title` | Inter | 20px | 700 | 24px | -0.5px | — | text-primary | Collapsible section and table-card titles |
-| `subgroup-title` | Inter | 16px | 700 | 22px | -0.5px | — | text-primary | Compact nested sections [PRESERVED] |
-| `summary-title` | Inter | 20px | 700 | 28px | -0.5px | — | text-primary | Summary-strip title (running SKU) |
+| `dialog-title` | Inter | 20px | 700 | 28px | -0.5px | — | text-h2 | Slide-panel and confirm-dialog titles |
+| `modal-title` | Inter | 14px | 400 | 18px | 0 | — | text-h3 | Compact modal title and form-section headers ("Add Cameras", "User Details") |
+| `card-title` | Inter | 20px | 600 | 24px | -0.4px | — | text-h2 | Dashboard and status-card titles |
+| `entity-title` | Inter | 20px | 600 | 28px | -0.4px | — | text-h2 | Entity-card names (factory cards) |
+| `media-title` | Inter | 20px | 600 | 26px | -0.25px | — | text-h2 | Camera tile titles (16 px on tiles narrower than 420 px) |
+| `group-title` | Inter | 20px | 700 | 24px | -0.5px | — | text-h2 | Collapsible section and table-card titles |
+| `subgroup-title` | Inter | 16px | 700 | 22px | -0.5px | — | text-h3 | Compact nested sections [PRESERVED] |
+| `summary-title` | Inter | 20px | 700 | 28px | -0.5px | — | text-h2 | Summary-strip title (running SKU) |
 | `kpi-value` | Inter | 20px | 700 | 28px | -0.65px | — | text-primary | KPI value |
 | `kpi-label` | Inter | 12px | 700 | 16px | +0.55px | UPPERCASE | text-muted | KPI label |
 | `metric-value` | Inter | 20px | 700 | 28px | -0.65px | — | text-primary | Inline metric in an entity card ("6") |
@@ -422,21 +426,21 @@ Every text element uses one of these styles. `.ds-ts-<name>` utility classes are
 | `section-title` | Inter | 20px | 500 | 28px | -0.35px | — | text-tertiary | Title of a page section above a card grid ("Active Operational Units • 6"; Figma `#64748b` lifted, R-03) |
 | `section-label` | Inter | 12px | 700 | 16px | +0.55px | UPPERCASE | text-tertiary | Card section labels ("REFERENCE BARCODES") |
 | `field-label` | Inter | 12px | 500 | 16px | 0 | — | text-tertiary | Label above a read-only value |
-| `field-value` | Inter | 16px | 400 | 22px | +0.5px | — | text-primary | Read-only identifiers (barcodes) |
+| `field-value` | Inter | 16px | 400 | 22px | +0.5px | — | text-secondary | Read-only identifiers (barcodes) |
 | `eyebrow` | Inter | 12px | 400 | 18px | +0.55px | — | link | Context label above a summary title, after an 8 px brand dot |
 | `body` | Inter | 14px | 400 | 20px | 0 | — | text-secondary | Default paragraph text |
 | `body-muted` | Inter | 14px | 400 | 20px | 0 | — | text-muted | Descriptions, "Showing …", empty states |
-| `body-strong` | Inter | 14px | 500 | 20px | 0 | — | text-primary | Names, primary values |
-| `body-emphasis` | Inter | 14px | 600 | 20px | 0 | — | text-primary | Emphasized values |
+| `body-strong` | Inter | 14px | 500 | 20px | 0 | — | text-secondary | Names, primary values |
+| `body-emphasis` | Inter | 14px | 600 | 20px | 0 | — | text-secondary | Emphasized values |
 | `small` | Inter | 12px | 400 | 16px | 0 | — | text-muted | Meta lines |
 | `small-strong` | Inter | 12px | 600 | 16px | 0 | — | text-secondary | Compact labels, callout titles |
 | `caption` | Inter | 10px | 400 | 14px | 0 | — | text-tertiary | Smallest annotations |
 | `table-header` | Inter | 12px | 600 | 16px | +0.3px | UPPERCASE | text-muted | `<th>` |
-| `table-cell-primary` | Inter | 14px | 500 | 20px | 0 | — | text-primary | First column |
+| `table-cell-primary` | Inter | 14px | 500 | 20px | 0 | — | text-secondary | First column |
 | `table-cell` | Inter | 14px | 400 | 20px | 0 | — | text-secondary | Other columns |
 | `form-label` | Inter | 12px | 500 | 16px | 0 | — | text-muted | Field labels (drawers, pages) |
 | `form-label-caps` | Inter | 12px | 500 | 16px | +0.55px | UPPERCASE | text-muted | Field labels in compact modals |
-| `input-text` | Inter | 14px | 400 | 20px | 0 | — | text-primary | Typed values |
+| `input-text` | Inter | 14px | 400 | 20px | 0 | — | text-secondary | Typed values |
 | `placeholder` | Inter | 14px | 400 | 20px | 0 | — | text-placeholder | Placeholders |
 | `validation` | Inter | 12px | 400 | 16px | 0 | — | error-text | Field errors |
 | `helper` | Inter | 12px | 400 | 16px | 0 | — | text-tertiary | Hints, autosave notes |
@@ -445,14 +449,14 @@ Every text element uses one of these styles. `.ds-ts-<name>` utility classes are
 | `button-lg` | Inter | 16px | 600 | 22px | 0 | — | per variant | Large buttons |
 | `badge` | Inter | 14px | 600 | 20px | 0 | — | per status | Status pill |
 | `badge-sm` | Inter | 12px | 600 | 16px | 0 | — | per status | Small status pill |
-| `tag` | Inter | 14px | 500 | 20px | 0 | — | text-primary | Role tag |
+| `tag` | Inter | 14px | 500 | 20px | 0 | — | text-secondary | Role tag |
 | `count-pill` | Inter | 14px | 700 | 18px | 0 | — | text-secondary | Count next to a title |
 | `nav-item` | Inter | 14px | 500 | 20px | 0 | — | text-muted | Sidebar items (primary when current) |
 | `nav-section` | Inter | 12px | 400 | 16px | 0 | — | text-muted | Sidebar group labels |
 | `tab` | Inter | 14px | 400 | 20px | 0 | — | text-muted | Segmented tabs (primary when selected) |
 | `tab-count` | Inter | 12px | 400 | 16px | 0 | — | text-tertiary | "(24)" after a tab label |
 | `link-action` | Inter | 14px | 600 | 20px | 0 | — | brand | Inline actions ("+ Add New User"); `link` on hover |
-| `step-title` | Inter | 12px | 700 | 16px | +0.3px | — | text-primary | Current step title |
+| `step-title` | Inter | 12px | 700 | 16px | +0.3px | — | text-h3 | Current step title |
 | `step-sub` | Inter | 12px | 500 | 16px | 0 | — | link | Current step status ("In progress") |
 | `media-detail` | Inter | 14px | 600 | 16px | 0 | — | text-secondary | Camera footer ("Detected : …"; value italic 400) |
 | `avatar-initials` | Inter | 14px | 500 | 16px | 0 | — | text-secondary | Neutral avatar initials |
@@ -505,14 +509,14 @@ Base unit **4 px**, with 2 px half-steps (2, 6, 10, 14) inside components. [PRES
 
 | Token | Value | Applies to | Kind |
 |---|---|---|---|
-| `--ds-space-page-gutter` | 16px | Left/right/bottom padding of page content; page header horizontal padding | padding |
-| `--ds-space-page-top` | 8px | Header → first content row (tight: the header has no fill or divider) | padding |
+| `--ds-space-page-gutter` | 20px | Left/right/bottom padding of page content; page header horizontal padding | padding |
+| `--ds-space-page-top` | 12px | Header → first content row (tight: the header has no fill or divider) | padding |
 | `--ds-space-shell-padding` | 16px | Viewport → shell panels [PRESERVED] | padding |
 | `--ds-space-shell-gap` | 20px | Sidebar → main panel | gap |
-| `--ds-space-section` | 28px | Between vertically stacked page sections | gap |
-| `--ds-space-grid` | 16px | Between KPI cards, camera tiles and side-panel cards | gap |
-| `--ds-space-grid-lg` | 20px | Between entity and dashboard cards; monitor grid → side panel | gap |
-| `--ds-space-stack` | 12px | Between collapsible sections, and between nested groups inside one | gap |
+| `--ds-space-section` | 32px | Between vertically stacked page sections | gap |
+| `--ds-space-grid` | 20px | Between KPI cards, camera tiles and side-panel cards | gap |
+| `--ds-space-grid-lg` | 24px | Between entity and dashboard cards; monitor grid → side panel | gap |
+| `--ds-space-stack` | 16px | Between collapsible sections, and between nested groups inside one | gap |
 | `--ds-space-card` | 16px | KPI cards, summary strip, collapsible-section body | padding |
 | `--ds-space-card-lg` | 20px | Side-panel cards | padding |
 | `--ds-space-card-xl` | 24px | Dashboard cards, modals, drawer body | padding |
@@ -827,7 +831,7 @@ The default density is DEOC's. A **compact** mode is derived mechanically for da
   --ds-size-section-header: 52px;  --ds-size-nav-item: 40px;
   --ds-space-cell-x: 12px;  --ds-space-cell-y: 10px;
   --ds-space-card: 12px;  --ds-space-card-lg: 16px;  --ds-space-card-xl: 20px;  --ds-space-card-entity: 21px;
-  --ds-space-form-row: 24px;  --ds-space-grid: 12px;  --ds-space-grid-lg: 16px;
+  --ds-space-form-row: 24px;  --ds-space-grid: 16px;  --ds-space-grid-lg: 20px;
 }
 ```
 
@@ -912,12 +916,14 @@ Copy this verbatim into the global stylesheet. **Every value used by a component
   --ds-color-track: rgba(255,255,255,0.08);
 
   /* ── Color: text ──────────────────────────────────────── */
-  --ds-color-text-primary: #ffffff;
-  --ds-color-text-emphasis: #e2e8f0;
-  --ds-color-text-secondary: #cbd5e1;
-  --ds-color-text-muted: #94a3b8;
-  --ds-color-text-tertiary: #8a99ae;
-  --ds-color-text-placeholder: rgba(203,213,225,0.60);
+  --ds-color-text-primary: #ffffff;                 /* L1 · H1 · 100 % */
+  --ds-color-text-h2: rgba(255,255,255,0.90);       /* L2 · H2 ·  90 % */
+  --ds-color-text-h3: rgba(255,255,255,0.80);       /* L3 · H3 ·  80 % */
+  --ds-color-text-emphasis: rgba(255,255,255,0.80); /* L3 */
+  --ds-color-text-secondary: rgba(255,255,255,0.70);/* L4 · B1 ·  70 % */
+  --ds-color-text-muted: rgba(255,255,255,0.60);    /* L5 · B2 ·  60 % */
+  --ds-color-text-tertiary: rgba(255,255,255,0.50); /* L6 · B3 ·  50 % */
+  --ds-color-text-placeholder: rgba(255,255,255,0.40);/* L7 · 40 % */
   --ds-color-text-faint: #475569;
   --ds-color-text-on-brand: #ffffff;
   --ds-color-text-on-bright: #0b0f14;
@@ -1054,14 +1060,14 @@ Copy this verbatim into the global stylesheet. **Every value used by a component
   --ds-space-12: 48px;
   --ds-space-16: 64px;
 
-  --ds-space-page-gutter: 16px;
-  --ds-space-page-top: 8px;
+  --ds-space-page-gutter: 20px;   /* +4 (user, 2026-11-13): screen padding */
+  --ds-space-page-top: 12px;   /* +4 (user, 2026-11-13) */
   --ds-space-shell-padding: 16px;
   --ds-space-shell-gap: 20px;
-  --ds-space-section: 28px;   /* +8 (user, 2026-11-09): sections read apart */
-  --ds-space-grid: 16px;
-  --ds-space-grid-lg: 20px;
-  --ds-space-stack: 12px;
+  --ds-space-section: 32px;   /* +8 (2026-11-09), +4 (2026-11-13): sections read apart */
+  --ds-space-grid: 20px;      /* +4 (user, 2026-11-13): card gaps */
+  --ds-space-grid-lg: 24px;   /* +4 */
+  --ds-space-stack: 16px;     /* +4 */
   --ds-space-card: 16px;
   --ds-space-card-lg: 20px;
   --ds-space-card-xl: 24px;
@@ -1293,17 +1299,17 @@ input[type="search"]::-webkit-search-cancel-button { -webkit-appearance: none; }
 
 /* Text-style helpers that components use directly (the full set is .ds-ts-<name>, generated from §2.3) */
 .ds-text-page-title   { font-size: var(--ds-font-size-title); font-weight: 600; line-height: var(--ds-line-height-title); letter-spacing: var(--ds-tracking-title); color: var(--ds-color-text-primary); }
-.ds-text-dialog-title { font-size: var(--ds-font-size-heading); font-weight: 700; line-height: var(--ds-line-height-heading); letter-spacing: var(--ds-tracking-heading); color: var(--ds-color-text-primary); }
-.ds-text-card-title   { font-size: var(--ds-font-size-heading); font-weight: 600; line-height: var(--ds-leading-24); letter-spacing: var(--ds-tracking-card-title); color: var(--ds-color-text-primary); }
-.ds-text-group-title  { font-size: var(--ds-font-size-heading); font-weight: 700; line-height: var(--ds-leading-24); letter-spacing: var(--ds-tracking-heading); color: var(--ds-color-text-primary); }
-.ds-text-subgroup-title { font-size: var(--ds-font-size-value); font-weight: 700; line-height: var(--ds-line-height-value); letter-spacing: var(--ds-tracking-heading); color: var(--ds-color-text-primary); }
+.ds-text-dialog-title { font-size: var(--ds-font-size-heading); font-weight: 700; line-height: var(--ds-line-height-heading); letter-spacing: var(--ds-tracking-heading); color: var(--ds-color-text-h2); }
+.ds-text-card-title   { font-size: var(--ds-font-size-heading); font-weight: 600; line-height: var(--ds-leading-24); letter-spacing: var(--ds-tracking-card-title); color: var(--ds-color-text-h2); }
+.ds-text-group-title  { font-size: var(--ds-font-size-heading); font-weight: 700; line-height: var(--ds-leading-24); letter-spacing: var(--ds-tracking-heading); color: var(--ds-color-text-h2); }
+.ds-text-subgroup-title { font-size: var(--ds-font-size-value); font-weight: 700; line-height: var(--ds-line-height-value); letter-spacing: var(--ds-tracking-heading); color: var(--ds-color-text-h3); }
 .ds-text-kpi-value    { font-size: var(--ds-font-size-heading); font-weight: 700; line-height: var(--ds-line-height-heading); letter-spacing: var(--ds-tracking-number); color: var(--ds-color-text-primary); }
 .ds-text-kpi-label    { font-size: var(--ds-font-size-label); font-weight: 700; line-height: var(--ds-line-height-label); letter-spacing: var(--ds-tracking-upper); color: var(--ds-color-text-muted); text-transform: uppercase; }
 .ds-text-metric-value { font-size: var(--ds-font-size-heading); font-weight: 700; line-height: var(--ds-line-height-heading); letter-spacing: var(--ds-tracking-number); color: var(--ds-color-text-primary); }
 .ds-text-metric-label { font-size: var(--ds-font-size-label); font-weight: 500; line-height: var(--ds-leading-18); letter-spacing: var(--ds-tracking-upper-sm); color: var(--ds-color-text-muted); text-transform: uppercase; }
 .ds-text-body         { font-size: var(--ds-font-size-body); font-weight: 400; line-height: var(--ds-line-height-body); color: var(--ds-color-text-secondary); }
 .ds-text-body-muted   { font-size: var(--ds-font-size-body); font-weight: 400; line-height: var(--ds-line-height-body); color: var(--ds-color-text-muted); }
-.ds-text-body-strong  { font-size: var(--ds-font-size-body); font-weight: 500; line-height: var(--ds-line-height-body); color: var(--ds-color-text-primary); }
+.ds-text-body-strong  { font-size: var(--ds-font-size-body); font-weight: 500; line-height: var(--ds-line-height-body); color: var(--ds-color-text-secondary); }
 .ds-text-small        { font-size: var(--ds-font-size-label); font-weight: 400; line-height: var(--ds-line-height-label); color: var(--ds-color-text-muted); }
 .ds-text-caption      { font-size: var(--ds-font-size-caption); font-weight: 400; line-height: var(--ds-line-height-caption); color: var(--ds-color-text-tertiary); }
 .ds-text-validation   { font-size: var(--ds-font-size-label); font-weight: 400; line-height: var(--ds-line-height-label); color: var(--ds-color-error-text); }
@@ -3297,10 +3303,10 @@ A card's top and bottom padding must match: rows inside a card don't carry their
 
 | Token | Default | `xs` |
 |---|---|---|
-| `--ds-space-page-top` | 8 | 16 (on a phone the header is a visible bar with a shadow, so content starts a full section gap below its edge) |
-| `--ds-space-section` | 28 | 24 |
-| `--ds-space-grid` / `-grid-lg` | 16 / 20 | 12 / 12 |
-| `--ds-space-stack` | 12 | 12 |
+| `--ds-space-page-top` | 12 | 20 (on a phone the header is a visible bar with a shadow, so content starts a full section gap below its edge) |
+| `--ds-space-section` | 32 | 28 |
+| `--ds-space-grid` / `-grid-lg` | 20 / 24 | 16 / 16 |
+| `--ds-space-stack` | 16 | 16 |
 | `--ds-space-card` / `-lg` / `-xl` / `-entity` | 16 / 20 / 24 / 25 | 16 / 16 / 16 / 17 |
 | `--ds-space-card-gap` / `--ds-space-chart-gap` | 20 | 12 |
 | `--ds-space-header-actions` | 12 | 8 |
@@ -3308,17 +3314,17 @@ A card's top and bottom padding must match: rows inside a card don't carry their
 | `--ds-space-cell-x` / `-y` | 16 / 12 | 12 / 10 |
 | `--ds-size-page-header` / `--ds-size-kpi-card` | 76 / 76 | 56 / 64 |
 
-The page gutter stays 16 px (12 px felt cramped on a phone). The page header (and the shell top bar) is 56 px tall with 8 px block padding, and always carries `shadow-glass-soft`, the same soft shadow as the section cards, so it reads as a bar above the content without a heavy edge (on desktop the header has no shadow until content scrolls under it). Sub-page headers drop the "Parent /" prefix and the page title steps down to `heading` size (§8.3).
+The page gutter stays at its desktop value, 20 px (12 px felt cramped on a phone). **Rule (user, 2026-11-13):** screen padding (`page-gutter`, `page-top`) and the gaps between cards and sections (`section`, `grid`, `grid-lg`, `stack`) were each raised by 4 px on every breakpoint; layouts must use these tokens, never fixed gaps, so spacing changes stay app-wide. The page header (and the shell top bar) is 56 px tall with 8 px block padding, and always carries `shadow-glass-soft`, the same soft shadow as the section cards, so it reads as a bar above the content without a heavy edge (on desktop the header has no shadow until content scrolls under it). Sub-page headers drop the "Parent /" prefix and the page title steps down to `heading` size (§8.3).
 
 Full-height app frames use `min-height: 100dvh`, never `100vh` / `min-h-screen`: on mobile browsers `100vh` is the height with the address bar hidden, so anything pinned to the page bottom (a Log out button, a form footer) lands behind a fixed bottom bar. Content above a fixed bottom bar gets bottom padding at least the bar's height.
 
 ```css
 @media (max-width: 639px) {
   :root {
-    --ds-space-page-top: 16px;
-    --ds-space-section: 24px;
-    --ds-space-grid: 12px;  --ds-space-grid-lg: 12px;
-    --ds-space-stack: 12px;
+    --ds-space-page-top: 20px;
+    --ds-space-section: 28px;
+    --ds-space-grid: 16px;  --ds-space-grid-lg: 16px;
+    --ds-space-stack: 16px;
     --ds-space-card: 16px;  --ds-space-card-lg: 16px;  --ds-space-card-xl: 16px;  --ds-space-card-entity: 17px;
     --ds-space-card-gap: 12px;  --ds-space-chart-gap: 12px;
     --ds-space-header-actions: 8px;

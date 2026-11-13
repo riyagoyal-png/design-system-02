@@ -111,6 +111,8 @@ Rules used to derive the values the frame does not show:
 | Token | Dark | Light | Source |
 |---|---|---|---|
 | `--ds-color-text-primary` | `#ffffff` | `#111827` | OBSERVED |
+| `--ds-color-text-h2` | white/90 % | `#0f172a` | RULE (opacity ladder; light = primary) |
+| `--ds-color-text-h3` | white/80 % | `#0f172a` | RULE (opacity ladder; light = primary) |
 | `--ds-color-text-strong` (new) | — | `#1f2636` | OBSERVED (barcode values, user name) |
 | `--ds-color-text-emphasis` | `#e2e8f0` | `#475569` | OBSERVED (filter values) |
 | `--ds-color-text-secondary` | `#cbd5e1` | `#475569` | OBSERVED (detected value, health labels) |
@@ -263,6 +265,8 @@ Every colour, gradient and shadow token of `spec/DESIGN_SYSTEM.md` §3 is redecl
 
   /* ── Text ─────────────────────────────────────────────── */
   --ds-color-text-primary: #0f172a;
+  --ds-color-text-h2: #0f172a;
+  --ds-color-text-h3: #0f172a;
   --ds-color-text-strong: #1f2636;
   --ds-color-text-emphasis: #475569;
   --ds-color-text-secondary: #344054;
